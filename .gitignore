@@ -102,3 +102,42 @@ dist
 
 # TernJS port file
 .tern-port
+
+# =============== #
+# Unity generated #
+# =============== #
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+
+
+# Visual Studio cache directory
+.vs/
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Unity3D generated meta files
+*.pidb.meta
+*.pdb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker0-prev.log
+
+
+# Builds
+*.apk
+*.unitypackage
