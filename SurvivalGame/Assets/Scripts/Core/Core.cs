@@ -15,6 +15,9 @@ public class Core : MonoBehaviour
     public static SceneLoadingManager LOADING { get { return instance.Get<SceneLoadingManager>(); } }
 
     [HideInInspector]
+    public static InputManager INPUT { get { return instance.Get<InputManager>(); } }
+
+    [HideInInspector]
     public bool isCoreReady = false;
 
     public void Awake()
