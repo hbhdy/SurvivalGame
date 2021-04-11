@@ -61,11 +61,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Core\HSSManager.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\HSSObject.cs" />
     <Compile Include="Assets\Scripts\Core\GameEngine.cs" />
     <Compile Include="Assets\Scripts\Core\InputManager.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\ObjectPool\HSSObject.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPool.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPoolManager.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\HSSObjectCategory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

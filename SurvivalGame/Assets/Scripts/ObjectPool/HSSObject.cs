@@ -23,7 +23,7 @@ public class HSSObject : MonoBehaviour
         return key;
     }
 
-    public virtual void Spawn(Transform parent = null, int level = 1)
+    public virtual void Spawn(Transform parent = null)
     {
         if (parent != null)
             transform.SetParent(parent);
