@@ -80,9 +80,9 @@ public class InputManager : HSSManager
 
 
 #if (UNITY_STANDALONE || UNITY_EDITOR)
-
+        PCInput();
 #elif (UNITY_IOS || UNITY_ANDROID)
-
+        MobileInput();
 #endif
     }
 
