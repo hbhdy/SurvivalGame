@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 5052921002979578537}
   - component: {fileID: 5052921002979578538}
   - component: {fileID: 5052921002979578539}
+  - component: {fileID: 4192835541771287931}
   - component: {fileID: 5052921002979578532}
   m_Layer: 5
   m_Name: GameUI
@@ -232,6 +233,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4192835541771287931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5052921002979578534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc053d78aac8ee94991fd4a3f20178b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!82 &5052921002979578532
 AudioSource:
   m_ObjectHideFlags: 0

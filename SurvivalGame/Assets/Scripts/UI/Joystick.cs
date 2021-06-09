@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 // 고정되어 있는 조이스틱과 화면전체에 따라 움직이는 조이스틱: 두가지 개발
-public class Joystick : MonoBehaviour//, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     public static Joystick instance = null;
 
@@ -53,6 +53,8 @@ public class Joystick : MonoBehaviour//, IPointerDownHandler, IPointerUpHandler,
             // moveDir로 이동방향 설정
             moveDir = rt.anchoredPosition - outsideRt.anchoredPosition;
             moveDir = moveDir.normalized;
+
+            Debug.Log(moveDir);
         }
     }
 
@@ -64,6 +66,8 @@ public class Joystick : MonoBehaviour//, IPointerDownHandler, IPointerUpHandler,
 
     public void OnPointerDown(Vector2 eventData)
     {
+
+
         inputPos = eventData;
         inputPos = ConvertScreenToAnchoredPos(inputPos);
 
@@ -133,6 +137,30 @@ public class Joystick : MonoBehaviour//, IPointerDownHandler, IPointerUpHandler,
 
         outsideRt.anchoredPosition = useOriginPos;
         rt.anchoredPosition = useOriginPos;
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        //IsPressed = true;
+        //inputPos = eventData.position;
+        //offset = eventData.position;
+        //inputPos = ConvertScreenToAnchoredPos(parent, inputPos, uiCamera);
+        //offset = ConvertScreenToAnchoredPos(parent, offset, uiCamera);
+        //Debug.Log(offset);
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        //rt.anchoredPosition = originPos;
+        //inputPos = Vector2.zero;
+        //offset = Vector2.zero;
+        //IsPressed = false;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        //inputPos = eventData.position;
+        //inputPos = ConvertScreenToAnchoredPos(parent, inputPos, uiCamera);
     }
 
     // 이동 체크
