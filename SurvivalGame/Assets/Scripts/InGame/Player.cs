@@ -8,23 +8,61 @@ public class Player : MonoBehaviour
     public float moveSpeed = 1.0f;
     public float rotateSpeed = 90.0f;
 
+    [Header("Player Object")]
+    public GameObject objWeapon;
+    public GameObject objBody;
+    public GameObject objWheel;
+
+    [HideInInspector]
+    public Weapon weapon;
+    [HideInInspector]
+    public Body body;
+    [HideInInspector]
+    public Wheel wheel;
+
     [HideInInspector]
     public bool isMoving = false;
     [HideInInspector]
     public Vector3 moveDir = Vector3.zero;
 
+
     private Rigidbody2D rigid2d;
+    private Vector3 originPos;
+    private Quaternion originQt;
 
     public void Awake()
     {
         rigid2d = GetComponent<Rigidbody2D>();
+        weapon = objWeapon.GetComponent<Weapon>();
+        body = objBody.GetComponent<Body>();
+        wheel = objWheel.GetComponent<Wheel>();
+    }
+
+    // 플레이어 초기화
+    public IEnumerator InitPayer()
+    {
+        originPos = transform.position;
+        originQt = transform.rotation;
+
+        isMoving = false;
+
+        yield return StartCoroutine(AssembleParts());
+    }
+
+    // 웨폰 바디 휠 조립
+    public IEnumerator AssembleParts()
+    {
+        //objBody = Instantiate(, transform.position, transform.rotation, transform);
+        //objWheel = Instantiate(, transform.position, transform.rotation, transform);
+
+        yield return true;
     }
 
     public void FixedUpdate()
     {
         if (Joystick.instance.GetDir() != Vector3.zero)
         {
-            MovePlayer(Joystick.instance.GetMoveForce());
+            wheel.MoveWheel(Joystick.instance.GetMoveForce());
 
             isMoving = true;
         }
@@ -32,33 +70,9 @@ public class Player : MonoBehaviour
         {
             if (isMoving)
             {
-                BreakPlayer();
+                wheel.BreakWheel();
                 isMoving = false;
             }
         }
-    }
-
-    public void MovePlayer(float power)
-    {
-        Quaternion newQt = Quaternion.FromToRotation(Vector3.up, Joystick.instance.GetDir());
-        newQt.x = 0.0f;
-        newQt.y = 0.0f;
-
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, newQt, rotateSpeed * Time.deltaTime);
-
-        moveDir = Vector3.Lerp(moveDir, Joystick.instance.GetDir(), Time.deltaTime);
-
-        Vector3 newPos = transform.position;
-
-        newPos += Joystick.instance.GetDir() * moveSpeed * power * Time.deltaTime;
-        rigid2d.MovePosition(newPos);
-
-        rigid2d.angularVelocity = 0.0f;
-    }
-
-    public void BreakPlayer()
-    {
-        rigid2d.angularVelocity = 0.0f;
-        rigid2d.velocity = Vector2.zero;
     }
 }

@@ -53,8 +53,6 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
             // moveDir로 이동방향 설정
             moveDir = rt.anchoredPosition - outsideRt.anchoredPosition;
             moveDir = moveDir.normalized;
-
-            Debug.Log(moveDir);
         }
     }
 
