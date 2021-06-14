@@ -16,3 +16,18 @@ public class EntityStatus
 
     public float useHP = 0;
 }
+
+[System.Serializable]
+public class AssembleData
+{
+    public EquipData bodyData = new EquipData();
+    public EquipData wheelData = new EquipData();
+}
+
+[System.Serializable]
+public class EquipData
+{
+    public string key;
+    public long id;
+    public int level;
+}

@@ -6,6 +6,9 @@ using UnityEngine.Audio;
 // 傈眉 府家胶 包府
 public class ResourceManager : HSSManager
 {
+    public BodyDataInfo bodyDataInfo;
+    
+
     public string imagePath = "";
 
     public override IEnumerator ManagerInitProcessing()
@@ -17,6 +20,9 @@ public class ResourceManager : HSSManager
 
     public override IEnumerator InitManager()
     {
+        yield return StartCoroutine(bodyDataInfo.InitData());
+
+
         yield return StartCoroutine(base.InitManager());
     }
 
@@ -32,7 +38,7 @@ public class ResourceManager : HSSManager
 
     public GameObject GetBodyObject(string key)
     {
-        return null;
+        return bodyDataInfo.GetPrefabData(key);
     }
 
     public GameObject GetWheelObject(string key)

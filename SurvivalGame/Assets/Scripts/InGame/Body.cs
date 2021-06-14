@@ -6,15 +6,14 @@ public class Body : MonoBehaviour
 {
     public EOwner eOwner = EOwner.Player;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector]
+    public GameObject objTransformCenter;
 
-    // Update is called once per frame
-    void Update()
+    private bool isCenterReady = false;
+
+    public void SetTransformCenter(GameObject obj)
     {
-        
+        objTransformCenter = obj;
+        isCenterReady = true;
     }
 }

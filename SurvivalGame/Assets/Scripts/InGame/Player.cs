@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     }
 
     // 플레이어 초기화
-    public IEnumerator InitPayer()
+    public IEnumerator InitPayer(AssembleData data)
     {
         originPos = transform.position;
         originQt = transform.rotation;
@@ -47,13 +47,17 @@ public class Player : MonoBehaviour
         isMoving = false;
 
         yield return StartCoroutine(AssembleParts());
+
+        yield return new WaitForEndOfFrame();
     }
 
     // 웨폰 바디 휠 조립
     public IEnumerator AssembleParts()
     {
-        //objBody = Instantiate(, transform.position, transform.rotation, transform);
-        //objWheel = Instantiate(, transform.position, transform.rotation, transform);
+        objBody = Instantiate(Core.RSS.GetBodyObject("PlayerBody_01"), transform.position, transform.rotation, transform);
+        objWheel = Instantiate(Core.RSS.GetWheelObject("PlayerWheel_01"), transform.position, transform.rotation, transform);
+
+        objBody.GetComponent<Body>().SetTransformCenter(objWheel);
 
         yield return true;
     }

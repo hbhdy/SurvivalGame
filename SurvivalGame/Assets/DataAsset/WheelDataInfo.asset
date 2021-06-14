@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4cd8d3d597d9f747a36f57a4fb7bce4, type: 3}
+  m_Name: WheelDataInfo
+  m_EditorClassIdentifier: 
+  prefabPath: Prefabs/Wheel/
+  wheelDataList:
+  - itemCode: PlayerWheel_01
+    prefabName: PlayerWheel_01
+    objPrefab: {fileID: 3838179170011392559, guid: 561589cfad7b758409607dfe9d60a2ea, type: 3}
+    movingSpeed: 3
+    RotateSpeed: 360

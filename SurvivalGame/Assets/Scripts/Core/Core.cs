@@ -12,6 +12,9 @@ public class Core : MonoBehaviour
     private Dictionary<Type, HSSManager> dicManagers = new Dictionary<Type, HSSManager>();
 
     [HideInInspector]
+    public static ResourceManager RSS { get { return instance.Get<ResourceManager>(); } }
+
+    [HideInInspector]
     public static SceneLoadingManager LOADING { get { return instance.Get<SceneLoadingManager>(); } }
 
     [HideInInspector]
