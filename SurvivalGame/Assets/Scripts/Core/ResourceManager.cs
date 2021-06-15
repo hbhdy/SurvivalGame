@@ -7,6 +7,7 @@ using UnityEngine.Audio;
 public class ResourceManager : HSSManager
 {
     public BodyDataInfo bodyDataInfo;
+    public WheelDataInfo wheelDataInfo;
     
 
     public string imagePath = "";
@@ -21,6 +22,7 @@ public class ResourceManager : HSSManager
     public override IEnumerator InitManager()
     {
         yield return StartCoroutine(bodyDataInfo.InitData());
+        yield return StartCoroutine(wheelDataInfo.InitData());
 
 
         yield return StartCoroutine(base.InitManager());
@@ -43,7 +45,7 @@ public class ResourceManager : HSSManager
 
     public GameObject GetWheelObject(string key)
     {
-        return null;
+        return wheelDataInfo.GetPrefabData(key);
     }
 
     public Sprite GetUIImage(string key)

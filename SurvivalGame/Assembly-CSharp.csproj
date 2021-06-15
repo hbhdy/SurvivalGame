@@ -61,12 +61,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Core\HSSManager.cs" />
+    <Compile Include="Assets\Scripts\InGame\PlayerSetting.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\WheelDataInfo.cs" />
     <Compile Include="Assets\Scripts\UI\GameUI.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\BodyDataInfo.cs" />
+    <Compile Include="Assets\Scripts\Etc\CSVReader.cs" />
+    <Compile Include="Assets\Scripts\InGame\InGameCore.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObject.cs" />
     <Compile Include="Assets\Scripts\InGame\Player.cs" />
     <Compile Include="Assets\Scripts\Core\GameEngine.cs" />
     <Compile Include="Assets\Scripts\Core\ResourceManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPoolManager.cs" />
+    <Compile Include="Assets\Scripts\Etc\CSVFunction.cs" />
     <Compile Include="Assets\Scripts\Etc\DataType.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectCategory.cs" />
     <Compile Include="Assets\Scripts\InGame\Wheel.cs" />
@@ -77,12 +83,7 @@
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\Etc\CSVReader.cs" />
-    <Compile Include="Assets\Scripts\Etc\CSVFunction.cs" />
-    <Compile Include="Assets\Scripts\DataInfo\BodyDataInfo.cs" />
-    <Compile Include="Assets\Scripts\DataInfo\WheelDataInfo.cs" />
-    <Compile Include="Assets\Scripts\InGame\PlayerSetting.cs" />
-    <Compile Include="Assets\Scripts\InGame\InGameCore.cs" />
+    <Compile Include="Assets\Scripts\InGame\CameraFollower.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

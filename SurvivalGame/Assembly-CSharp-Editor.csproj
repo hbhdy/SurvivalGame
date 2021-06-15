@@ -60,8 +60,8 @@
     <UnityVersion>2020.2.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DataInfo\Editor\BodyDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\WheelDataInfoEditor.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\Editor\BodyDataInfoEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

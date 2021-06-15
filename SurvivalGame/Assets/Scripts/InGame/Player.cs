@@ -25,18 +25,9 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public Vector3 moveDir = Vector3.zero;
 
-
-    private Rigidbody2D rigid2d;
     private Vector3 originPos;
     private Quaternion originQt;
 
-    public void Awake()
-    {
-        rigid2d = GetComponent<Rigidbody2D>();
-        weapon = objWeapon.GetComponent<Weapon>();
-        body = objBody.GetComponent<Body>();
-        wheel = objWheel.GetComponent<Wheel>();
-    }
 
     // 플레이어 초기화
     public IEnumerator InitPayer(AssembleData data)
@@ -47,6 +38,10 @@ public class Player : MonoBehaviour
         isMoving = false;
 
         yield return StartCoroutine(AssembleParts());
+
+        //weapon = objWeapon.GetComponent<Weapon>();
+        body = objBody.GetComponent<Body>();
+        wheel = objWheel.GetComponent<Wheel>();
 
         yield return new WaitForEndOfFrame();
     }
