@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
     public Wheel wheel;
 
     [HideInInspector]
+    public AssembleData assembleData;
+
+    [HideInInspector]
     public bool isMoving = false;
     [HideInInspector]
     public Vector3 moveDir = Vector3.zero;
@@ -28,10 +31,11 @@ public class Player : MonoBehaviour
     private Vector3 originPos;
     private Quaternion originQt;
 
-
     // 플레이어 초기화
     public IEnumerator InitPayer(AssembleData data)
     {
+        assembleData = data;
+
         originPos = transform.position;
         originQt = transform.rotation;
 
@@ -39,7 +43,7 @@ public class Player : MonoBehaviour
 
         yield return StartCoroutine(AssembleParts());
 
-        //weapon = objWeapon.GetComponent<Weapon>();
+        weapon = objWeapon.GetComponent<Weapon>();
         body = objBody.GetComponent<Body>();
         wheel = objWheel.GetComponent<Wheel>();
 
@@ -49,8 +53,11 @@ public class Player : MonoBehaviour
     // 웨폰 바디 휠 조립
     public IEnumerator AssembleParts()
     {
-        objBody = Instantiate(Core.RSS.GetBodyObject("PlayerBody_01"), transform.position, transform.rotation, transform);
-        objWheel = Instantiate(Core.RSS.GetWheelObject("PlayerWheel_01"), transform.position, transform.rotation, transform);
+        objWeapon = Instantiate(Core.RSS.GetWeaponObject(assembleData.weaponData.key), transform.position, transform.rotation, transform);
+        objBody = Instantiate(Core.RSS.GetBodyObject(assembleData.bodyData.key), transform.position, transform.rotation, transform);
+        objWheel = Instantiate(Core.RSS.GetWheelObject(assembleData.wheelData.key), transform.position, transform.rotation, transform);
+
+        objWeapon.transform.parent = objBody.transform;
 
         objBody.GetComponent<Body>().SetTransformCenter(objWheel);
 

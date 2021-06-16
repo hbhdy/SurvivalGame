@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 인게임내 초기화 및 게임 흐름을 제어하는 부분
 public class InGameCore : MonoBehaviour
 {
     public static InGameCore instance = null;
@@ -33,6 +34,7 @@ public class InGameCore : MonoBehaviour
             StartCoroutine(InitGameScene());
     }
 
+    // 로비에서 들어오므로 로딩 프로세스를 구축해야함
     public IEnumerator InitGameScene()
     {
         yield return new WaitUntil(() => Core.instance.isCoreReady);
@@ -41,9 +43,12 @@ public class InGameCore : MonoBehaviour
         // 씬 초기화하면서 오브젝트풀의 설정된 오브젝트 생성
         HSSObjectPoolManager.instance.MakeObjectPool();
 
+        // 이후 로딩 프로세스 작업 필요
+
         yield return null;
     }
 
+    // 인게임에서 실행하므로 별도의 로딩을 추가하지 않음
     public IEnumerator InitGameSceneDev()
     {
         yield return new WaitUntil(() => Core.instance.isCoreReady);
@@ -58,5 +63,7 @@ public class InGameCore : MonoBehaviour
         playerCamera.SetReady(true);
 
         yield return null;
+
+        isInGameCoreReady = true;
     }
 }

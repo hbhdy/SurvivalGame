@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Core\HSSManager.cs" />
     <Compile Include="Assets\Scripts\InGame\PlayerSetting.cs" />
     <Compile Include="Assets\Scripts\DataInfo\WheelDataInfo.cs" />
+    <Compile Include="Assets\Scripts\InGame\CameraFollower.cs" />
     <Compile Include="Assets\Scripts\UI\GameUI.cs" />
     <Compile Include="Assets\Scripts\DataInfo\BodyDataInfo.cs" />
     <Compile Include="Assets\Scripts\Etc\CSVReader.cs" />
@@ -83,7 +84,7 @@
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\InGame\CameraFollower.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\WeaponDataInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

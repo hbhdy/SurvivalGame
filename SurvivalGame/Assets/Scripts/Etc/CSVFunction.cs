@@ -128,7 +128,7 @@ public class CSVFunction
         outStream.Close();
     }
 
-    //public static void BodyInfoReader(string path, BodyDataInfo asset)
+    //public static void WheelDataInfoReader(string path, WheelDataInfo asset)
     public static void WheelDataInfoReader(WheelDataInfo asset)
     {
         // 지정된 위치의 파일 읽기
@@ -148,6 +148,82 @@ public class CSVFunction
             asset.wheelDataList[i].prefabName = data[i]["prefabName"].ToString();
             asset.wheelDataList[i].movingSpeed = float.Parse(data[i]["MovingSpeed"].ToString());
             asset.wheelDataList[i].RotateSpeed = float.Parse(data[i]["RotateSpeed"].ToString());
+        }
+    }
+    #endregion
+
+    #region [CSV] Weapon Data Info 
+    public static void WeaponDataInfoWriter(WeaponDataInfo asset)
+    {
+        List<string[]> data = new List<string[]>();
+
+        string[] tempData = new string[5];
+        tempData[0] = "itemCode";
+        tempData[1] = "prefabName";
+        tempData[2] = "attackDamage";
+        tempData[3] = "criticalChance";
+        tempData[4] = "criticalDamage";
+
+        data.Add(tempData);
+
+        for (int i = 0; i < asset.weaponDataList.Count; i++)
+        {
+            tempData = new string[6];
+            tempData[0] = asset.weaponDataList[i].itemCode;
+            tempData[1] = asset.weaponDataList[i].prefabName;
+            tempData[2] = asset.weaponDataList[i].attackDamage.ToString();
+            tempData[3] = asset.weaponDataList[i].criChance.ToString();
+            tempData[4] = asset.weaponDataList[i].criDamage.ToString();
+
+            data.Add(tempData);
+        }
+
+        string[][] output = new string[data.Count][];
+
+        for (int i = 0; i < output.Length; i++)
+        {
+            output[i] = data[i];
+        }
+
+        int length = output.GetLength(0);
+        string delimiter = ",";
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int index = 0; index < length; index++)
+        {
+            sb.AppendLine(string.Join(delimiter, output[index]));
+        }
+
+        // 임의 경로
+        string filePath = Application.dataPath + "/CSVFile/" + "WeaponDataInfo.csv";
+
+        StreamWriter outStream = File.CreateText(filePath);
+        outStream.WriteLine(sb);
+        outStream.Close();
+    }
+
+    //public static void WeaponDataInfoReader(string path, WeaponDataInfo asset)
+    public static void WeaponDataInfoReader(WeaponDataInfo asset)
+    {
+        // 지정된 위치의 파일 읽기
+        List<Dictionary<string, object>> data = CSVReader.FileRead("WeaponDataInfo.csv");
+
+        // 임의의 위치에 선택한 파일 읽기
+        //List<Dictionary<string, object>> data = CSVReader.SearchRead(path);
+
+        asset.weaponDataList.Clear();
+
+        for (int i = 0; i < data.Count; i++)
+            asset.weaponDataList.Add(new WeaponData());
+
+        for (int i = 0; i < data.Count; i++)
+        {
+            asset.weaponDataList[i].itemCode = data[i]["itemCode"].ToString();
+            asset.weaponDataList[i].prefabName = data[i]["prefabName"].ToString();
+            asset.weaponDataList[i].attackDamage = float.Parse(data[i]["attackDamage"].ToString());
+            asset.weaponDataList[i].criChance = float.Parse(data[i]["criticalChance"].ToString());
+            asset.weaponDataList[i].criDamage = float.Parse(data[i]["criticalDamage"].ToString());
         }
     }
     #endregion

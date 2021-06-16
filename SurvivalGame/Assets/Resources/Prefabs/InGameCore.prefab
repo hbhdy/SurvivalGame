@@ -138,7 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bcf80b3a9bda5f45bb1de2d7d1086d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objTarget: {fileID: 0}
   trackingSpeed: 0.125
 --- !u!81 &4287643760100309359
 AudioListener:
@@ -196,6 +195,10 @@ MonoBehaviour:
   objPlayer: {fileID: 0}
   player: {fileID: 0}
   dummyPlayer:
+    weaponData:
+      key: PlayerWeapon_01
+      id: 0
+      level: 0
     bodyData:
       key: PlayerBody_01
       id: 0
@@ -205,6 +208,10 @@ MonoBehaviour:
       id: 0
       level: 0
   inGamePlayer:
+    weaponData:
+      key: 
+      id: 0
+      level: 0
     bodyData:
       key: 
       id: 0

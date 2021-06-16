@@ -20,6 +20,7 @@ public class EntityStatus
 [System.Serializable]
 public class AssembleData
 {
+    public EquipData weaponData = new EquipData();
     public EquipData bodyData = new EquipData();
     public EquipData wheelData = new EquipData();
 }

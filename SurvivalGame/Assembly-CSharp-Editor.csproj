@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\DataInfo\Editor\WheelDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\BodyDataInfoEditor.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\Editor\WeaponDataInfoEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
