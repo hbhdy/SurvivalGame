@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [Header("Player Move Status")]
-    public float moveSpeed = 1.0f;
-    public float rotateSpeed = 90.0f;
-
     [Header("Player Object")]
     public GameObject objWeapon;
     public GameObject objBody;

@@ -79,12 +79,14 @@
     <Compile Include="Assets\Scripts\InGame\Wheel.cs" />
     <Compile Include="Assets\Scripts\UI\Joystick.cs" />
     <Compile Include="Assets\Scripts\Core\InputManager.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\WeaponDataInfo.cs" />
     <Compile Include="Assets\Scripts\InGame\Body.cs" />
     <Compile Include="Assets\Scripts\InGame\Weapon.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\DataInfo\WeaponDataInfo.cs" />
+    <Compile Include="Assets\Scripts\InGame\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Etc\FOV2D.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

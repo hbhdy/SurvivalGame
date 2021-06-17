@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed1c7c2b3e53e0345972a04a8fbd30a4, type: 3}
+  m_Name: EnemyWeaponDataInfo
+  m_EditorClassIdentifier: 
+  prefabPath: Prefabs/Enemy/Weapon/
+  weaponDataList:
+  - itemCode: WP_01
+    prefabName: WP_01
+    objPrefab: {fileID: 2929941312180695300, guid: b8c4db7e6f011a84fbdb83e95ed5006c, type: 3}
+    attackDamage: 50
+    criChance: 0
+    criDamage: 0

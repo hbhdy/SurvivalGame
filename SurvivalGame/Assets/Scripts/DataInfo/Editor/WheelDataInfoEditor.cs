@@ -18,7 +18,10 @@ public class WheelDataInfoEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("CSV Reader [颇老 佬扁]"))
         {
-            CSVFunction.WheelDataInfoReader(info);
+            if (info.name == "WheelDataInfo")
+                CSVFunction.WheelDataInfoReader(info);
+            else if (info.name == "EnemyWheelDataInfo")
+                CSVFunction.EnemyWheelDataInfoReader(info);
         }
         GUILayout.EndHorizontal();
 
@@ -27,7 +30,10 @@ public class WheelDataInfoEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("CSV Writer [颇老 积己]"))
         {
-            CSVFunction.WheelDataInfoWriter(info);
+            if (info.name == "WheelDataInfo")
+                CSVFunction.WheelDataInfoWriter(info);
+            else if (info.name == "EnemyWheelDataInfo")
+                CSVFunction.EnemyWheelDataInfoWriter(info);
         }
         GUILayout.EndHorizontal();
 

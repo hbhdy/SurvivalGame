@@ -18,7 +18,10 @@ public class BodyDataInfoEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("CSV Reader [颇老 佬扁]"))
         {
-            CSVFunction.BodyDataInfoReader(info);
+            if (info.name == "BodyDataInfo")
+                CSVFunction.BodyDataInfoReader(info);
+            else if (info.name == "EnemyBodyDataInfo")
+                CSVFunction.EnemyBodyDataInfoReader(info);
         }
         GUILayout.EndHorizontal();
 
@@ -27,7 +30,10 @@ public class BodyDataInfoEditor : Editor
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("CSV Writer [颇老 积己]"))
         {
-            CSVFunction.BodyDataInfoWriter(info);
+            if (info.name == "BodyDataInfo")
+                CSVFunction.BodyDataInfoWriter(info);
+            else if (info.name == "EnemyBodyDataInfo")
+                CSVFunction.EnemyBodyDataInfoWriter(info);
         }
         GUILayout.EndHorizontal();
 

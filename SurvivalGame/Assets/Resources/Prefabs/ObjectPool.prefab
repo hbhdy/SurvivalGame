@@ -43,7 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e233892f8e5d74ba5a260fc63f1f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolTable: []
+  poolTable:
+  - keyName: Enemy_01
+    prefab: {fileID: 800508678880833605, guid: 3adab3faafe39174ba323310443ab052, type: 3}
+    originParent: {fileID: 0}
+    count: 1
 --- !u!1 &1259604169115939821
 GameObject:
   m_ObjectHideFlags: 0
