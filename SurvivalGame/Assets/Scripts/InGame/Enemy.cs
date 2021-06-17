@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : HSSObject
 {
     [Header("Enemy Object")]
     public GameObject objWeapon;
     public GameObject objBody;
     public GameObject objWheel;
+
+    public Vector3 spawnPoint;
 
     [HideInInspector]
     public Weapon weapon;
@@ -16,6 +18,8 @@ public class Enemy : MonoBehaviour
     [HideInInspector]
     public Wheel wheel;
 
+    [HideInInspector]
+    public bool isLive = false;
 
     public void Awake()
     {
@@ -32,5 +36,19 @@ public class Enemy : MonoBehaviour
     public void FixedUpdate()
     {
         
+    }
+
+    public override void Spawn(Transform parent = null)
+    {
+        base.Spawn(parent);
+
+        objBody.SetActive(true);
+        objWheel.SetActive(true);
+
+        spawnPoint = transform.position;
+
+        InitEnemy();
+
+        isLive = true;
     }
 }

@@ -32,3 +32,27 @@ public class EquipData
     public long id;
     public int level;
 }
+
+[System.Serializable]
+public class SpawnerInfo
+{
+    public GameObject objPoint;
+    public float spawnTimer = 10.0f;
+    public bool isLinked = false;
+    public GameObject objLinkedObject = null;
+
+    public bool isFold = true;
+
+    public bool canRecycle = true;
+    public bool canActive = false;
+    public bool isFirst = true;
+    public float addTimer = 0.0f;
+    public bool isUsed = false;
+
+}
+
+[System.Serializable]
+public class SpawnKeyInfo
+{
+    public string spawnKey;
+}

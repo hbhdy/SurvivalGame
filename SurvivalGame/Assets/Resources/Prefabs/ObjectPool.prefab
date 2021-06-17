@@ -46,8 +46,8 @@ MonoBehaviour:
   poolTable:
   - keyName: Enemy_01
     prefab: {fileID: 800508678880833605, guid: 3adab3faafe39174ba323310443ab052, type: 3}
-    originParent: {fileID: 0}
-    count: 1
+    originParent: {fileID: 334929107663668634}
+    count: 3
 --- !u!1 &1259604169115939821
 GameObject:
   m_ObjectHideFlags: 0
