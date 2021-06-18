@@ -11,6 +11,7 @@ public class FOV2D : MonoBehaviour
     public float viewAngle;
 
     public LayerMask targetMask;
+    public LayerMask obstacleMask;
 
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -47,7 +48,7 @@ public class FOV2D : MonoBehaviour
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget))
+                if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
                 }
@@ -65,12 +66,12 @@ public class FOV2D : MonoBehaviour
         }
     }
 
-    //public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
-    //{
-    //    if (!angleIsGlobal)
-    //    {
-    //        angleInDegrees -= transform.eulerAngles.z;
-    //    }
-    //    return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
-    //}
+    public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
+    {
+        if (!angleIsGlobal)
+        {
+            angleInDegrees -= transform.eulerAngles.z;
+        }
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
 }

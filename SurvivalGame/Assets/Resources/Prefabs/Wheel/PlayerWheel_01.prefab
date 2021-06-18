@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3838179170011392552}
   - component: {fileID: 2901474593408854145}
   - component: {fileID: 6996513058921903044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerWheel_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,6 +9,7 @@ public class Enemy : HSSObject
     public GameObject objBody;
     public GameObject objWheel;
 
+    [HideInInspector]
     public Vector3 spawnPoint;
 
     [HideInInspector]
@@ -40,6 +41,7 @@ public class Enemy : HSSObject
 
     public override void Spawn(Transform parent = null)
     {
+        Debug.Log("»ý¼º");
         base.Spawn(parent);
 
         objBody.SetActive(true);

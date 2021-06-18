@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Etc\Editor\FOV2DEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\WeaponDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\BodyDataInfoEditor.cs" />
+    <Compile Include="Assets\Scripts\InGame\Editor\SpawnPointEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

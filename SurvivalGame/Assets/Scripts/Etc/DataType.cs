@@ -37,6 +37,7 @@ public class EquipData
 public class SpawnerInfo
 {
     public GameObject objPoint;
+    public float percent = 100.0f;
     public float spawnTimer = 10.0f;
     public bool isLinked = false;
     public GameObject objLinkedObject = null;
