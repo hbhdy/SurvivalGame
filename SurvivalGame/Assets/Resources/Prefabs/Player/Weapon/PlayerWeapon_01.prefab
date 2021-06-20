@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5862832351064645515}
   - component: {fileID: 1306292404681117844}
   - component: {fileID: 4476904875283098905}
+  - component: {fileID: 8440133028081832390}
   m_Layer: 10
   m_Name: PlayerWeapon_01
   m_TagString: Untagged
@@ -44,6 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959ea98ecf35f494db586ecb8a0add87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eOwner: 0
+  bulletKey: Bullet_P_01
+  weaponData:
+    itemCode: PlayerWeapon_01
+    prefabName: 
+    objPrefab: {fileID: 0}
+    attackDamage: 1
+    criChance: 0
+    criDamage: 150
+  fireInterval: 0.5
 --- !u!114 &4476904875283098905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +72,23 @@ MonoBehaviour:
   viewAngle: 360
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  obstacleMask:
+    serializedVersion: 2
+    m_Bits: 16384
   visibleTargets: []
   isTargetInside: 0
+--- !u!114 &8440133028081832390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143470438177682473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a73671e17104b541a57e222be949fd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isNearObject: 1
+  objTarget: {fileID: 0}

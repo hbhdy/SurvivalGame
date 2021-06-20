@@ -13,7 +13,7 @@ public class Enemy : HSSObject
     public Vector3 spawnPoint;
 
     [HideInInspector]
-    public Weapon weapon;
+    public EnemyWeapon weapon;
     [HideInInspector]
     public Body body;
     [HideInInspector]
@@ -24,7 +24,7 @@ public class Enemy : HSSObject
 
     public void Awake()
     {
-        weapon = objWeapon.GetComponent<Weapon>();
+        weapon = objWeapon.GetComponent<EnemyWeapon>();
         body = objBody.GetComponent<Body>();
         wheel = objWheel.GetComponent<Wheel>();
     }
@@ -32,6 +32,9 @@ public class Enemy : HSSObject
     public void InitEnemy()
     {
         body.SetTransformCenter(objWheel);
+
+        body.SetBodyData();
+        weapon.SetWeaponData();
     }
 
     public void FixedUpdate()
@@ -41,7 +44,6 @@ public class Enemy : HSSObject
 
     public override void Spawn(Transform parent = null)
     {
-        Debug.Log("»ý¼º");
         base.Spawn(parent);
 
         objBody.SetActive(true);

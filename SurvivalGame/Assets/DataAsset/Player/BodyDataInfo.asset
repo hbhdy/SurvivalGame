@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f4181729759894ab1859eacb312583, type: 3}
   m_Name: BodyDataInfo
   m_EditorClassIdentifier: 
-  prefabPath: Prefabs/Body/
+  prefabPath: Prefabs/Player/Body/
   bodyDataList:
   - itemCode: PlayerBody_01
     prefabName: PlayerBody_01

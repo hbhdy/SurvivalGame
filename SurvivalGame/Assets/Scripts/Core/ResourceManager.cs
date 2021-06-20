@@ -10,6 +10,10 @@ public class ResourceManager : HSSManager
     public BodyDataInfo bodyDataInfo;
     public WheelDataInfo wheelDataInfo;
 
+    public WeaponDataInfo enemyWeaponDataInfo;
+    public BodyDataInfo enemyBodyDataInfo;
+    public WheelDataInfo enemyWheelDataInfo;
+
     public string imagePath = "";
 
     public override IEnumerator ManagerInitProcessing()
@@ -26,12 +30,49 @@ public class ResourceManager : HSSManager
         yield return StartCoroutine(bodyDataInfo.InitData());
         yield return StartCoroutine(wheelDataInfo.InitData());
 
+        yield return StartCoroutine(enemyWeaponDataInfo.InitData());
+        yield return StartCoroutine(enemyBodyDataInfo.InitData());
+        yield return StartCoroutine(enemyWheelDataInfo.InitData());
+
         yield return StartCoroutine(base.InitManager());
     }
 
     public GameObject LoadGameObject(string key)
     {
         return Resources.Load<GameObject>(key);
+    }
+
+    // Enemy------------------------------------------------------------------------------------
+    public WeaponData GetEnemyWeaponData(string key)
+    {
+        return enemyWeaponDataInfo.GetWeaponData(key);
+    }
+
+    public BodyData GetEnemyBodyData(string key)
+    {
+        return enemyBodyDataInfo.GetBodyData(key);
+    }
+
+    public WheelData GetEnemyWheelData(string key)
+    {
+        return enemyWheelDataInfo.GetWheelData(key);
+    }
+
+    // Player------------------------------------------------------------------------------------
+
+    public WeaponData GetWeaponData(string key)
+    {
+        return weaponDataInfo.GetWeaponData(key);
+    }
+
+    public BodyData GetBodyData(string key)
+    {
+        return bodyDataInfo.GetBodyData(key);
+    }
+
+    public WheelData GetWheelData(string key)
+    {
+        return wheelDataInfo.GetWheelData(key);
     }
 
     public GameObject GetWeaponObject(string key)

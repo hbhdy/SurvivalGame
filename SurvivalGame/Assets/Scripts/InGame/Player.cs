@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
         body = objBody.GetComponent<Body>();
         wheel = objWheel.GetComponent<Wheel>();
 
+        body.SetBodyData();
+        weapon.SetWeaponData();
+
+        GameUI.instance.playerHPState.LinkBody(body);
+
         yield return new WaitForEndOfFrame();
     }
 

@@ -23,10 +23,10 @@ public class Wheel : MonoBehaviour
 
     public void FixedUpdate()
     {
-        //if (!Core.instance.isCoreReady)
-          //  return;
+        if (!InGameCore.instance.isInGameCoreReady)
+            return;
 
-        if(eOwner==EOwner.AI)
+        if (eOwner == EOwner.AI)
         {
 
         }

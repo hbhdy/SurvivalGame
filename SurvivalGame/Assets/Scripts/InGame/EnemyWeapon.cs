@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public class EnemyWeapon : MonoBehaviour
 {
-    public EOwner eOwner = EOwner.Player;
+    public EOwner eOwner = EOwner.AI;
 
     public string bulletKey;
     public WeaponData weaponData;
@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
 
     public void SetWeaponData()
     {
-        weaponData = Core.RSS.GetWeaponData(weaponData.itemCode);
+        weaponData = Core.RSS.GetEnemyWeaponData(weaponData.itemCode);
     }
 
     public void FixedUpdate()
@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
         if (!InGameCore.instance.isInGameCoreReady)
             return;
 
-        if (raderFov2D.objTarget)
+        if(raderFov2D.objTarget)
         {
             if (isFireReady)
             {

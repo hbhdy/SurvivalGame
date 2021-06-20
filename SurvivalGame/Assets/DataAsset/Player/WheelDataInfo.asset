@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4cd8d3d597d9f747a36f57a4fb7bce4, type: 3}
   m_Name: WheelDataInfo
   m_EditorClassIdentifier: 
-  prefabPath: Prefabs/Wheel/
+  prefabPath: Prefabs/Player/Wheel/
   wheelDataList:
   - itemCode: PlayerWheel_01
     prefabName: PlayerWheel_01

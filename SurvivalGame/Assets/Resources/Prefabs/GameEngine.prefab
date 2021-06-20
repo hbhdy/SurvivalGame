@@ -46,6 +46,9 @@ MonoBehaviour:
   weaponDataInfo: {fileID: 11400000, guid: 2c5a30983352bd64991a0ce4cd8b1936, type: 2}
   bodyDataInfo: {fileID: 11400000, guid: f583d772dca2d724fbcd2fade73c60ae, type: 2}
   wheelDataInfo: {fileID: 11400000, guid: 0af4d1f5358d97a46b7d21724842067c, type: 2}
+  enemyWeaponDataInfo: {fileID: 11400000, guid: 5c5e68eac90459d46ab0409f77b4924e, type: 2}
+  enemyBodyDataInfo: {fileID: 11400000, guid: c8ccaaf2aba47874488ff87d84ed397f, type: 2}
+  enemyWheelDataInfo: {fileID: 11400000, guid: e607b14b636de53419a004e2410c0a03, type: 2}
   imagePath: 
 --- !u!1 &7868371630034628027
 GameObject:

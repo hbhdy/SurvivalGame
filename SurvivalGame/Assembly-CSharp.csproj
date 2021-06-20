@@ -89,6 +89,10 @@
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
+    <Compile Include="Assets\Scripts\InGame\Bullet\Bullet.cs" />
+    <Compile Include="Assets\Scripts\InGame\EnemyWeapon.cs" />
+    <Compile Include="Assets\Scripts\Etc\RadarWithFOV2D.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerHPState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

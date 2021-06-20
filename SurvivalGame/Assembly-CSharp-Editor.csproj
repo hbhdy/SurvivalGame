@@ -60,11 +60,11 @@
     <UnityVersion>2020.2.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\InGame\Editor\SpawnPointEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\WheelDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\Etc\Editor\FOV2DEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\WeaponDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\BodyDataInfoEditor.cs" />
-    <Compile Include="Assets\Scripts\InGame\Editor\SpawnPointEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

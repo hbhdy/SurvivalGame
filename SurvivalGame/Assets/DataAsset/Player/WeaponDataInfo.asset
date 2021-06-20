@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1c7c2b3e53e0345972a04a8fbd30a4, type: 3}
   m_Name: WeaponDataInfo
   m_EditorClassIdentifier: 
-  prefabPath: Prefabs/Weapon/
+  prefabPath: Prefabs/Player/Weapon/
   weaponDataList:
   - itemCode: PlayerWeapon_01
     prefabName: PlayerWeapon_01

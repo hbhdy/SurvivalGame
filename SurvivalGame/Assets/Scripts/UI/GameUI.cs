@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class GameUI : MonoBehaviour
 {
+    public static GameUI instance = null;
 
+    public PlayerHPState playerHPState;
+
+    public void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
 
     public void Update()
     {
