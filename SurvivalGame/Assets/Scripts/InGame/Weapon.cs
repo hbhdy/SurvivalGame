@@ -43,6 +43,7 @@ public class Weapon : MonoBehaviour
 
                 GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                 bullet.GetComponent<Bullet>().SetBulletDirection(dir);
+                bullet.GetComponent<Bullet>().SetBulletState(weaponData);
             }
         }
 

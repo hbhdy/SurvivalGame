@@ -5,6 +5,10 @@ using UnityEngine;
 public class GameUI : MonoBehaviour
 {
     public static GameUI instance = null;
+    public HUDManager HUD;
+
+    [HideInInspector]
+    public HUDPack[] hudPacks;
 
     public PlayerHPState playerHPState;
 
@@ -27,13 +31,11 @@ public class GameUI : MonoBehaviour
         if(Core.INPUT.isDrag)
         {
             Joystick.instance.OnDrag(Core.INPUT.inputPosition);
-
         }
 
         if (Core.INPUT.isRelease)
         {
             Joystick.instance.OnPointerUp(Core.INPUT.inputPosition);
-
         }
     }
 }

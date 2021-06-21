@@ -8,6 +8,12 @@ public class Enemy : HSSObject
     public GameObject objWeapon;
     public GameObject objBody;
     public GameObject objWheel;
+    public GameObject objHPBarPoint;
+
+    public bool haveHUD = true;
+
+    [HideInInspector]
+    public GameObject objHUD = null;
 
     [HideInInspector]
     public Vector3 spawnPoint;
@@ -39,7 +45,11 @@ public class Enemy : HSSObject
 
     public void FixedUpdate()
     {
-        
+        //if (objHUD != null)
+        //{
+        //    //objHPBarPoint.transform.position = objWheel.transform.position;
+        //    objHUD.GetComponent<HUDPack>().Following();
+        //}
     }
 
     public override void Spawn(Transform parent = null)
@@ -54,5 +64,15 @@ public class Enemy : HSSObject
         InitEnemy();
 
         isLive = true;
+
+        if(haveHUD)
+        {
+            objHUD = GameUI.instance.HUD.MackHudPack();
+            objHUD.GetComponent<HUDPack>().SetSteeringTarget(objHPBarPoint);
+            objHUD.GetComponent<HUDPack>().SetGage(1.0f);
+            objHUD.GetComponent<HUDPack>().Following();
+
+            objHUD.SetActive(true);
+        }
     }
 }

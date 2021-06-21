@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     public GameObject objWheel;
 
     [HideInInspector]
+    public GameObject objHUD = null;
+
+    [HideInInspector]
     public Weapon weapon;
     [HideInInspector]
     public Body body;
@@ -45,6 +48,9 @@ public class Player : MonoBehaviour
 
         body.SetBodyData();
         weapon.SetWeaponData();
+
+        objHUD = GameUI.instance.HUD.GetPlayerHudPack();
+        objHUD.GetComponent<HUDPack>().SetSteeringTarget(objWheel);
 
         GameUI.instance.playerHPState.LinkBody(body);
 

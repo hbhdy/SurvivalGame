@@ -6,9 +6,14 @@ public class Bullet : HSSObject
 {
     private EOwner eOwner;
 
-    public float moveDistance = 10.0f;
+    [Header("Bullet State")]
     public float damage;
+    public float criChance;
+    public float criDamage;
+    public float moveDistance = 10.0f;
     public float moveSpeed;
+
+    [HideInInspector]
     public Vector3 moveDir = Vector3.up;
 
     private Vector3 startPos = Vector3.zero;
@@ -36,6 +41,12 @@ public class Bullet : HSSObject
         //transform.rotation = Quaternion.FromToRotation(Vector3.up, moveDir);
     }
 
+    public void SetBulletState(WeaponData data)
+    {
+        damage = data.attackDamage;
+        criChance = data.criChance;
+        criDamage = data.criDamage;
+    }
 
     public void FixedUpdate()
     {

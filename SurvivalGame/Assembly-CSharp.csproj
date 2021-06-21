@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\InGame\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Core\HSSManager.cs" />
+    <Compile Include="Assets\Scripts\InGame\EnemyWeapon.cs" />
     <Compile Include="Assets\Scripts\InGame\PlayerSetting.cs" />
     <Compile Include="Assets\Scripts\DataInfo\WheelDataInfo.cs" />
     <Compile Include="Assets\Scripts\InGame\CameraFollower.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Assets\Scripts\InGame\InGameCore.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObject.cs" />
     <Compile Include="Assets\Scripts\InGame\Enemy.cs" />
+    <Compile Include="Assets\Scripts\InGame\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\InGame\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\InGame\Player.cs" />
     <Compile Include="Assets\Scripts\Core\GameEngine.cs" />
@@ -78,21 +80,25 @@
     <Compile Include="Assets\Scripts\Etc\FOV2D.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPoolManager.cs" />
     <Compile Include="Assets\Scripts\Etc\CSVFunction.cs" />
+    <Compile Include="Assets\Scripts\Etc\RadarWithFOV2D.cs" />
     <Compile Include="Assets\Scripts\Etc\DataType.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectCategory.cs" />
     <Compile Include="Assets\Scripts\InGame\Wheel.cs" />
     <Compile Include="Assets\Scripts\UI\Joystick.cs" />
     <Compile Include="Assets\Scripts\Core\InputManager.cs" />
+    <Compile Include="Assets\Scripts\UI\PlayerHPState.cs" />
     <Compile Include="Assets\Scripts\DataInfo\WeaponDataInfo.cs" />
     <Compile Include="Assets\Scripts\InGame\Body.cs" />
     <Compile Include="Assets\Scripts\InGame\Weapon.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\InGame\Bullet\Bullet.cs" />
-    <Compile Include="Assets\Scripts\InGame\EnemyWeapon.cs" />
-    <Compile Include="Assets\Scripts\Etc\RadarWithFOV2D.cs" />
-    <Compile Include="Assets\Scripts\UI\PlayerHPState.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\HSSUIObject.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPool.cs" />
+    <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPoolManager.cs" />
+    <Compile Include="Assets\Scripts\UI\DamageText.cs" />
+    <Compile Include="Assets\Scripts\UI\HUDManager.cs" />
+    <Compile Include="Assets\Scripts\UI\HUDPack.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

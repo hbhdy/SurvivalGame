@@ -31,6 +31,7 @@ Transform:
   - {fileID: 4395280328380460910}
   - {fileID: 8829800018659644090}
   - {fileID: 3759555519466373315}
+  - {fileID: 1030623366246051778}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,11 +50,44 @@ MonoBehaviour:
   objWeapon: {fileID: 5182866756549839980}
   objBody: {fileID: 3268806342693687391}
   objWheel: {fileID: 2575454970607948306}
+  objHPBarPoint: {fileID: 1425623864853796867}
+  haveHUD: 1
+  objHUD: {fileID: 0}
   spawnPoint: {x: 0, y: 0, z: 0}
   weapon: {fileID: 0}
   body: {fileID: 0}
   wheel: {fileID: 0}
   isLive: 0
+--- !u!1 &1425623864853796867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030623366246051778}
+  m_Layer: 6
+  m_Name: BarPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1030623366246051778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425623864853796867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7992142117072521197}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4880548487352204959
 PrefabInstance:
   m_ObjectHideFlags: 0
