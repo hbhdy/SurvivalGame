@@ -28,6 +28,8 @@ public class Enemy : HSSObject
     [HideInInspector]
     public bool isLive = false;
 
+    private int prevHp;
+
     public void Awake()
     {
         weapon = objWeapon.GetComponent<EnemyWeapon>();
@@ -41,6 +43,8 @@ public class Enemy : HSSObject
 
         body.SetBodyData();
         weapon.SetWeaponData();
+
+        prevHp = body.entityStatus.HP;
     }
 
     public void FixedUpdate()
@@ -74,5 +78,17 @@ public class Enemy : HSSObject
 
             objHUD.SetActive(true);
         }
+    }
+
+    public void HitProgress()
+    {
+        int totalDamage = prevHp - (int)body.entityStatus.useHP;
+        prevHp = (int)body.entityStatus.useHP;
+
+        float rate = body.entityStatus.useHP / (float)body.entityStatus.HP;
+
+        objHUD.GetComponent<HUDPack>().MakeDamageText(false, totalDamage);
+
+        objHUD.GetComponent<HUDPack>().SetGage(rate);
     }
 }

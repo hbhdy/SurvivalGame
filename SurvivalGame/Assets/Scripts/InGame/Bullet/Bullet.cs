@@ -72,6 +72,8 @@ public class Bullet : HSSObject
         ContactPoint2D cp = collision.contacts[0];
         Vector3 pos = cp.point;
 
+        collision.collider.gameObject.GetComponent<Body>().Hit(damage, false);
+
         isReady = false;
 
         HSSObjectPoolManager.instance.SaveObject(key, gameObject);

@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     private Vector3 originPos;
     private Quaternion originQt;
+    private int prevHp;
 
     // 플레이어 초기화
     public IEnumerator InitPayer(AssembleData data)
@@ -53,6 +54,8 @@ public class Player : MonoBehaviour
         objHUD.GetComponent<HUDPack>().SetSteeringTarget(objWheel);
 
         GameUI.instance.playerHPState.LinkBody(body);
+
+        prevHp = body.entityStatus.HP;
 
         yield return new WaitForEndOfFrame();
     }
@@ -87,5 +90,17 @@ public class Player : MonoBehaviour
                 isMoving = false;
             }
         }
+    }
+
+    public void HitProgress()
+    {
+        int totalDamage = prevHp - (int)body.entityStatus.useHP;
+        prevHp = (int)body.entityStatus.useHP;
+
+        float rate = body.entityStatus.useHP / (float)body.entityStatus.HP;
+
+        objHUD.GetComponent<HUDPack>().MakeDamageText(true, totalDamage);
+
+        objHUD.GetComponent<HUDPack>().SetGage(rate);
     }
 }

@@ -42,7 +42,8 @@ public class InGameCore : MonoBehaviour
 
         // 씬 초기화하면서 오브젝트풀의 설정된 오브젝트 생성
         HSSObjectPoolManager.instance.MakeObjectPool();
-
+        // 씬 초기화하면서 UI 오브젝트풀의 설정된 UI 생성
+        HSSUIObjectPoolManager.instance.MakeObjectPool();
         // 이후 로딩 프로세스 작업 필요
 
         yield return null;
@@ -56,6 +57,8 @@ public class InGameCore : MonoBehaviour
 
         // 씬 초기화하면서 오브젝트풀의 설정된 오브젝트 생성
         HSSObjectPoolManager.instance.MakeObjectPool();
+        // 씬 초기화하면서 UI 오브젝트풀의 설정된 UI 생성
+        HSSUIObjectPoolManager.instance.MakeObjectPool();
 
         yield return StartCoroutine(playerSetting.AssemblePlayerDev());
 

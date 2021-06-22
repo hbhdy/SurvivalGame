@@ -202,4 +202,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiGage: {fileID: 3115534965831446001}
   objHPBar: {fileID: 3355378637244141692}
-  damageEffect: 
+  damageEffect: Damage_E_Normal

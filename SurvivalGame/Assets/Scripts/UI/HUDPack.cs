@@ -32,11 +32,15 @@ public class HUDPack : MonoBehaviour
     }
 
     // 데미지 출력
-    public void MakeDamageText(int damage)
+    public void MakeDamageText(bool isPlayer, int damage)
     {
         Vector3 scPos = RectTransformUtility.WorldToScreenPoint(InGameCore.instance.playerCamera.GetComponent<Camera>(), objSteering.transform.position);
         Vector2 uiPos = Vector2.zero;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), scPos, InGameCore.instance.playerCamera.GetComponent<Camera>(), out uiPos);
+
+        if (isPlayer)
+            uiPos = this.transform.position + new Vector3(0, 50, 0);
+        else
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), scPos, InGameCore.instance.playerCamera.GetComponent<Camera>(), out uiPos);
 
         GameObject objText = HSSUIObjectPoolManager.instance.SpawnObject(damageEffect, uiPos, Quaternion.identity, this.transform);
         objText.GetComponent<DamageText>().SetText(damage);

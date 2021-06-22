@@ -10,18 +10,27 @@ public class Body : MonoBehaviour
 
     [HideInInspector]
     public EntityStatus entityStatus = new EntityStatus();
-
     [HideInInspector]
     public GameObject objTransformCenter;
+    [HideInInspector]
+    public Player rootPlayer;
+    [HideInInspector]
+    public Enemy rootEnemy;
 
     private bool isCenterReady = false;
 
     public void SetBodyData()
     {
         if (eOwner == EOwner.Player)
+        {
             bodyData = Core.RSS.GetBodyData(bodyData.itemCode);
+            rootPlayer = GetComponentInParent<Player>();
+        }
         else
+        {
             bodyData = Core.RSS.GetEnemyBodyData(bodyData.itemCode);
+            rootEnemy = GetComponentInParent<Enemy>();
+        }
 
         entityStatus.HP = bodyData.hp;
         entityStatus.useHP = entityStatus.HP;
@@ -55,6 +64,25 @@ public class Body : MonoBehaviour
         if (eOwner == EOwner.AI)
         {
 
+        }
+    }
+
+    public void Hit(float hitDamage, bool critical)
+    {
+        hitDamage = UtilFunction.CalcDamage(hitDamage, entityStatus.DEF);
+
+        entityStatus.useHP -= (int)hitDamage;
+
+        if (entityStatus.useHP <= 0)       
+            entityStatus.useHP = 0;
+
+        if (eOwner == EOwner.Player)
+        {
+            rootPlayer.HitProgress();
+        }
+        else
+        {
+            rootEnemy.HitProgress();
         }
     }
 }
