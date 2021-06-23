@@ -101,6 +101,6 @@ public class Player : MonoBehaviour
 
         objHUD.GetComponent<HUDPack>().MakeDamageText(true, totalDamage);
 
-        objHUD.GetComponent<HUDPack>().SetGage(rate);
+        GameUI.instance.playerHPState.CalcHPState();
     }
 }

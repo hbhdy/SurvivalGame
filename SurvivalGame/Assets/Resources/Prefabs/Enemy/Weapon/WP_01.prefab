@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 1
+  barrageKey: Tornado_1
   bulletKey: Bullet_E_01
   weaponData:
     itemCode: WP_01
@@ -54,7 +55,6 @@ MonoBehaviour:
     attackDamage: 1
     criChance: 0
     criDamage: 150
-  fireInterval: 1
 --- !u!114 &5004149254467196081
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,9 +7,9 @@ public class Bullet : HSSObject
     private EOwner eOwner;
 
     [Header("Bullet State")]
-    public float damage;
-    public float criChance;
-    public float criDamage;
+    public float damage = 0;
+    public float criChance = 0;
+    public float criDamage = 0;
     public float moveDistance = 10.0f;
     public float moveSpeed;
 

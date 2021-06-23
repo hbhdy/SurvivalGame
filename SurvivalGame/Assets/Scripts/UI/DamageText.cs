@@ -38,7 +38,7 @@ public class DamageText : HSSUIObject
         {
             transform.Translate(dir * Time.deltaTime);
 
-            uiDamage.color = new Color(1, 1, 1, 1f - (time / fadeTime));
+            uiDamage.color = new Color(uiDamage.color.r, uiDamage.color.g, uiDamage.color.b, 1f - (time / fadeTime));
 
             time += Time.deltaTime;
             yield return null;
@@ -49,7 +49,7 @@ public class DamageText : HSSUIObject
 
     public void SelfDestroy()
     {
-        uiDamage.color = Color.white;
+        uiDamage.color = new Color(uiDamage.color.r, uiDamage.color.g, uiDamage.color.b, 1);
         dir = Vector3.zero;
         transform.position = Vector3.zero;
 

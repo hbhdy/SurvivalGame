@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\Etc\RadarWithFOV2D.cs" />
     <Compile Include="Assets\Scripts\Etc\DataType.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectCategory.cs" />
+    <Compile Include="Assets\Scripts\Etc\UtilFunction.cs" />
     <Compile Include="Assets\Scripts\InGame\Wheel.cs" />
     <Compile Include="Assets\Scripts\UI\HUDManager.cs" />
     <Compile Include="Assets\Scripts\UI\Joystick.cs" />
@@ -99,7 +100,7 @@
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\Etc\UtilFunction.cs" />
+    <Compile Include="Assets\Scripts\InGame\Bullet\BarrageData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

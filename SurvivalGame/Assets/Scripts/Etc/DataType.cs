@@ -8,6 +8,15 @@ public enum EOwner
     AI
 }
 
+public enum EBarrageType
+{
+    Straight, // 직선
+    Angle, // 방향 연발
+    Shot, // 산탄
+    Tornado, // 회전
+
+}
+
 [System.Serializable]
 public class EntityStatus
 {

@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 314d03ceb7739324389e18f5619596b2, type: 3}
+  m_Name: BarrageData
+  m_EditorClassIdentifier: 
+  barrageDataList:
+  - key: Straight_1
+    eBarrageType: 0
+    startAngle: 0
+    addAngle: 0
+    firingTime: 0
+    firingDelay: 1
+    bulletCount: 1
+  - key: Shot_1
+    eBarrageType: 1
+    startAngle: 0
+    addAngle: 0
+    firingTime: 0
+    firingDelay: 3
+    bulletCount: 10
+  - key: Triple_1
+    eBarrageType: 1
+    startAngle: -30
+    addAngle: 30
+    firingTime: 0
+    firingDelay: 1
+    bulletCount: 3
+  - key: Triple_2
+    eBarrageType: 1
+    startAngle: 0
+    addAngle: 30
+    firingTime: 0
+    firingDelay: 3
+    bulletCount: 12
+  - key: Tornado_1
+    eBarrageType: 3
+    startAngle: 0
+    addAngle: 25
+    firingTime: 0.02
+    firingDelay: 10
+    bulletCount: 200

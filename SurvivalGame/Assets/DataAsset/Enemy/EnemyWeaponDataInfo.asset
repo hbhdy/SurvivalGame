@@ -17,6 +17,6 @@ MonoBehaviour:
   - itemCode: WP_01
     prefabName: WP_01
     objPrefab: {fileID: 2929941312180695300, guid: b8c4db7e6f011a84fbdb83e95ed5006c, type: 3}
-    attackDamage: 50
+    attackDamage: 20
     criChance: 0
     criDamage: 0

@@ -446,4 +446,82 @@ public class CSVFunction
         }
     }
     #endregion
+
+    #region [CSV] Barrage Data
+    public static void BarrageDataWriter(BarrageData asset)
+    {
+        List<string[]> data = new List<string[]>();
+
+        string[] tempData = new string[7];
+        tempData[0] = "key";
+        tempData[1] = "eBarrageType";
+        tempData[2] = "startAngle";
+        tempData[3] = "addAngle";
+        tempData[4] = "firingTime";
+        tempData[5] = "firingDelay";
+        tempData[6] = "bulletCount";
+
+        data.Add(tempData);
+
+        for (int i = 0; i < asset.barrageDataList.Count; i++)
+        {
+            tempData = new string[6];
+            tempData[0] = asset.barrageDataList[i].key;
+            tempData[1] = asset.barrageDataList[i].eBarrageType.ToString();
+            tempData[2] = asset.barrageDataList[i].startAngle.ToString();
+            tempData[3] = asset.barrageDataList[i].addAngle.ToString();
+            tempData[4] = asset.barrageDataList[i].firingTime.ToString();
+            tempData[5] = asset.barrageDataList[i].firingDelay.ToString();
+            tempData[6] = asset.barrageDataList[i].bulletCount.ToString();
+
+            data.Add(tempData);
+        }
+
+        string[][] output = new string[data.Count][];
+
+        for (int i = 0; i < output.Length; i++)
+        {
+            output[i] = data[i];
+        }
+
+        int length = output.GetLength(0);
+        string delimiter = ",";
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int index = 0; index < length; index++)
+        {
+            sb.AppendLine(string.Join(delimiter, output[index]));
+        }
+
+        // 임의 경로
+        string filePath = Application.dataPath + "/CSVFile/" + "BarrageData.csv";
+
+        StreamWriter outStream = File.CreateText(filePath);
+        outStream.WriteLine(sb);
+        outStream.Close();
+    }
+
+    public static void BarrageDataReader(BarrageData asset)
+    {
+        // 지정된 위치의 파일 읽기
+        List<Dictionary<string, object>> data = CSVReader.FileRead("BarrageData.csv");
+
+        asset.barrageDataList.Clear();
+
+        for (int i = 0; i < data.Count; i++)
+            asset.barrageDataList.Add(new Barrage());
+
+        for (int i = 0; i < data.Count; i++)
+        {
+            asset.barrageDataList[i].key = data[i]["key"].ToString();
+            asset.barrageDataList[i].eBarrageType = (EBarrageType)Enum.Parse(typeof(EBarrageType), data[i]["eBarrageType"].ToString());
+            asset.barrageDataList[i].firingTime = float.Parse(data[i]["startAngle"].ToString());
+            asset.barrageDataList[i].firingTime = float.Parse(data[i]["addAngle"].ToString());
+            asset.barrageDataList[i].firingTime = float.Parse(data[i]["firingTime"].ToString());
+            asset.barrageDataList[i].firingDelay = float.Parse(data[i]["firingDelay"].ToString());
+            asset.barrageDataList[i].bulletCount = int.Parse(data[i]["bulletCount"].ToString());
+        }
+    }
+    #endregion
 }

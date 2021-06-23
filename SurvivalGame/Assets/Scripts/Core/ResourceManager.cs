@@ -14,6 +14,8 @@ public class ResourceManager : HSSManager
     public BodyDataInfo enemyBodyDataInfo;
     public WheelDataInfo enemyWheelDataInfo;
 
+    public BarrageData barrageData;
+
     public string imagePath = "";
 
     public override IEnumerator ManagerInitProcessing()
@@ -34,12 +36,19 @@ public class ResourceManager : HSSManager
         yield return StartCoroutine(enemyBodyDataInfo.InitData());
         yield return StartCoroutine(enemyWheelDataInfo.InitData());
 
+        yield return StartCoroutine(barrageData.InitData());
+
         yield return StartCoroutine(base.InitManager());
     }
 
     public GameObject LoadGameObject(string key)
     {
         return Resources.Load<GameObject>(key);
+    }
+
+    public Barrage GetBarrageData(string key)
+    {
+        return barrageData.GetBarrageData(key);
     }
 
     // Enemy------------------------------------------------------------------------------------

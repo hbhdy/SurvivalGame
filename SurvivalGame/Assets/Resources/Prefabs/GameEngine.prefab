@@ -49,6 +49,7 @@ MonoBehaviour:
   enemyWeaponDataInfo: {fileID: 11400000, guid: 5c5e68eac90459d46ab0409f77b4924e, type: 2}
   enemyBodyDataInfo: {fileID: 11400000, guid: c8ccaaf2aba47874488ff87d84ed397f, type: 2}
   enemyWheelDataInfo: {fileID: 11400000, guid: e607b14b636de53419a004e2410c0a03, type: 2}
+  barrageData: {fileID: 11400000, guid: de4ce86350a14bf4dbad6711d62a97ab, type: 2}
   imagePath: 
 --- !u!1 &7868371630034628027
 GameObject:
