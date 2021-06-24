@@ -20,3 +20,33 @@ MonoBehaviour:
     attackDamage: 20
     criChance: 0
     criDamage: 0
+  - itemCode: WP_BOSS_01
+    prefabName: WP_BOSS_01
+    objPrefab: {fileID: 5324417424838021062, guid: df1fded0624788a40b8f8c8b874e061c, type: 3}
+    attackDamage: 20
+    criChance: 0
+    criDamage: 0
+  - itemCode: WP_BOSS_02
+    prefabName: WP_BOSS_02
+    objPrefab: {fileID: 4026009374816708817, guid: b60e1eff1c32f6f4dbd616d094c213b9, type: 3}
+    attackDamage: 20
+    criChance: 0
+    criDamage: 0
+  - itemCode: WP_BOSS_03
+    prefabName: WP_BOSS_03
+    objPrefab: {fileID: 547186514779628098, guid: 7f8336ccaa6643847ae47cd76431a021, type: 3}
+    attackDamage: 20
+    criChance: 0
+    criDamage: 0
+  - itemCode: WP_BOSS_04
+    prefabName: WP_BOSS_04
+    objPrefab: {fileID: 700953611432494173, guid: d5b1d2c147393c749a405e58eb0fb82c, type: 3}
+    attackDamage: 20
+    criChance: 0
+    criDamage: 0
+  - itemCode: WP_BOSS_05
+    prefabName: WP_BOSS_05
+    objPrefab: {fileID: 642927896922685429, guid: 7a01bf67163e1254686cc6fd289e86ce, type: 3}
+    attackDamage: 20
+    criChance: 0
+    criDamage: 0

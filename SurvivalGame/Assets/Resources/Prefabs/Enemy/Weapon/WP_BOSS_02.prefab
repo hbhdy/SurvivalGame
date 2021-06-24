@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2929941312180695300
+--- !u!1 &4026009374816708817
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6033468801795822086}
-  - component: {fileID: 5158048222322878365}
-  - component: {fileID: 5004149254467196081}
-  - component: {fileID: 4961502277574277761}
+  - component: {fileID: 5534171614551411667}
+  - component: {fileID: 6405083680904183368}
+  - component: {fileID: 6486365508586147172}
+  - component: {fileID: 6605848419058131796}
   m_Layer: 6
-  m_Name: WP_01
+  m_Name: WP_BOSS_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6033468801795822086
+--- !u!4 &5534171614551411667
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929941312180695300}
+  m_GameObject: {fileID: 4026009374816708817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,13 +33,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5158048222322878365
+--- !u!114 &6405083680904183368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929941312180695300}
+  m_GameObject: {fileID: 4026009374816708817}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 096ce2c33e463ba40adb5d85b94a6596, type: 3}
@@ -49,19 +49,19 @@ MonoBehaviour:
   barrageKey: Tornado_1
   bulletKey: Bullet_E_01
   weaponData:
-    itemCode: WP_01
+    itemCode: WP_BOSS_02
     prefabName: 
     objPrefab: {fileID: 0}
     attackDamage: 1
     criChance: 0
     criDamage: 150
---- !u!114 &5004149254467196081
+--- !u!114 &6486365508586147172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929941312180695300}
+  m_GameObject: {fileID: 4026009374816708817}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c686943aeecc9b34bbcdf3304b965a4a, type: 3}
@@ -78,13 +78,13 @@ MonoBehaviour:
     m_Bits: 16384
   visibleTargets: []
   isTargetInside: 0
---- !u!114 &4961502277574277761
+--- !u!114 &6605848419058131796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929941312180695300}
+  m_GameObject: {fileID: 4026009374816708817}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a73671e17104b541a57e222be949fd0, type: 3}
