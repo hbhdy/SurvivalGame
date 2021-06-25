@@ -143,7 +143,7 @@ MonoBehaviour:
   - keyName: Bullet_E_01
     prefab: {fileID: 853795601251692006, guid: 7f2d652eb3b74ac4c82b808ffbc210db, type: 3}
     originParent: {fileID: 5345169044030583769}
-    count: 10
+    count: 50
 --- !u!1 &8188167116933277132
 GameObject:
   m_ObjectHideFlags: 0

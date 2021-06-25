@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 1
-  barrageKey: Tornado_1
+  barrageKey: Straight_1
   bulletKey: Bullet_E_01
   weaponData:
     itemCode: WP_BOSS_05

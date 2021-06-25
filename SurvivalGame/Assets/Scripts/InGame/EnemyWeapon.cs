@@ -37,7 +37,7 @@ public class EnemyWeapon : MonoBehaviour
         if (!InGameCore.instance.isInGameCoreReady)
             return;
 
-        if(raderFov2D.objTarget)
+        if (raderFov2D.objTarget)
         {
             if (isFireReady)
             {
@@ -46,74 +46,100 @@ public class EnemyWeapon : MonoBehaviour
                 Vector3 dir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
                 dir = dir.normalized;
 
-                StartCoroutine(BulletRoutine(dir));
-
-                //GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                //bullet.GetComponent<Bullet>().SetBulletDirection(dir);
-                //bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                StartCoroutine(BulletRoutine());
             }
         }
 
-        if (!isFireReady)
-        {
-            addFireInterval += Time.deltaTime;
-            if (addFireInterval >= barrage.firingDelay)
-            {
-                isFireReady = true;
-                addFireInterval = 0.0f;
-            }
-        }
+        //if (!isFireReady)
+        //{
+        //    addFireInterval += Time.deltaTime;
+        //    if (addFireInterval >= barrage.firingDelay)
+        //    {
+        //        isFireReady = true;
+        //        addFireInterval = 0.0f;
+        //    }
+        //}
     }
 
-    public IEnumerator BulletRoutine(Vector3 dir)
+    public IEnumerator BulletRoutine()
     {
         switch (barrage.eBarrageType)
         {
             case EBarrageType.Straight:
-                for (int i = 0; i < barrage.bulletCount; i++)
+                while (addFireInterval <= barrage.fireRunningTime)
                 {
-                    GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                    bullet.GetComponent<Bullet>().SetBulletDirection(dir);
-                    bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                    addFireInterval += Time.deltaTime;
+
+                    Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                    straightDir = straightDir.normalized;
+
+                    for (int i = 0; i < barrage.bulletCount; i++)
+                    {
+                        GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                        bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
+                        bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                    yield return new WaitForSeconds(barrage.fireInterval);
                 }
                 break;
             case EBarrageType.Angle:
-                angle = barrage.startAngle;
-                for (int i = 0; i < barrage.bulletCount; i++)
+                while (addFireInterval <= barrage.fireRunningTime)
                 {
-                    Vector3 degree = Quaternion.Euler(0, 0, angle) * dir;
-                    GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                    bullet.GetComponent<Bullet>().SetBulletDirection(degree);
-                    bullet.GetComponent<Bullet>().SetBulletState(weaponData);
-                    angle += barrage.addAngle;
+                    addFireInterval += Time.deltaTime;
+
+                    Vector3 angleDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                    angleDir = angleDir.normalized;
+
+                    angle = barrage.startAngle;
+                    for (int i = 0; i < barrage.bulletCount; i++)
+                    {
+                        Vector3 degree = Quaternion.Euler(0, 0, angle) * angleDir;
+                        GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                        bullet.GetComponent<Bullet>().SetBulletDirection(degree);
+                        bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                        angle += barrage.addAngle;
+                    }
+                    yield return new WaitForSeconds(barrage.fireInterval);
                 }
                 break;
             case EBarrageType.Shot:
-                for (int i = 0; i < barrage.bulletCount; i++)
+                while (addFireInterval <= barrage.fireRunningTime)
                 {
-                    dir = new Vector3(dir.x + Random.Range(-0.15f, 0.15f), dir.y + Random.Range(-0.15f, 0.15f));
-                    GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                    bullet1.GetComponent<Bullet>().SetBulletDirection(dir);
-                    bullet1.GetComponent<Bullet>().SetBulletState(weaponData);
-                    yield return null;
+                    addFireInterval += Time.deltaTime;
+
+                    Vector3 shotDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                    shotDir = shotDir.normalized;
+
+                    for (int i = 0; i < barrage.bulletCount; i++)
+                    {
+                        shotDir = new Vector3(shotDir.x + Random.Range(-0.25f, 0.25f), shotDir.y + Random.Range(-0.1f, 0.1f));
+                        GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                        bullet1.GetComponent<Bullet>().SetBulletDirection(shotDir);
+                        bullet1.GetComponent<Bullet>().SetBulletState(weaponData);
+                    }
+                    yield return new WaitForSeconds(barrage.fireInterval);
                 }
                 break;
             case EBarrageType.Tornado:
+                Vector3 tornadoDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                tornadoDir = tornadoDir.normalized;
+
                 angle = barrage.startAngle;
-                for (int i = 0; i < barrage.bulletCount; i++)
+
+                while (addFireInterval <= barrage.fireRunningTime)
                 {
-                    Vector3 degree = Quaternion.Euler(0, 0, angle) * dir;
+                    addFireInterval += Time.deltaTime;
+
+                    Vector3 degree = Quaternion.Euler(0, 0, angle) * tornadoDir;
                     GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                     bullet1.GetComponent<Bullet>().SetBulletDirection(degree);
                     bullet1.GetComponent<Bullet>().SetBulletState(weaponData);
                     angle += barrage.addAngle;
 
-                    yield return new WaitForSeconds(barrage.firingTime);
-                    //yield return new WaitForEndOfFrame();
+                    yield return new WaitForSeconds(barrage.fireInterval);
                 }
                 break;
         }
-
-        yield return null;
     }
 }

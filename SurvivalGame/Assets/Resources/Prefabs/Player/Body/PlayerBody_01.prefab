@@ -99,7 +99,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.13
 --- !u!114 &2326541205179896353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,3 +124,5 @@ MonoBehaviour:
     DEF: 0
     useHP: 0
   objTransformCenter: {fileID: 0}
+  rootPlayer: {fileID: 0}
+  rootEnemy: {fileID: 0}

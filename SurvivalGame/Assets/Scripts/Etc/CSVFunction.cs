@@ -457,9 +457,10 @@ public class CSVFunction
         tempData[1] = "eBarrageType";
         tempData[2] = "startAngle";
         tempData[3] = "addAngle";
-        tempData[4] = "firingTime";
-        tempData[5] = "firingDelay";
-        tempData[6] = "bulletCount";
+        tempData[4] = "fireRunningTime";
+        tempData[5] = "fireInterval";
+        tempData[6] = "fireDelay";
+        tempData[7] = "bulletCount";
 
         data.Add(tempData);
 
@@ -470,9 +471,10 @@ public class CSVFunction
             tempData[1] = asset.barrageDataList[i].eBarrageType.ToString();
             tempData[2] = asset.barrageDataList[i].startAngle.ToString();
             tempData[3] = asset.barrageDataList[i].addAngle.ToString();
-            tempData[4] = asset.barrageDataList[i].firingTime.ToString();
-            tempData[5] = asset.barrageDataList[i].firingDelay.ToString();
-            tempData[6] = asset.barrageDataList[i].bulletCount.ToString();
+            tempData[4] = asset.barrageDataList[i].fireRunningTime.ToString();
+            tempData[5] = asset.barrageDataList[i].fireInterval.ToString();
+            tempData[6] = asset.barrageDataList[i].fireDelay.ToString();
+            tempData[7] = asset.barrageDataList[i].bulletCount.ToString();
 
             data.Add(tempData);
         }
@@ -516,10 +518,11 @@ public class CSVFunction
         {
             asset.barrageDataList[i].key = data[i]["key"].ToString();
             asset.barrageDataList[i].eBarrageType = (EBarrageType)Enum.Parse(typeof(EBarrageType), data[i]["eBarrageType"].ToString());
-            asset.barrageDataList[i].firingTime = float.Parse(data[i]["startAngle"].ToString());
-            asset.barrageDataList[i].firingTime = float.Parse(data[i]["addAngle"].ToString());
-            asset.barrageDataList[i].firingTime = float.Parse(data[i]["firingTime"].ToString());
-            asset.barrageDataList[i].firingDelay = float.Parse(data[i]["firingDelay"].ToString());
+            asset.barrageDataList[i].startAngle = float.Parse(data[i]["startAngle"].ToString());
+            asset.barrageDataList[i].addAngle = float.Parse(data[i]["addAngle"].ToString());
+            asset.barrageDataList[i].fireRunningTime = float.Parse(data[i]["fireRunningTime"].ToString());
+            asset.barrageDataList[i].fireInterval = float.Parse(data[i]["fireInterval"].ToString());
+            asset.barrageDataList[i].fireDelay = float.Parse(data[i]["fireDelay"].ToString());
             asset.barrageDataList[i].bulletCount = int.Parse(data[i]["bulletCount"].ToString());
         }
     }

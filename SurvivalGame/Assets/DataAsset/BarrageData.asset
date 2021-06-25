@@ -17,34 +17,39 @@ MonoBehaviour:
     eBarrageType: 0
     startAngle: 0
     addAngle: 0
-    firingTime: 0
-    firingDelay: 1
-    bulletCount: 1
+    fireRunningTime: 5
+    fireInterval: 1
+    fireDelay: 3
+    bulletCount: 5
   - key: Shot_1
-    eBarrageType: 1
+    eBarrageType: 2
     startAngle: 0
     addAngle: 0
-    firingTime: 0
-    firingDelay: 3
+    fireRunningTime: 5
+    fireInterval: 1
+    fireDelay: 3
     bulletCount: 10
   - key: Triple_1
     eBarrageType: 1
     startAngle: -30
     addAngle: 30
-    firingTime: 0
-    firingDelay: 1
+    fireRunningTime: 5
+    fireInterval: 1
+    fireDelay: 3
     bulletCount: 3
-  - key: Triple_2
+  - key: Circle_1
     eBarrageType: 1
     startAngle: 0
-    addAngle: 30
-    firingTime: 0
-    firingDelay: 3
-    bulletCount: 12
+    addAngle: 20
+    fireRunningTime: 5
+    fireInterval: 1
+    fireDelay: 3
+    bulletCount: 18
   - key: Tornado_1
     eBarrageType: 3
     startAngle: 0
     addAngle: 25
-    firingTime: 0.02
-    firingDelay: 10
-    bulletCount: 200
+    fireRunningTime: 5
+    fireInterval: 0
+    fireDelay: 3
+    bulletCount: 10
