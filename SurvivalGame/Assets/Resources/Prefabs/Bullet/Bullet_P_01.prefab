@@ -79,7 +79,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.25, y: 0.25}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
   criChance: 0
   criDamage: 0
   moveDistance: 7
-  moveSpeed: 5
+  moveSpeed: 13
   moveDir: {x: 0, y: 1, z: 0}
 --- !u!58 &5603960190867046750
 CircleCollider2D:

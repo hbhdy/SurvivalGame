@@ -14,39 +14,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPath: Prefabs/Enemy/Weapon/
   weaponDataList:
-  - itemCode: WP_01
-    prefabName: WP_01
-    objPrefab: {fileID: 2929941312180695300, guid: b8c4db7e6f011a84fbdb83e95ed5006c, type: 3}
+  - itemCode: WP_Circle_01
+    prefabName: WP_Circle_01
+    objPrefab: {fileID: 6855404546123567952, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
     attackDamage: 20
     criChance: 0
     criDamage: 0
-  - itemCode: WP_BOSS_01
-    prefabName: WP_BOSS_01
-    objPrefab: {fileID: 5324417424838021062, guid: df1fded0624788a40b8f8c8b874e061c, type: 3}
+  - itemCode: WP_Heart_01
+    prefabName: WP_Heart_01
+    objPrefab: {fileID: 6422519220976765773, guid: 4b2dc64521ef81d48bcb75ac35644466, type: 3}
     attackDamage: 20
     criChance: 0
     criDamage: 0
-  - itemCode: WP_BOSS_02
-    prefabName: WP_BOSS_02
-    objPrefab: {fileID: 4026009374816708817, guid: b60e1eff1c32f6f4dbd616d094c213b9, type: 3}
+  - itemCode: WP_Hexagon_01
+    prefabName: WP_Hexagon_01
+    objPrefab: {fileID: 8670587184735153769, guid: 1de8504fe4dd34c4dbecec56d5bd2620, type: 3}
     attackDamage: 20
     criChance: 0
     criDamage: 0
-  - itemCode: WP_BOSS_03
-    prefabName: WP_BOSS_03
-    objPrefab: {fileID: 547186514779628098, guid: 7f8336ccaa6643847ae47cd76431a021, type: 3}
+  - itemCode: WP_Octagon_01
+    prefabName: WP_Octagon_01
+    objPrefab: {fileID: 9132460429456032076, guid: 00822e340ec43b047a87335616fd01de, type: 3}
     attackDamage: 20
     criChance: 0
     criDamage: 0
-  - itemCode: WP_BOSS_04
-    prefabName: WP_BOSS_04
-    objPrefab: {fileID: 700953611432494173, guid: d5b1d2c147393c749a405e58eb0fb82c, type: 3}
+  - itemCode: WP_Plus_01
+    prefabName: WP_Plus_01
+    objPrefab: {fileID: 769272620146928554, guid: 9854a291236d1cf46b4ab0faeb520fe2, type: 3}
     attackDamage: 20
     criChance: 0
     criDamage: 0
-  - itemCode: WP_BOSS_05
-    prefabName: WP_BOSS_05
-    objPrefab: {fileID: 642927896922685429, guid: 7a01bf67163e1254686cc6fd289e86ce, type: 3}
+  - itemCode: WP_Square_01
+    prefabName: WP_Square_01
+    objPrefab: {fileID: 3874813954512273566, guid: 529bb84fd07dd4c46a3bf40e070c0673, type: 3}
+    attackDamage: 20
+    criChance: 0
+    criDamage: 0
+  - itemCode: WP_Star_01
+    prefabName: WP_Star_01
+    objPrefab: {fileID: 6156927441911478545, guid: 081e89c928646d2499b8bbb15cec1225, type: 3}
+    attackDamage: 20
+    criChance: 0
+    criDamage: 0
+  - itemCode: WP_Triangle_01
+    prefabName: WP_Triangle_01
+    objPrefab: {fileID: 5485604653914765813, guid: 206a0e6c2545f344c9447e15e498f3f7, type: 3}
     attackDamage: 20
     criChance: 0
     criDamage: 0

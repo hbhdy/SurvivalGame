@@ -18,9 +18,9 @@ MonoBehaviour:
     startAngle: 0
     addAngle: 0
     fireRunningTime: 5
-    fireInterval: 1
+    fireInterval: 0.5
     fireDelay: 3
-    bulletCount: 5
+    bulletCount: 1
   - key: Shot_1
     eBarrageType: 2
     startAngle: 0

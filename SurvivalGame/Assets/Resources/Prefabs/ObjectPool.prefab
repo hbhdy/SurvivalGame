@@ -44,10 +44,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolTable:
-  - keyName: Enemy_01
-    prefab: {fileID: 800508678880833605, guid: 3adab3faafe39174ba323310443ab052, type: 3}
+  - keyName: Boss_Circle_01
+    prefab: {fileID: 158084105804961226, guid: 3c476e8100364d64080d87c53e29e671, type: 3}
     originParent: {fileID: 334929107663668634}
-    count: 3
+    count: 1
+  - keyName: Boss_Heart_01
+    prefab: {fileID: 3003001138740648145, guid: ae823d3f79425184ab1ec81b26403d34, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 1
+  - keyName: Boss_Hexagon_01
+    prefab: {fileID: 3876830979826492856, guid: 1cc8497e1b0286f40b6b53612c6284c5, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 1
+  - keyName: Boss_Octagon_01
+    prefab: {fileID: 2950355508371163338, guid: ae23267460efd55499704b7aa224d7c0, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 1
+  - keyName: Boss_Plus_01
+    prefab: {fileID: 5548439713230234989, guid: e236156904b86fd46992e58d4d24e925, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 1
+  - keyName: Boss_Square_01
+    prefab: {fileID: 4877930009063551407, guid: 6493ee49f63a7e54caa5cea0958fd7b7, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 1
+  - keyName: Boss_Star_01
+    prefab: {fileID: 7250552154756891481, guid: 0b35a11327c7d7e42bf1a13d2e240ef7, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 1
+  - keyName: Boss_Triangle_01
+    prefab: {fileID: 3992049622139789078, guid: 3e3a1bba5cb0bfc4f9b616a7efb1ba94, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 1
 --- !u!1 &1259604169115939821
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +168,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolTable:
-  - keyName: Bullet_E_01
-    prefab: {fileID: 853795601251692006, guid: 7f2d652eb3b74ac4c82b808ffbc210db, type: 3}
+  - keyName: Bullet_Circle_01
+    prefab: {fileID: 1514063937868827671, guid: 35ec4e9138221ad449e35f8c707f21c5, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Heart_01
+    prefab: {fileID: 6803161911643953683, guid: c086a61bead1f9a4496d44b55e560981, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Hexagon_01
+    prefab: {fileID: 8035231479214778731, guid: 029964fb8d0f08849b730d17f1eec1c9, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Octagon_01
+    prefab: {fileID: 5987135432169437277, guid: 98a8fc4ce2ded274eb929fabf78c62af, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Plus_01
+    prefab: {fileID: 2795305970028830194, guid: 23660fe6b52db4a47b38982b3604c268, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Square_01
+    prefab: {fileID: 7754533650178317264, guid: f20d9b9265097ea46850766448682944, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Star_01
+    prefab: {fileID: 698436760001694561, guid: ae5245bff2f86854faca3caa9a1468f8, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Triangle_01
+    prefab: {fileID: 5859264753529700655, guid: 0539a44380f1b2c4b88b008066642ab0, type: 3}
     originParent: {fileID: 5345169044030583769}
     count: 50
 --- !u!1 &8188167116933277132

@@ -14,33 +14,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabPath: Prefabs/Enemy/Body/
   bodyDataList:
-  - itemCode: BD_01
-    prefabName: BD_01
+  - itemCode: BD_Circle_01
+    prefabName: BD_Circle_01
     objPrefab: {fileID: 5352126846985265391, guid: ec92586392ddb37418a9cc28baaa0492, type: 3}
-    hp: 200
+    hp: 2000
     defence: 0
-  - itemCode: BD_BOSS_01
-    prefabName: BD_BOSS_01
-    objPrefab: {fileID: 1347706177166755512, guid: 767df46062d8ace468b95c9b067ed37e, type: 3}
+  - itemCode: BD_Heart_01
+    prefabName: BD_Heart_01
+    objPrefab: {fileID: 5617365007280947490, guid: 9bdb225573cdc7a47904c8b19110b73a, type: 3}
     hp: 1000
     defence: 0
-  - itemCode: BD_BOSS_02
-    prefabName: BD_BOSS_02
-    objPrefab: {fileID: 591427737340396260, guid: 732de5281b39f3148a06a57eb1a8c885, type: 3}
+  - itemCode: BD_Hexagon_01
+    prefabName: BD_Hexagon_01
+    objPrefab: {fileID: 6006764720805804860, guid: 1fa0823b47ebad84885bfde82b1d7321, type: 3}
     hp: 3000
     defence: 0
-  - itemCode: BD_BOSS_03
-    prefabName: BD_BOSS_03
-    objPrefab: {fileID: 4807188176770651371, guid: 59d47b9a90f3ac64a9fac25f109403df, type: 3}
+  - itemCode: BD_Octagon_01
+    prefabName: BD_Octagon_01
+    objPrefab: {fileID: 6359858736856364950, guid: 8e88e0631ef3d8f4b964886736e4c8e3, type: 3}
     hp: 5000
     defence: 0
-  - itemCode: BD_BOSS_04
-    prefabName: BD_BOSS_04
-    objPrefab: {fileID: 5662310361824079673, guid: b543e2928e9d49b478a2513197d6c92b, type: 3}
+  - itemCode: BD_Plus_01
+    prefabName: BD_Plus_01
+    objPrefab: {fileID: 9208558252549144709, guid: 4991e5d307a96a048a07f97dfbf00a05, type: 3}
     hp: 10000
     defence: 0
-  - itemCode: BD_BOSS_05
-    prefabName: BD_BOSS_05
-    objPrefab: {fileID: 1062498224050825508, guid: 67ecee7e66d577a4aa46b2b9ebaf3072, type: 3}
+  - itemCode: BD_Square_01
+    prefabName: BD_Square_01
+    objPrefab: {fileID: 8882810466523312607, guid: 42888ac9fbf406c4cafedd1b58af284d, type: 3}
+    hp: 20000
+    defence: 0
+  - itemCode: BD_Star_01
+    prefabName: BD_Star_01
+    objPrefab: {fileID: 5948874363182852659, guid: b5c67af6e7d6bc94f9b0d73cab31b025, type: 3}
+    hp: 20000
+    defence: 0
+  - itemCode: BD_Triangle_01
+    prefabName: BD_Triangle_01
+    objPrefab: {fileID: 7330748505154071011, guid: 5d3043d5f72eef04cb4f2691085f0f3f, type: 3}
     hp: 20000
     defence: 0
