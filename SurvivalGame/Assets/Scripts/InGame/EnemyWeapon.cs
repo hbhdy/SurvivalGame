@@ -19,6 +19,8 @@ public class EnemyWeapon : MonoBehaviour
     private float addFireInterval = 0.0f;
     private float angle = 0;
 
+    public List<Vector2> dirList = new List<Vector2>();
+
     public void Awake()
     {
         fov2D = GetComponent<FOV2D>();
@@ -30,6 +32,17 @@ public class EnemyWeapon : MonoBehaviour
         weaponData = Core.RSS.GetEnemyWeaponData(weaponData.itemCode);
 
         barrage = Core.RSS.GetBarrageData(barrageKey);
+
+        for (int i = 0; i < barrage.patten.Length; i++)
+        {
+            for (int j = 0; j < barrage.patten[i].boolDir.Length; j++)
+            {
+                if (barrage.patten[i].boolDir[j])
+                {
+                    dirList.Add(new Vector2((i - 7) * 0.1f, (j - 7) * 0.1f));
+                }
+            }
+        }
     }
 
     public void FixedUpdate()
@@ -70,16 +83,24 @@ public class EnemyWeapon : MonoBehaviour
                 {
                     addFireInterval += Time.deltaTime;
 
-                    Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
-                    straightDir = straightDir.normalized;
+                    //Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                    //straightDir = straightDir.normalized;
 
-                    for (int i = 0; i < barrage.bulletCount; i++)
+                    //for (int i = 0; i < barrage.bulletCount; i++)
+                    //{
+                    //    GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                    //    bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
+                    //    bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                    //    yield return new WaitForSeconds(0.1f);
+                    //}
+
+                    for (int i = 0; i < dirList.Count; i++)
                     {
                         GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                        bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
+                        bullet.GetComponent<Bullet>().SetBulletDirection(dirList[i]);
                         bullet.GetComponent<Bullet>().SetBulletState(weaponData);
-                        yield return new WaitForSeconds(0.1f);
                     }
+
                     yield return new WaitForSeconds(barrage.fireInterval);
                 }
                 break;

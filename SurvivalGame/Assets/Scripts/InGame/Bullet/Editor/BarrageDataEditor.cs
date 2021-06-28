@@ -35,9 +35,28 @@ public class BarrageDataEditor : Editor
 
         base.OnInspectorGUI();
 
+        for (int i = 0; i < info.barrageDataList.Count; i++)
+        {
+            GUILayout.BeginVertical();
+            for (int x = 0; x < info.barrageDataList[i].patten.Length; x++)
+            {
+                GUILayout.BeginHorizontal();
+                for (int y = 0; y < info.barrageDataList[i].patten[x].boolDir.Length; y++)
+                {
+                    info.barrageDataList[i].patten[x].boolDir[y] = EditorGUILayout.Toggle(info.barrageDataList[i].patten[x].boolDir[y], GUILayout.Width(15));
+                }
+                GUILayout.EndHorizontal();
+            }
+            GUILayout.EndVertical();
+
+            GUILayout.Space(30);
+        }
+
+
         if (GUI.changed)
         {
             EditorUtility.SetDirty(info);
         }
     }
+
 }

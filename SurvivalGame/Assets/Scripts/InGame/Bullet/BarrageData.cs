@@ -43,5 +43,15 @@ public class Barrage
     public float fireRunningTime;       // 탄막 발사하는 시간
     public float fireInterval;          // 탄막 발사 간격
     public float fireDelay;             // 발사시간 이후 대기 시간
-    public int bulletCount;             // 한번에 발사하는 개수
+    public int bulletCount;             // 한번에 발사하는 개수 
+
+    public CheckDir[] patten = new CheckDir[15];
 }
+
+[System.Serializable]
+public class CheckDir
+{
+    public bool[] boolDir = new bool[15];
+}
+
+
