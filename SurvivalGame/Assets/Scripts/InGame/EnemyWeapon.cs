@@ -39,7 +39,7 @@ public class EnemyWeapon : MonoBehaviour
             {
                 if (barrage.patten[i].boolDir[j])
                 {
-                    dirList.Add(new Vector2((i - 7) * 0.1f, (j - 7) * 0.1f));
+                    dirList.Add(new Vector2((j - 7) * 0.1f, (7 - i) * 0.1f));
                 }
             }
         }

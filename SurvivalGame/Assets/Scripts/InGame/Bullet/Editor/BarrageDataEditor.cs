@@ -38,6 +38,17 @@ public class BarrageDataEditor : Editor
         for (int i = 0; i < info.barrageDataList.Count; i++)
         {
             GUILayout.BeginVertical();
+            if (GUILayout.Button("No." + i + " Patten Reset"))
+            {
+                for (int x = 0; x < info.barrageDataList[i].patten.Length; x++)
+                {
+                    for (int y = 0; y < info.barrageDataList[i].patten[x].boolDir.Length; y++)
+                    {
+                        info.barrageDataList[i].patten[x].boolDir[y] = false;
+                    }
+                }
+            }
+
             for (int x = 0; x < info.barrageDataList[i].patten.Length; x++)
             {
                 GUILayout.BeginHorizontal();
@@ -51,7 +62,6 @@ public class BarrageDataEditor : Editor
 
             GUILayout.Space(30);
         }
-
 
         if (GUI.changed)
         {
