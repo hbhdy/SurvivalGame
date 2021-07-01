@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class GameUI : MonoBehaviour
     public HUDPack[] hudPacks;
 
     public PlayerHPState playerHPState;
+    public GameObject objBossHpFrame;
+
+    public Image uiBossHpGage;
 
     public void Awake()
     {

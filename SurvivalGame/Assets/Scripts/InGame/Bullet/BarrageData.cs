@@ -45,6 +45,9 @@ public class Barrage
     public float fireDelay;             // 발사시간 이후 대기 시간
     public int bulletCount;             // 한번에 발사하는 개수 
 
+    public bool isFold = true;
+    public bool isTargetOn = false;
+
     public CheckDir[] patten = new CheckDir[15];
 }
 

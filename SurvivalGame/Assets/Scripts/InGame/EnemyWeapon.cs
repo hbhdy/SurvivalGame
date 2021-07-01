@@ -78,27 +78,50 @@ public class EnemyWeapon : MonoBehaviour
     {
         switch (barrage.eBarrageType)
         {
+            case EBarrageType.Custom:
+                while (addFireInterval <= barrage.fireRunningTime)
+                {
+                    addFireInterval += Time.deltaTime;
+
+                    if (barrage.isTargetOn)
+                    {
+                        Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                        straightDir = straightDir.normalized;
+
+                        for (int i = 0; i < dirList.Count; i++)
+                        {
+                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            bullet.GetComponent<Bullet>().SetBulletDoubleDirection(dirList[i], straightDir);
+                            bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < dirList.Count; i++)
+                        {
+                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            bullet.GetComponent<Bullet>().SetBulletDirection(dirList[i]);
+                            bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                        }
+                    }
+                    yield return new WaitForSeconds(barrage.fireInterval);
+                }
+                break;
+
             case EBarrageType.Straight:
                 while (addFireInterval <= barrage.fireRunningTime)
                 {
                     addFireInterval += Time.deltaTime;
 
-                    //Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
-                    //straightDir = straightDir.normalized;
+                    Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                    straightDir = straightDir.normalized;
 
-                    //for (int i = 0; i < barrage.bulletCount; i++)
-                    //{
-                    //    GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                    //    bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
-                    //    bullet.GetComponent<Bullet>().SetBulletState(weaponData);
-                    //    yield return new WaitForSeconds(0.1f);
-                    //}
-
-                    for (int i = 0; i < dirList.Count; i++)
+                    for (int i = 0; i < barrage.bulletCount; i++)
                     {
                         GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                        bullet.GetComponent<Bullet>().SetBulletDirection(dirList[i]);
+                        bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
                         bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                        yield return new WaitForSeconds(0.1f);
                     }
 
                     yield return new WaitForSeconds(barrage.fireInterval);

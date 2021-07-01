@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 1
-  barrageKey: Straight_1
+  barrageKey: Custom_Octagon_1
   bulletKey: Bullet_Octagon_01
   weaponData:
     itemCode: WP_Octagon_01
@@ -55,6 +55,7 @@ MonoBehaviour:
     attackDamage: 1
     criChance: 0
     criDamage: 150
+  dirList: []
 --- !u!114 &1397933916790318329
 MonoBehaviour:
   m_ObjectHideFlags: 0

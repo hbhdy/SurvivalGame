@@ -100,9 +100,10 @@ MonoBehaviour:
   damage: 0
   criChance: 0
   criDamage: 0
-  moveDistance: 7
+  moveDistance: 15
   moveSpeed: 13
   moveDir: {x: 0, y: 1, z: 0}
+  changeDir: {x: 0, y: 1, z: 0}
 --- !u!58 &5603960190867046750
 CircleCollider2D:
   m_ObjectHideFlags: 0

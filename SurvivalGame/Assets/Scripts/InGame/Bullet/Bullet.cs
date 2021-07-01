@@ -15,14 +15,18 @@ public class Bullet : HSSObject
 
     [HideInInspector]
     public Vector3 moveDir = Vector3.up;
+    [HideInInspector]
+    public Vector3 changeDir = Vector3.up;
 
     private Vector3 startPos = Vector3.zero;
     private Vector3 originStartPos = Vector3.zero;
     private bool isReady = false;
+    private bool isChange = false;
+    private float t = 0;
 
     public void OnEnable()
     {
-        isReady = false;
+        isReady = false;      
     }
 
     public override void Spawn(Transform parent = null)
@@ -33,12 +37,21 @@ public class Bullet : HSSObject
         originStartPos = startPos;
 
         isReady = true;
+        isChange = false;
+        t = 0;
+    }
+
+    public void SetBulletDoubleDirection(Vector3 dir, Vector3 change)
+    {
+        moveDir = dir;
+        changeDir = change;
+
+        isChange = true;
     }
 
     public void SetBulletDirection(Vector3 dir)
     {
         moveDir = dir;
-        //transform.rotation = Quaternion.FromToRotation(Vector3.up, moveDir);
     }
 
     public void SetBulletState(WeaponData data)
@@ -55,7 +68,22 @@ public class Bullet : HSSObject
 
         Vector3 newPos = transform.position;
 
-        newPos += moveDir * moveSpeed * Time.deltaTime;
+        if (isChange)
+        {
+            if (t >= 0.8f)
+            {
+                newPos += changeDir * moveSpeed * Time.deltaTime;
+            }
+            else
+            {
+                newPos += moveDir * moveSpeed * Time.deltaTime;
+            }
+            t += Time.deltaTime;
+        }
+        else
+        {
+            newPos += moveDir * moveSpeed * Time.deltaTime;
+        }
 
         if (Vector2.Distance(originStartPos, newPos) >= moveDistance)
         {
@@ -72,7 +100,8 @@ public class Bullet : HSSObject
         ContactPoint2D cp = collision.contacts[0];
         Vector3 pos = cp.point;
 
-        collision.collider.gameObject.GetComponent<Body>().Hit(damage, false);
+        if (collision.collider.gameObject.GetComponent<Body>())
+            collision.collider.gameObject.GetComponent<Body>().Hit(damage, false);
 
         isReady = false;
 

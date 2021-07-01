@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 1
-  barrageKey: Shot_1
+  barrageKey: Custom_Circle_1
   bulletKey: Bullet_Circle_01
   weaponData:
     itemCode: WP_Circle_01

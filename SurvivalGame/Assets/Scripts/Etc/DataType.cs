@@ -14,6 +14,7 @@ public enum EBarrageType
     Angle, // 방향 연발
     Shot, // 산탄
     Tornado, // 회전
+    Custom,  // 커스텀
 
 }
 

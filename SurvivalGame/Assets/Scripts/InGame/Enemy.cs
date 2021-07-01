@@ -11,6 +11,7 @@ public class Enemy : HSSObject
     public GameObject objHPBarPoint;
 
     public bool haveHUD = true;
+    public bool isBoss = false;
 
     [HideInInspector]
     public GameObject objHUD = null;
@@ -80,6 +81,11 @@ public class Enemy : HSSObject
         }
     }
 
+    public float GetHpRatio()
+    {
+        return body.entityStatus.useHP / (float)body.entityStatus.HP;
+    }
+
     public void HitProgress()
     {
         int totalDamage = prevHp - (int)body.entityStatus.useHP;
@@ -90,5 +96,41 @@ public class Enemy : HSSObject
         objHUD.GetComponent<HUDPack>().MakeDamageText(false, totalDamage);
 
         objHUD.GetComponent<HUDPack>().SetGage(rate);
+
+        if(isBoss)
+        {
+            if(GameUI.instance.objBossHpFrame.activeSelf)
+            {
+                GameUI.instance.uiBossHpGage.fillAmount = rate;
+            }
+        }
+
+        if (body.entityStatus.useHP <= 0)
+        {
+            SaveEnemy();
+            return;
+        }
+    }
+
+    public void SaveEnemy()
+    {
+        if (!isLive)
+            return;
+
+        isLive = false;
+
+        objBody.SetActive(false);
+
+        if (isBoss)
+            GameUI.instance.objBossHpFrame.SetActive(false);
+
+        Invoke("SaveInPool", 3.0f);
+    }
+
+    public void SaveInPool()
+    {
+        HSSObjectPoolManager.instance.SaveObject(key, gameObject);
+
+        Destroy(objHUD);
     }
 }
