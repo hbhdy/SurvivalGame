@@ -14,6 +14,7 @@ public class EnemyWeapon : MonoBehaviour
 
     private FOV2D fov2D;
     private RadarWithFOV2D raderFov2D;
+    private Enemy enemy;
 
     private bool isFireReady = true;
     private float addFireInterval = 0.0f;
@@ -25,6 +26,7 @@ public class EnemyWeapon : MonoBehaviour
     {
         fov2D = GetComponent<FOV2D>();
         raderFov2D = GetComponent<RadarWithFOV2D>();
+        enemy = GetComponentInParent<Enemy>();
     }
 
     public void SetWeaponData()
@@ -48,6 +50,9 @@ public class EnemyWeapon : MonoBehaviour
     public void FixedUpdate()
     {
         if (!InGameCore.instance.isInGameCoreReady)
+            return;
+
+        if (!enemy.isLive)
             return;
 
         if (raderFov2D.objTarget)
@@ -81,6 +86,9 @@ public class EnemyWeapon : MonoBehaviour
             case EBarrageType.Custom:
                 while (addFireInterval <= barrage.fireRunningTime)
                 {
+                    if (!enemy.isLive)
+                        yield break;
+
                     addFireInterval += Time.deltaTime;
 
                     if (barrage.isTargetOn)
@@ -111,6 +119,9 @@ public class EnemyWeapon : MonoBehaviour
             case EBarrageType.Straight:
                 while (addFireInterval <= barrage.fireRunningTime)
                 {
+                    if (!enemy.isLive)
+                        yield break;
+
                     addFireInterval += Time.deltaTime;
 
                     Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
@@ -130,6 +141,9 @@ public class EnemyWeapon : MonoBehaviour
             case EBarrageType.Angle:
                 while (addFireInterval <= barrage.fireRunningTime)
                 {
+                    if (!enemy.isLive)
+                        yield break;
+
                     addFireInterval += Time.deltaTime;
 
                     Vector3 angleDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
@@ -150,6 +164,9 @@ public class EnemyWeapon : MonoBehaviour
             case EBarrageType.Shot:
                 while (addFireInterval <= barrage.fireRunningTime)
                 {
+                    if (!enemy.isLive)
+                        yield break;
+
                     addFireInterval += Time.deltaTime;
 
                     Vector3 shotDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
@@ -173,6 +190,9 @@ public class EnemyWeapon : MonoBehaviour
 
                 while (addFireInterval <= barrage.fireRunningTime)
                 {
+                    if (!enemy.isLive)
+                        yield break;
+
                     addFireInterval += Time.deltaTime;
 
                     Vector3 degree = Quaternion.Euler(0, 0, angle) * tornadoDir;

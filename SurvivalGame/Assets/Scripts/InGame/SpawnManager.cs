@@ -6,7 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     public static SpawnManager instance = null;
 
-    private SpawnPoint[] spawnPoints;
+    private List<ZonePoint> zonePoints = new List<ZonePoint>();
+
 
 
     public void Awake()
@@ -16,7 +17,10 @@ public class SpawnManager : MonoBehaviour
             instance = this;
         }
 
-        spawnPoints = this.GetComponentsInChildren<SpawnPoint>();
+        ZonePoint[] zones = GetComponentsInChildren<ZonePoint>();
+
+        for (int i = 0; i < zones.Length; i++)
+            zonePoints.Add(zones[i]);
     }
 
     public void Start()

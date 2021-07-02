@@ -124,6 +124,8 @@ public class Enemy : HSSObject
         if (isBoss)
             GameUI.instance.objBossHpFrame.SetActive(false);
 
+        objHUD.GetComponent<HUDPack>().SetHPBar(false);
+
         Invoke("SaveInPool", 3.0f);
     }
 

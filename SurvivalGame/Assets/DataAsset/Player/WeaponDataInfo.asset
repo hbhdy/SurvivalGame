@@ -17,6 +17,6 @@ MonoBehaviour:
   - itemCode: PlayerWeapon_01
     prefabName: PlayerWeapon_01
     objPrefab: {fileID: 1143470438177682473, guid: 9af5069f4d882974f84a711a9b5659fc, type: 3}
-    attackDamage: 5000
+    attackDamage: 200
     criChance: 0
     criDamage: 150

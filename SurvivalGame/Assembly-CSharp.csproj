@@ -101,6 +101,7 @@
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
+    <Compile Include="Assets\Scripts\InGame\ZonePoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
