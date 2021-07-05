@@ -50,11 +50,13 @@ public class Enemy : HSSObject
 
     public void FixedUpdate()
     {
-        //if (objHUD != null)
-        //{
-        //    //objHPBarPoint.transform.position = objWheel.transform.position;
-        //    objHUD.GetComponent<HUDPack>().Following();
-        //}
+        if (!isBoss)
+        {
+            if (SpawnManager.instance.isWaitCheck)
+            {
+                SaveEnemy();
+            }
+        }
     }
 
     public override void Spawn(Transform parent = null)

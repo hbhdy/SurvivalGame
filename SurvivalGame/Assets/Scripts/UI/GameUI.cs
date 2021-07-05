@@ -13,8 +13,11 @@ public class GameUI : MonoBehaviour
 
     public PlayerHPState playerHPState;
     public GameObject objBossHpFrame;
+    public GameObject objWarning;
 
     public Image uiBossHpGage;
+
+    public Image uiFadeEffect;
 
     public void Awake()
     {
@@ -41,5 +44,36 @@ public class GameUI : MonoBehaviour
         {
             Joystick.instance.OnPointerUp(Core.INPUT.inputPosition);
         }
+    }
+
+    public void FadeEffectRoutine()
+    {
+        StartCoroutine(FadeEffectCoroutine());
+    }
+
+    public IEnumerator FadeEffectCoroutine()
+    {
+        objWarning.SetActive(true);
+        float fadeCount = 0;
+        uiFadeEffect.color = new Color(0, 0, 0, 0);
+
+        while (fadeCount < 1f)
+        {
+            uiFadeEffect.color = new Color(0, 0, 0, fadeCount);
+            fadeCount += 0.01f;
+            yield return null;
+        }
+
+        uiFadeEffect.color = new Color(0, 0, 0, 1);
+        fadeCount = 1;
+
+        while (fadeCount > 0)
+        {
+            uiFadeEffect.color = new Color(0, 0, 0, fadeCount);
+            fadeCount -= 0.01f;
+            yield return null;
+        }
+        uiFadeEffect.color = new Color(0, 0, 0, 0);
+        objWarning.SetActive(false);
     }
 }

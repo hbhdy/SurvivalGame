@@ -74,4 +74,9 @@ public class PlayerSetting : MonoBehaviour
 
         //inGamePlayer.weaponKeyList = weapon;       
     }
+
+    public void PlayerResetPosition()
+    {
+        player.objWheel.transform.position = objStartMarker.transform.position;
+    }
 }

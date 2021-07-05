@@ -26,6 +26,9 @@ public class Joystick : MonoBehaviour
     private bool isPressed = false;
     private bool isFixedStick = false;
 
+    [HideInInspector]
+    public bool isPause = false;
+
     public void Awake()
     {
         if (instance == null)
@@ -43,6 +46,9 @@ public class Joystick : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (isPause)
+            return;
+
         if (isPressed)
         {
             if (Vector2.Distance(rt.anchoredPosition, outsideRt.anchoredPosition) < 0.1f)
@@ -64,6 +70,9 @@ public class Joystick : MonoBehaviour
 
     public void OnPointerDown(Vector2 eventData)
     {
+        if (isPause)
+            return;
+
         inputPos = eventData;
         inputPos = ConvertScreenToAnchoredPos(inputPos);
 
@@ -89,6 +98,9 @@ public class Joystick : MonoBehaviour
 
     public void OnDrag(Vector2 eventData)
     {
+        if (isPause)
+            return;
+
         if (!isPressed)
             return;
 
@@ -182,5 +194,16 @@ public class Joystick : MonoBehaviour
         RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), screen, uiCamera, out newInputPos);
 
         return newInputPos;
+    }
+
+    public void SetPause(bool set)
+    {
+        isPause = set;
+    }
+
+    public void SetJoystick(bool set)
+    {
+        objJoystickOut.SetActive(set);
+        objJoystickIn.SetActive(set);
     }
 }

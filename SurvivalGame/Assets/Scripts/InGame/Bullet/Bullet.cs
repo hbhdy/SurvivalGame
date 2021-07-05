@@ -66,6 +66,13 @@ public class Bullet : HSSObject
         if (!isReady)
             return;
 
+        if(SpawnManager.instance.isWaitCheck)
+        {
+            isReady = false;
+
+            HSSObjectPoolManager.instance.SaveObject(key, gameObject);
+        }
+
         Vector3 newPos = transform.position;
 
         if (isChange)
