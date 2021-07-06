@@ -148,10 +148,22 @@ public class SpawnPoint : MonoBehaviour
         {
             info.objLinkedObject = HSSObjectPoolManager.instance.SpawnObject(spawnKeyInfos[index].spawnKey, info.objPoint.transform.position, info.objPoint.transform.rotation, null);
 
-            if(info.objLinkedObject.GetComponent<Enemy>().isBoss)
+            if (spawnKeyInfos[index].isRelativeSpwaner)
             {
-                GameUI.instance.uiBossHpGage.fillAmount = info.objLinkedObject.GetComponent<Enemy>().GetHpRatio();
-                GameUI.instance.objBossHpFrame.SetActive(true);
+                if (spawnKeyInfos[index].objRelativeSpawner != null)
+                {
+                    spawnKeyInfos[index].objRelativeSpawner.SetActive(true);
+                    spawnKeyInfos[index].objRelativeSpawner.GetComponent<RelativeSpawnPoint>().LinkGameObject(info.objLinkedObject);
+                }
+            }
+
+            if (info.objLinkedObject.GetComponent<Enemy>() != null)
+            {
+                if (info.objLinkedObject.GetComponent<Enemy>().isBoss)
+                {
+                    GameUI.instance.uiBossHpGage.fillAmount = info.objLinkedObject.GetComponent<Enemy>().GetHpRatio();
+                    GameUI.instance.objBossHpFrame.SetActive(true);
+                }
             }
 
             info.isLinked = true;

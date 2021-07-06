@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectPoolManager.cs" />
     <Compile Include="Assets\Scripts\Etc\CSVFunction.cs" />
     <Compile Include="Assets\Scripts\Etc\RadarWithFOV2D.cs" />
+    <Compile Include="Assets\Scripts\InGame\ZonePoint.cs" />
     <Compile Include="Assets\Scripts\Etc\DataType.cs" />
     <Compile Include="Assets\Scripts\InGame\Bullet\BarrageData.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObjectCategory.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\InGame\ZonePoint.cs" />
+    <Compile Include="Assets\Scripts\InGame\RelativeSpawnPoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

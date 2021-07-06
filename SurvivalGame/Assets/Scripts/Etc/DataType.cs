@@ -66,4 +66,7 @@ public class SpawnerInfo
 public class SpawnKeyInfo
 {
     public string spawnKey;
+    public bool isRelativeSpwaner = false;
+    public GameObject objRelativeSpawner;
+    public bool isFold = true;
 }

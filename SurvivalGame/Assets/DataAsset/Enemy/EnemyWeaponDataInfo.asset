@@ -62,3 +62,9 @@ MonoBehaviour:
     attackDamage: 20
     criChance: 0
     criDamage: 0
+  - itemCode: WP_Straight_01
+    prefabName: WP_Straight_01
+    objPrefab: {fileID: 3600241953713374099, guid: af047418318f2b747a795cd30d12426a, type: 3}
+    attackDamage: 5
+    criChance: 0
+    criDamage: 0

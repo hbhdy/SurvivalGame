@@ -54,3 +54,8 @@ MonoBehaviour:
     objPrefab: {fileID: 7330748505154071011, guid: 5d3043d5f72eef04cb4f2691085f0f3f, type: 3}
     hp: 20000
     defence: 0
+  - itemCode: BD_Basic_01
+    prefabName: BD_Basic_01
+    objPrefab: {fileID: 7528619329604612084, guid: 3a887a9fff9ee9c40aa9c9cb1e02b3b0, type: 3}
+    hp: 1000
+    defence: 0

@@ -74,17 +74,26 @@ public class SpawnPointEditor : Editor
         for (int i = 0; i < point.spawnKeyInfos.Count; ++i)
         {
             GUILayout.BeginVertical(GUI.skin.box);
+            point.spawnKeyInfos[i].isFold = EditorGUILayout.Foldout(point.spawnKeyInfos[i].isFold, "SpawnKey_" + i.ToString());
 
-            point.spawnKeyInfos[i].spawnKey = EditorGUILayout.TextField("Spawn Key", point.spawnKeyInfos[i].spawnKey);
-
-            if (GUILayout.Button("- Del Key", GUILayout.Width(100)))
+            if (point.spawnKeyInfos[i].isFold)
             {
-                index = i;
-                del = true;
+                point.spawnKeyInfos[i].spawnKey = EditorGUILayout.TextField("Spawn Key", point.spawnKeyInfos[i].spawnKey);
+                point.spawnKeyInfos[i].isRelativeSpwaner = EditorGUILayout.Toggle("Has Spawner", point.spawnKeyInfos[i].isRelativeSpwaner);
+
+                if (point.spawnKeyInfos[i].isRelativeSpwaner)
+                {
+                    point.spawnKeyInfos[i].objRelativeSpawner = (GameObject)EditorGUILayout.ObjectField("Spawner Link", point.spawnKeyInfos[i].objRelativeSpawner, typeof(GameObject), true);
+                }
+
+                if (GUILayout.Button("- Del Key", GUILayout.Width(100)))
+                {
+                    index = i;
+                    del = true;
+                }
+
+                EditorGUILayout.Space();
             }
-
-            EditorGUILayout.Space();
-
             GUILayout.EndVertical();
         }
 

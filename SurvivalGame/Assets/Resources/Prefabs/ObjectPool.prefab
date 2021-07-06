@@ -76,6 +76,10 @@ MonoBehaviour:
     prefab: {fileID: 3992049622139789078, guid: 3e3a1bba5cb0bfc4f9b616a7efb1ba94, type: 3}
     originParent: {fileID: 334929107663668634}
     count: 1
+  - keyName: Enemy_Straight_01
+    prefab: {fileID: 2001500238893303494, guid: 13f32b6833fe7484cb1df0da401ade17, type: 3}
+    originParent: {fileID: 334929107663668634}
+    count: 10
 --- !u!1 &1259604169115939821
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +202,10 @@ MonoBehaviour:
     count: 50
   - keyName: Bullet_Triangle_01
     prefab: {fileID: 5859264753529700655, guid: 0539a44380f1b2c4b88b008066642ab0, type: 3}
+    originParent: {fileID: 5345169044030583769}
+    count: 50
+  - keyName: Bullet_Basic_01
+    prefab: {fileID: 2432342224067940826, guid: 826496b12801b044e9d85d1738caa874, type: 3}
     originParent: {fileID: 5345169044030583769}
     count: 50
 --- !u!1 &8188167116933277132
