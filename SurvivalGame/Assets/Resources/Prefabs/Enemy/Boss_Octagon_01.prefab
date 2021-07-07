@@ -52,6 +52,7 @@ MonoBehaviour:
   objWheel: {fileID: 24739511783287453}
   objHPBarPoint: {fileID: 3468593636641710220}
   haveHUD: 1
+  isBoss: 1
   objHUD: {fileID: 0}
   spawnPoint: {x: 0, y: 0, z: 0}
   weapon: {fileID: 0}

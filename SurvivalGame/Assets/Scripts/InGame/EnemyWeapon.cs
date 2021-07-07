@@ -12,8 +12,9 @@ public class EnemyWeapon : MonoBehaviour
 
     private Barrage barrage;
 
+    [HideInInspector]
+    public RadarWithFOV2D raderFov2D;
     private FOV2D fov2D;
-    private RadarWithFOV2D raderFov2D;
     private Enemy enemy;
 
     private bool isFireReady = true;
@@ -31,6 +32,8 @@ public class EnemyWeapon : MonoBehaviour
 
     public void SetWeaponData()
     {
+        isFireReady = true;
+
         weaponData = Core.RSS.GetEnemyWeaponData(weaponData.itemCode);
 
         barrage = Core.RSS.GetBarrageData(barrageKey);

@@ -60,11 +60,6 @@ public class Body : MonoBehaviour
 
         if (Quaternion.Angle(transform.rotation, objTransformCenter.transform.rotation) > 0.01f)
             transform.rotation = Quaternion.Slerp(transform.rotation, objTransformCenter.transform.rotation, 360f * Time.deltaTime);
-
-        if (eOwner == EOwner.AI)
-        {
-
-        }
     }
 
     public void Hit(float hitDamage, bool critical)

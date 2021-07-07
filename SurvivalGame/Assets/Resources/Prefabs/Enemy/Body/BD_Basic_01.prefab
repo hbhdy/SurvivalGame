@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eOwner: 1
   bodyData:
-    itemCode: BD_Circle_01
+    itemCode: BD_Basic_01
     prefabName: 
     objPrefab: {fileID: 0}
     hp: 0

@@ -6,9 +6,7 @@ public class Wheel : MonoBehaviour
 {
     public EOwner eOwner = EOwner.Player;
 
-    public float moveSpeed = 1.0f;
-    public float rotateSpeed = 360.0f;
-
+    public WheelData wheelData;
 
     [HideInInspector]
     public Vector3 moveDir = Vector3.zero;
@@ -21,19 +19,40 @@ public class Wheel : MonoBehaviour
         rigid2D = GetComponent<Rigidbody2D>();
     }
 
-    public void FixedUpdate()
+    public void SetWheelData()
     {
-        if (!InGameCore.instance.isInGameCoreReady)
-            return;
-
-        if (eOwner == EOwner.AI)
+        if (eOwner == EOwner.Player)
         {
-
+            wheelData = Core.RSS.GetWheelData(wheelData.itemCode);
         }
         else
         {
-
+            wheelData = Core.RSS.GetEnemyWheelData(wheelData.itemCode);
         }
+    }
+
+    //public void FixedUpdate()
+    //{
+    //    if (!InGameCore.instance.isInGameCoreReady)
+    //        return;
+
+    //    if (eOwner == EOwner.AI)
+    //    {
+
+    //    }
+    //    else
+    //    {
+
+    //    }
+    //}
+
+    public void MoveEnemyWheel(Vector3 dir)
+    {
+        Vector3 newPos = transform.position;
+
+        newPos += dir * Time.deltaTime * wheelData.movingSpeed;
+
+        rigid2D.MovePosition(newPos);
     }
 
     public void MoveWheel(float power)
@@ -42,13 +61,13 @@ public class Wheel : MonoBehaviour
         newQt.x = 0.0f;
         newQt.y = 0.0f;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, newQt, rotateSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, newQt, wheelData.rotateSpeed * Time.deltaTime);
 
         moveDir = Vector3.Lerp(moveDir, Joystick.instance.GetDir(), Time.deltaTime);
 
         Vector3 newPos = transform.position;
 
-        newPos += Joystick.instance.GetDir() * moveSpeed * power * Time.deltaTime;
+        newPos += Joystick.instance.GetDir() * wheelData.movingSpeed * power * Time.deltaTime;
         rigid2D.MovePosition(newPos);
 
         rigid2D.angularVelocity = 0.0f;

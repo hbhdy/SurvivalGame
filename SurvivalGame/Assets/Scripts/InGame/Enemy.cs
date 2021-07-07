@@ -44,6 +44,7 @@ public class Enemy : HSSObject
 
         body.SetBodyData();
         weapon.SetWeaponData();
+        wheel.SetWheelData();
 
         prevHp = body.entityStatus.HP;
     }
@@ -55,6 +56,13 @@ public class Enemy : HSSObject
             if (SpawnManager.instance.isWaitCheck)
             {
                 SaveEnemy();
+            }
+
+            if (weapon.raderFov2D.objTarget != null)
+            {
+                Vector3 dir = weapon.raderFov2D.objTarget.transform.position - wheel.transform.position;
+                dir = dir.normalized;
+                wheel.MoveEnemyWheel(dir);
             }
         }
     }

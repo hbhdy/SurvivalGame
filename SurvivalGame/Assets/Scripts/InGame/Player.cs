@@ -49,6 +49,7 @@ public class Player : MonoBehaviour
 
         body.SetBodyData();
         weapon.SetWeaponData();
+        wheel.SetWheelData();
 
         objHUD = GameUI.instance.HUD.GetPlayerHudPack();
         objHUD.GetComponent<HUDPack>().SetSteeringTarget(objWheel);

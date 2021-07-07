@@ -18,4 +18,4 @@ MonoBehaviour:
     prefabName: PlayerWheel_01
     objPrefab: {fileID: 3838179170011392559, guid: 561589cfad7b758409607dfe9d60a2ea, type: 3}
     movingSpeed: 3
-    RotateSpeed: 360
+    rotateSpeed: 360

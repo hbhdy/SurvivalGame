@@ -98,7 +98,7 @@ public class CSVFunction
             tempData[0] = asset.wheelDataList[i].itemCode;
             tempData[1] = asset.wheelDataList[i].prefabName;
             tempData[2] = asset.wheelDataList[i].movingSpeed.ToString();
-            tempData[3] = asset.wheelDataList[i].RotateSpeed.ToString();
+            tempData[3] = asset.wheelDataList[i].rotateSpeed.ToString();
 
             data.Add(tempData);
         }
@@ -147,7 +147,7 @@ public class CSVFunction
             asset.wheelDataList[i].itemCode = data[i]["itemCode"].ToString();
             asset.wheelDataList[i].prefabName = data[i]["prefabName"].ToString();
             asset.wheelDataList[i].movingSpeed = float.Parse(data[i]["MovingSpeed"].ToString());
-            asset.wheelDataList[i].RotateSpeed = float.Parse(data[i]["RotateSpeed"].ToString());
+            asset.wheelDataList[i].rotateSpeed = float.Parse(data[i]["RotateSpeed"].ToString());
         }
     }
     #endregion
@@ -319,7 +319,7 @@ public class CSVFunction
             tempData[0] = asset.wheelDataList[i].itemCode;
             tempData[1] = asset.wheelDataList[i].prefabName;
             tempData[2] = asset.wheelDataList[i].movingSpeed.ToString();
-            tempData[3] = asset.wheelDataList[i].RotateSpeed.ToString();
+            tempData[3] = asset.wheelDataList[i].rotateSpeed.ToString();
 
             data.Add(tempData);
         }
@@ -367,7 +367,7 @@ public class CSVFunction
             asset.wheelDataList[i].itemCode = data[i]["itemCode"].ToString();
             asset.wheelDataList[i].prefabName = data[i]["prefabName"].ToString();
             asset.wheelDataList[i].movingSpeed = float.Parse(data[i]["MovingSpeed"].ToString());
-            asset.wheelDataList[i].RotateSpeed = float.Parse(data[i]["RotateSpeed"].ToString());
+            asset.wheelDataList[i].rotateSpeed = float.Parse(data[i]["RotateSpeed"].ToString());
         }
     }
     #endregion

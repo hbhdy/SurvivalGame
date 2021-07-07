@@ -22,22 +22,22 @@ MonoBehaviour:
   - itemCode: BD_Heart_01
     prefabName: BD_Heart_01
     objPrefab: {fileID: 5617365007280947490, guid: 9bdb225573cdc7a47904c8b19110b73a, type: 3}
-    hp: 1000
+    hp: 2000
     defence: 0
   - itemCode: BD_Hexagon_01
     prefabName: BD_Hexagon_01
     objPrefab: {fileID: 6006764720805804860, guid: 1fa0823b47ebad84885bfde82b1d7321, type: 3}
-    hp: 3000
+    hp: 2000
     defence: 0
   - itemCode: BD_Octagon_01
     prefabName: BD_Octagon_01
     objPrefab: {fileID: 6359858736856364950, guid: 8e88e0631ef3d8f4b964886736e4c8e3, type: 3}
-    hp: 5000
+    hp: 2000
     defence: 0
   - itemCode: BD_Plus_01
     prefabName: BD_Plus_01
     objPrefab: {fileID: 9208558252549144709, guid: 4991e5d307a96a048a07f97dfbf00a05, type: 3}
-    hp: 10000
+    hp: 2000
     defence: 0
   - itemCode: BD_Square_01
     prefabName: BD_Square_01
@@ -47,15 +47,15 @@ MonoBehaviour:
   - itemCode: BD_Star_01
     prefabName: BD_Star_01
     objPrefab: {fileID: 5948874363182852659, guid: b5c67af6e7d6bc94f9b0d73cab31b025, type: 3}
-    hp: 20000
+    hp: 2000
     defence: 0
   - itemCode: BD_Triangle_01
     prefabName: BD_Triangle_01
     objPrefab: {fileID: 7330748505154071011, guid: 5d3043d5f72eef04cb4f2691085f0f3f, type: 3}
-    hp: 20000
+    hp: 2000
     defence: 0
   - itemCode: BD_Basic_01
     prefabName: BD_Basic_01
     objPrefab: {fileID: 7528619329604612084, guid: 3a887a9fff9ee9c40aa9c9cb1e02b3b0, type: 3}
-    hp: 1000
+    hp: 300
     defence: 0

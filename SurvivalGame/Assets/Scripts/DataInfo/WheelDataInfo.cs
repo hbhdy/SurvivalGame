@@ -49,5 +49,5 @@ public class WheelData
     public GameObject objPrefab;
 
     public float movingSpeed = 1f;
-    public float RotateSpeed = 360f;
+    public float rotateSpeed = 360f;
 }

@@ -66,6 +66,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 0
-  moveSpeed: 3
-  rotateSpeed: 360
+  wheelData:
+    itemCode: PlayerWheel_01
+    prefabName: 
+    objPrefab: {fileID: 0}
+    movingSpeed: 1
+    rotateSpeed: 360
   moveDir: {x: 0, y: 0, z: 0}
