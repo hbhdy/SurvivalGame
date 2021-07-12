@@ -12,12 +12,14 @@ public class GameUI : MonoBehaviour
     public HUDPack[] hudPacks;
 
     public PlayerHPState playerHPState;
+
     public GameObject objBossHpFrame;
     public GameObject objWarning;
 
     public Image uiBossHpGage;
-
     public Image uiFadeEffect;
+
+    public Text uiStageText;
 
     public void Awake()
     {
@@ -53,6 +55,7 @@ public class GameUI : MonoBehaviour
 
     public IEnumerator FadeEffectCoroutine()
     {
+        uiStageText.text = "Stage_" + (SpawnManager.instance.nowStageCount + 1).ToString();
         objWarning.SetActive(true);
         float fadeCount = 0;
         uiFadeEffect.color = new Color(0, 0, 0, 0);

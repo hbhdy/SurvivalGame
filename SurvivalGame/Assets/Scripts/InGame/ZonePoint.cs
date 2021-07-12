@@ -37,8 +37,6 @@ public class ZonePoint : MonoBehaviour
         isZoneClear = true;
 
         ZoneChanceRoutine();
-
-        Debug.Log("해당 스테이지 클리어!!!");
     }
 
     public void ActiveZone()

@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPoolManager.cs" />
     <Compile Include="Assets\Scripts\DataInfo\BodyDataInfo.cs" />
     <Compile Include="Assets\Scripts\Etc\CSVReader.cs" />
+    <Compile Include="Assets\Scripts\InGame\RelativeSpawnPoint.cs" />
     <Compile Include="Assets\Scripts\InGame\InGameCore.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSObject.cs" />
     <Compile Include="Assets\Scripts\InGame\Enemy.cs" />
@@ -102,7 +103,9 @@
     <Compile Include="Assets\Scripts\Core\SceneLoadingManager.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
-    <Compile Include="Assets\Scripts\InGame\RelativeSpawnPoint.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Speech.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueAsset.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\DialogueData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

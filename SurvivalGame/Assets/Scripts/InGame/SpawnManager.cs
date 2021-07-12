@@ -29,7 +29,8 @@ public class SpawnManager : MonoBehaviour
 
     public void Start()
     {
-        zonePoints[nowStageCount].ActiveZone();
+        StartCoroutine(StarGameRoutine());
+        //zonePoints[nowStageCount].ActiveZone();
     }
 
     public IEnumerator StarGameRoutine()

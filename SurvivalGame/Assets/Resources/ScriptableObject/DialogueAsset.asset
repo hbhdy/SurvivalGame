@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f219e1a6a0d3f40bfc57c087043d4e, type: 3}
+  m_Name: DialogueAsset
+  m_EditorClassIdentifier: 
+  key: 
+  languageView: 1
+  speech_Lists:
+    speech_List:
+    - key: Circle_Dialogue
+      eActionType: 0
+      eDetailType: 0
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
+      eActionType: 0
+      eDetailType: 0
+      eDialogueType: 2
+      eEndDelayType: 0
+      c_num: 1
+      eCharacterName: 1
+      isCharacterHideOn: 0
+      textList:
+      - "\uC6D0\uC785\uB2C8\uB2E4."
+      - 
+      - 
+      - 
+      isAppearCheck: 1
+      isExitCheck: 0
+      appear_num: 000000000100000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000100000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
+      eActionType: 0
+      eDetailType: 0
+      eDialogueType: 2
+      eEndDelayType: 0
+      c_num: 1
+      eCharacterName: 1
+      isCharacterHideOn: 0
+      textList:
+      - "\uC0C1\uB300 \uD574\uB4DC\uB9AC\uC8E0"
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
+      eActionType: 0
+      eDetailType: 0
+      eDialogueType: 2
+      eEndDelayType: 0
+      c_num: 1
+      eCharacterName: 1
+      isCharacterHideOn: 0
+      textList:
+      - "\uB364\uBE44\uC138\uC694"
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
+      eActionType: 0
+      eDetailType: 0
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 1
+      appear_num: 000000000000000000000000
+      isPosCheck: 000100
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: End
+      eActionType: 0
+      eDetailType: 0
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    listTitle: 
+  start_C_set: 000000000100000002000000030000000400000005000000060000000700000008000000
+  start_C_Array:
+  - None
+  - Circle
+  - Heart
+  - Hexagon
+  - Octagon
+  - Plus
+  - Square
+  - Star
+  - Triangle
+  languageName:
+  - Korean
+  - English
+  - Japanese
+  - Russian

@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 1
-  barrageKey: Custom_Heart_1
+  barrageKeyLists:
+  - Custom_Heart_1
   bulletKey: Bullet_Heart_01
   weaponData:
     itemCode: WP_Heart_01
@@ -55,7 +56,7 @@ MonoBehaviour:
     attackDamage: 1
     criChance: 0
     criDamage: 150
-  dirList: []
+  raderFov2D: {fileID: 0}
 --- !u!114 &3817414307645779704
 MonoBehaviour:
   m_ObjectHideFlags: 0

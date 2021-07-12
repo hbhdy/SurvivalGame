@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 1
-  barrageKey: Custom_Square_1
+  barrageKeyLists:
+  - Custom_Square_1
   bulletKey: Bullet_Square_01
   weaponData:
     itemCode: WP_Square_01
@@ -55,7 +56,7 @@ MonoBehaviour:
     attackDamage: 1
     criChance: 0
     criDamage: 150
-  dirList: []
+  raderFov2D: {fileID: 0}
 --- !u!114 &6349349665378821419
 MonoBehaviour:
   m_ObjectHideFlags: 0

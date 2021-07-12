@@ -64,9 +64,10 @@
     <Compile Include="Assets\Scripts\DataInfo\Editor\WheelDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\InGame\Bullet\Editor\BarrageDataEditor.cs" />
     <Compile Include="Assets\Scripts\Etc\Editor\FOV2DEditor.cs" />
+    <Compile Include="Assets\Scripts\InGame\Editor\RelativeSpawnPointEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\WeaponDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\BodyDataInfoEditor.cs" />
-    <Compile Include="Assets\Scripts\InGame\Editor\RelativeSpawnPointEditor.cs" />
+    <Compile Include="Assets\Scripts\Dialogue\Editor\DialogueAssetEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

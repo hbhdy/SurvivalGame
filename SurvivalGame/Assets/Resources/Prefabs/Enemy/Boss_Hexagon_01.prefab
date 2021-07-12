@@ -207,6 +207,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1686653607674853616, guid: 1de8504fe4dd34c4dbecec56d5bd2620, type: 3}
+      propertyPath: barrageKeyLists.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686653607674853616, guid: 1de8504fe4dd34c4dbecec56d5bd2620, type: 3}
+      propertyPath: barrageKeyLists.Array.data[1]
+      value: Straight_02
+      objectReference: {fileID: 0}
     - target: {fileID: 8670587184735153769, guid: 1de8504fe4dd34c4dbecec56d5bd2620, type: 3}
       propertyPath: m_Name
       value: WP_Hexagon_01

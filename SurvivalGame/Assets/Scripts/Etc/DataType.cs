@@ -2,6 +2,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[System.Serializable]
+public enum EGameLanuage
+{
+    Korean,
+    English,
+    Japanese,
+    Russian,
+    Count
+}
+
+public enum EActionType
+{
+    Dialogue,
+    DisplayImage,
+    ScreenEffect,
+}
+
+public enum EDetailType
+{
+    // DisplayImage
+    Background,
+    Negative,
+
+    // ScreenEffect
+    BlackOut,
+    BlackIn,
+    WhiteOut,
+    WhiteIn,
+    Flash,
+    ZoomIn,
+    ZoomOut,
+}
+
+public enum EDialogueType
+{
+    None,
+    Narration,
+    Dialogue
+}
+
+public enum EEndDelayType
+{
+    None,
+    WaitInput,
+}
+
+[System.Serializable]
+public enum ECharacterName
+{
+    None,
+    Circle, Heart, Hexagon, Octagon,
+    Plus, Square, Star, Triangle,
+}
+
+
 public enum EOwner
 {
     Player,

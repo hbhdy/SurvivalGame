@@ -100,7 +100,7 @@ MonoBehaviour:
   damage: 0
   criChance: 0
   criDamage: 0
-  moveDistance: 15
+  moveDistance: 20
   moveSpeed: 13
   moveDir: {x: 0, y: 1, z: 0}
   changeDir: {x: 0, y: 1, z: 0}

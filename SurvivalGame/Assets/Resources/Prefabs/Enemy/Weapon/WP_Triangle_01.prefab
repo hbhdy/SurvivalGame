@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eOwner: 1
-  barrageKey: Custom_Triangle_1
+  barrageKeyLists:
+  - Custom_Triangle_1
   bulletKey: Bullet_Triangle_01
   weaponData:
     itemCode: WP_Triangle_01
@@ -55,7 +56,7 @@ MonoBehaviour:
     attackDamage: 1
     criChance: 0
     criDamage: 150
-  dirList: []
+  raderFov2D: {fileID: 0}
 --- !u!114 &2448754765305846848
 MonoBehaviour:
   m_ObjectHideFlags: 0

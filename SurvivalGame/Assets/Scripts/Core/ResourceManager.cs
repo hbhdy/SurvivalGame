@@ -16,6 +16,12 @@ public class ResourceManager : HSSManager
 
     public BarrageData barrageData;
 
+    // 다이얼로그는 에셋이 여러개일 수 있음 ( 묶음 관리 )
+    public DialogueData dialogueData = new DialogueData();
+
+    // 다이얼로그 에셋 이름 ( 링크 )
+    public List<string> dialogueNames = new List<string>();
+
     public string imagePath = "";
 
     public override IEnumerator ManagerInitProcessing()
@@ -39,6 +45,13 @@ public class ResourceManager : HSSManager
         yield return StartCoroutine(barrageData.InitData());
 
         yield return StartCoroutine(base.InitManager());
+
+        dialogueData.LoadDialouge(dialogueNames);
+    }
+
+    public List<DialogueDataSet> GetDialogueKeyData(string key)
+    {
+        return dialogueData.GetDialogueKeyData(key);
     }
 
     public GameObject LoadGameObject(string key)

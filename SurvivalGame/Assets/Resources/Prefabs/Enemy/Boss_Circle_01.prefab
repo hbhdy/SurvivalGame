@@ -252,15 +252,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2607966736858722386, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2607966736858722386, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2607966736858722386, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2607966736858722386, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -273,6 +273,14 @@ PrefabInstance:
     - target: {fileID: 2607966736858722386, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467601851278247369, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
+      propertyPath: barrageKeyLists.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467601851278247369, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
+      propertyPath: barrageKeyLists.Array.data[1]
+      value: Straight_02
       objectReference: {fileID: 0}
     - target: {fileID: 6855404546123567952, guid: 2f908a1ad36e8544ebdb380d5278e35a, type: 3}
       propertyPath: m_Name

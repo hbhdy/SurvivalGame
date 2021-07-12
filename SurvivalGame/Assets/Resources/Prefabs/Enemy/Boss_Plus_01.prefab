@@ -234,6 +234,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WP_Plus_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7318682277124046131, guid: 9854a291236d1cf46b4ab0faeb520fe2, type: 3}
+      propertyPath: barrageKeyLists.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7318682277124046131, guid: 9854a291236d1cf46b4ab0faeb520fe2, type: 3}
+      propertyPath: barrageKeyLists.Array.data[1]
+      value: Straight_02
+      objectReference: {fileID: 0}
     - target: {fileID: 8196288187564165288, guid: 9854a291236d1cf46b4ab0faeb520fe2, type: 3}
       propertyPath: m_RootOrder
       value: 0

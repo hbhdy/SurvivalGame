@@ -77,7 +77,7 @@ public class Bullet : HSSObject
 
         if (isChange)
         {
-            if (t >= 0.8f)
+            if (t >= 0.6f)
             {
                 newPos += changeDir * moveSpeed * Time.deltaTime;
             }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7486111292932732871}
   - component: {fileID: 6416726148268578221}
   m_Layer: 5
-  m_Name: BossWarning
+  m_Name: StageFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -934,6 +934,7 @@ MonoBehaviour:
   objWarning: {fileID: 709000863609843096}
   uiBossHpGage: {fileID: 952347247849415735}
   uiFadeEffect: {fileID: 5086858707209707938}
+  uiStageText: {fileID: 1747516653001437445}
 --- !u!82 &5052921002979578532
 AudioSource:
   m_ObjectHideFlags: 0

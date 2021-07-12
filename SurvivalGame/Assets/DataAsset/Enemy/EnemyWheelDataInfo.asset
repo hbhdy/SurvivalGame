@@ -17,5 +17,5 @@ MonoBehaviour:
   - itemCode: WH_01
     prefabName: WH_01
     objPrefab: {fileID: 6919475554931141773, guid: 2df49604d62b2ae4ca442172027bee64, type: 3}
-    movingSpeed: 3
+    movingSpeed: 1.5
     rotateSpeed: 360
