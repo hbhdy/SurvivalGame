@@ -40,6 +40,8 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
         zonePoints[nowStageCount].ActiveZone();
+
+        DialogueUI.instance.StartDialogue("Circle_Dialogue");
     }
 
     public void NextStageRoutine()

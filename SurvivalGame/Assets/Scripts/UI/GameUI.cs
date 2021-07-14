@@ -21,6 +21,9 @@ public class GameUI : MonoBehaviour
 
     public Text uiStageText;
 
+    [HideInInspector]
+    public bool isPause = false;
+
     public void Awake()
     {
         if (instance == null)
@@ -29,6 +32,9 @@ public class GameUI : MonoBehaviour
 
     public void Update()
     {
+        if (isPause)
+            return;
+
         if (!Core.instance.isCoreReady)
             return;
 
@@ -78,5 +84,31 @@ public class GameUI : MonoBehaviour
         }
         uiFadeEffect.color = new Color(0, 0, 0, 0);
         objWarning.SetActive(false);
+    }
+
+    public void HudsOnOff(bool set)
+    {
+        if (!set)
+        {
+            hudPacks = HUD.GetComponentsInChildren<HUDPack>(true);
+
+            for (int i = 0; i < hudPacks.Length; i++)
+            {
+                if (hudPacks[i].gameObject != null)
+                    hudPacks[i].gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            hudPacks = HUD.GetComponentsInChildren<HUDPack>(true);
+
+            for (int i = 0; i < hudPacks.Length; i++)
+                hudPacks[i].gameObject.SetActive(true);
+        }
+    }
+
+    public void SetPause(bool set)
+    {
+        isPause = set;
     }
 }

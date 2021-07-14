@@ -7,6 +7,10 @@ public class DialogueData
 {
     public List<DialogueAsset> dialogueAsset = new List<DialogueAsset>();
 
+    public CharacterNameAsset nameAsset;
+
+    public Dictionary<string, NameTextData> dialogueName = new Dictionary<string, NameTextData>();
+
     public void LoadDialouge(List<string> names)
     {
         dialogueAsset.Clear();
@@ -16,7 +20,7 @@ public class DialogueData
             dialogueAsset.Add(Resources.Load<DialogueAsset>("ScriptableObject/DialogueAsset"));
         }
 
-        //nameAsset = Resources.Load<CharacterNameAsset>("ScriptableObject/CharaterNameText");
+        nameAsset = Resources.Load<CharacterNameAsset>("ScriptableObject/CharaterNameText");
 
         for (int i = 0; i < dialogueAsset.Count; ++i)
         {
@@ -37,5 +41,21 @@ public class DialogueData
 
         Debug.LogError("다이얼로그 키가 없거나 잘못 입력되었습니다.");
         return null;
+    }
+
+    public Dictionary<string, NameTextData> GetNameData()
+    {
+        dialogueName.Clear();
+
+        List<NameTextData> nameData = new List<NameTextData>();
+
+        nameData = nameAsset.GetNameData();
+
+        for (int i = 0; i < nameData.Count; i++)
+        {
+            dialogueName.Add(nameData[i].editorName, nameData[i]);
+        }
+
+        return dialogueName;
     }
 }

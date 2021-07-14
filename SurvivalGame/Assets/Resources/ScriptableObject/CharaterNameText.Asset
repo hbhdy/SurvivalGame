@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c282a1bd02bf5f541927d097e464be58, type: 3}
+  m_Name: CharaterNameText
+  m_EditorClassIdentifier: 
+  nameData:
+  - editorName: Circle
+    viewName:
+    - "\uC6D0"
+    - 
+    - 
+    - 
+  - editorName: Heart
+    viewName:
+    - "\uD558\uD2B8"
+    - 
+    - 
+    - 
+  - editorName: Hexagon
+    viewName:
+    - "\uC721\uAC01"
+    - 
+    - 
+    - 
+  - editorName: Octagon
+    viewName:
+    - "\uC624\uAC01"
+    - 
+    - 
+    - 
+  - editorName: Plus
+    viewName:
+    - "\uC2ED\uC790"
+    - 
+    - 
+    - 
+  - editorName: Square
+    viewName:
+    - "\uC0AC\uAC01"
+    - 
+    - 
+    - 
+  - editorName: Star
+    viewName:
+    - "\uBCC4"
+    - 
+    - 
+    - 
+  - editorName: Triangle
+    viewName:
+    - "\uC0BC\uAC01"
+    - 
+    - 
+    - 

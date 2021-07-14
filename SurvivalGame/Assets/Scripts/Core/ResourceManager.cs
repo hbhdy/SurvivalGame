@@ -54,6 +54,12 @@ public class ResourceManager : HSSManager
         return dialogueData.GetDialogueKeyData(key);
     }
 
+    public Dictionary<string, NameTextData> GetNameText()
+    {
+        dialogueData.GetNameData();
+        return dialogueData.dialogueName;
+    }
+
     public GameObject LoadGameObject(string key)
     {
         return Resources.Load<GameObject>(key);

@@ -69,4 +69,18 @@ public class InGameCore : MonoBehaviour
 
         isInGameCoreReady = true;
     }
+
+    public void GamePause()
+    {
+        Joystick.instance.SetPause(true);
+        GameUI.instance.SetPause(true);
+        Time.timeScale = 0;
+    }
+
+    public void GameResume()
+    {
+        Joystick.instance.SetPause(false);
+        GameUI.instance.SetPause(false);
+        Time.timeScale = 1;
+    }
 }

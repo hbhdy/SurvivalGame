@@ -39,6 +39,72 @@ MonoBehaviour:
       strValue: 
       floatValue: 0
     - key: 
+      eActionType: 2
+      eDetailType: 2
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
+      eActionType: 1
+      eDetailType: 0
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: Gray
+      floatValue: 0
+    - key: 
+      eActionType: 2
+      eDetailType: 3
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
       eActionType: 0
       eDetailType: 0
       eDialogueType: 2
@@ -105,6 +171,50 @@ MonoBehaviour:
       strValue: 
       floatValue: 0
     - key: 
+      eActionType: 2
+      eDetailType: 2
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
+      eActionType: 1
+      eDetailType: 0
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: End
+      floatValue: 0
+    - key: 
       eActionType: 0
       eDetailType: 0
       eDialogueType: 0
@@ -121,6 +231,28 @@ MonoBehaviour:
       isExitCheck: 1
       appear_num: 000000000000000000000000
       isPosCheck: 000100
+      eAppearCharacterName: 000000000000000000000000
+      endDeleyTime: 0
+      isFadeCheck: 0
+      strValue: 
+      floatValue: 0
+    - key: 
+      eActionType: 2
+      eDetailType: 3
+      eDialogueType: 0
+      eEndDelayType: 0
+      c_num: 0
+      eCharacterName: 0
+      isCharacterHideOn: 0
+      textList:
+      - 
+      - 
+      - 
+      - 
+      isAppearCheck: 0
+      isExitCheck: 0
+      appear_num: 000000000000000000000000
+      isPosCheck: 000000
       eAppearCharacterName: 000000000000000000000000
       endDeleyTime: 0
       isFadeCheck: 0

@@ -32,8 +32,6 @@ public enum EDetailType
     WhiteOut,
     WhiteIn,
     Flash,
-    ZoomIn,
-    ZoomOut,
 }
 
 public enum EDialogueType
