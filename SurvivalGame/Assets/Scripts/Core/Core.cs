@@ -54,19 +54,16 @@ public class Core : MonoBehaviour
 
         if (!GameEngine.instance.isDev)
         {
-            yield return StartCoroutine(LOADING.SceneUnLoad("Start"));
-
-            yield return StartCoroutine(LOADING.SceneLoadingWithAsync("Title"));
+            yield return StartCoroutine(LOADING.SceneLoadingWithAsync("Lobby"));
 
             Debug.Log("Call Title");
         }
-
 
         // 추후 위치가 이동될 수 있음 ( 언어 세팅 )
         //Helper.ChangeLanguageSetting(EGameLanuage.Korean);
     }
 
-    // 짧고 알기 쉽게 명명하기 위함 ( 제약조건 HSSManager )
+    // 짧고 알기 쉽게 명명하기 위함 ( 상속 조건 HSSManager )
     public T Get<T>() where T : HSSManager
     {
         var type = typeof(T);

@@ -108,6 +108,8 @@
     <Compile Include="Assets\Scripts\ObjectPool\HSSUIObjectPool.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
     <Compile Include="Assets\Scripts\Dialogue\CharacterNameAsset.cs" />
+    <Compile Include="Assets\Scripts\UI\LoadingUI.cs" />
+    <Compile Include="Assets\Scripts\UI\LobbyUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

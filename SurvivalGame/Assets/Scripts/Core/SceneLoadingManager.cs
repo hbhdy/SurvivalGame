@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadingManager : HSSManager
 {
-
     private float currentProgress = 0.0f;
     private float targetProgress = 0.0f;
 
@@ -42,13 +41,15 @@ public class SceneLoadingManager : HSSManager
         {
             currentProgress = Mathf.MoveTowards(currentProgress, 1.0f, 0.01f);
 
+            LoadingUI.instance.SetLoadingGage(currentProgress);
             yield return new WaitForSeconds(0.01f);
         }
 
-        yield return null;
+        yield return new WaitUntil(() => InGameCore.instance.isInGameCoreReady);
+
+        LoadingUI.instance.SetActiveLoadingUI(false);
     }
 
-    // 비동기 씬 연결
     public IEnumerator SceneLoadingWithAsync(string targetScene)
     {
         AsyncOperation async = SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);
@@ -66,6 +67,25 @@ public class SceneLoadingManager : HSSManager
         {
             yield return null;
         }
+
+        yield return async;
+    }
+
+    // 비동기 씬 연결
+    public IEnumerator SceneLoadingWithAsyncUI(string targetScene)
+    {
+        LoadingUI.instance.SetActiveLoadingUI(true);
+
+        AsyncOperation async = SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);
+
+        async.allowSceneActivation = false;
+
+        while (async.progress < 0.9f)
+        {
+            yield return null;
+        }
+
+        async.allowSceneActivation = true;
 
         StartTargetSceneSync();
 

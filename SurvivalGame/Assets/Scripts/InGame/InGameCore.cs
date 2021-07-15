@@ -44,9 +44,15 @@ public class InGameCore : MonoBehaviour
         HSSObjectPoolManager.instance.MakeObjectPool();
         // 씬 초기화하면서 UI 오브젝트풀의 설정된 UI 생성
         HSSUIObjectPoolManager.instance.MakeObjectPool();
-        // 이후 로딩 프로세스 작업 필요
+
+        yield return StartCoroutine(playerSetting.AssemblePlayerDev());
+
+        playerCamera.SetTrackingTarget(playerSetting.player.objWheel);
+        playerCamera.SetReady(true);
 
         yield return null;
+
+        isInGameCoreReady = true;
     }
 
     // 인게임에서 실행하므로 별도의 로딩을 추가하지 않음

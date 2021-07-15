@@ -55,8 +55,7 @@ public class ZonePoint : MonoBehaviour
         Joystick.instance.SetPause(true);
         Joystick.instance.OnPointerUp(Vector2.zero);
 
-        PlayerSetting.instance.PlayerResetPosition();
-        GameUI.instance.FadeEffectRoutine();
+        PlayerSetting.instance.PlayerResetPosition();     
         SpawnManager.instance.NextStageRoutine();
     }
 }

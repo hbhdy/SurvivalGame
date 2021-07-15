@@ -52,15 +52,19 @@ public class SpawnManager : MonoBehaviour
     public IEnumerator NextStageCoroutine()
     {
         isWaitCheck = true;
-        yield return new WaitForSeconds(5.0f);
-
         if (zonePoints[nowStageCount].isZoneClear)
         {
             zonePoints[nowStageCount].DeactiveZone();
 
             nowStageCount++;
-            zonePoints[nowStageCount].ActiveZone();
         }
+        GameUI.instance.FadeEffectRoutine();
+
+        yield return new WaitForSeconds(5.0f);
+
+        nowStageCount++;
+        zonePoints[nowStageCount].ActiveZone();
+
         isWaitCheck = false;
 
         Joystick.instance.SetPause(false);
