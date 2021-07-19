@@ -59,7 +59,6 @@ public class Core : MonoBehaviour
             Debug.Log("Call Title");
         }
 
-        // 추후 위치가 이동될 수 있음 ( 언어 세팅 )
         //Helper.ChangeLanguageSetting(EGameLanuage.Korean);
     }
 
