@@ -23,6 +23,14 @@ public class Core : MonoBehaviour
     [HideInInspector]
     public bool isCoreReady = false;
 
+    // 짧고 알기 쉽게 명명하기 위함 ( 상속 조건 HSSManager )
+    public T Get<T>() where T : HSSManager
+    {
+        var type = typeof(T);
+
+        return dicManagers.ContainsKey(type) ? (T)dicManagers[type] : null;
+    }
+
     public void Awake()
     {
         if (instance == null)
@@ -59,14 +67,6 @@ public class Core : MonoBehaviour
             Debug.Log("Call Title");
         }
 
-        //Helper.ChangeLanguageSetting(EGameLanuage.Korean);
-    }
-
-    // 짧고 알기 쉽게 명명하기 위함 ( 상속 조건 HSSManager )
-    public T Get<T>() where T : HSSManager
-    {
-        var type = typeof(T);
-
-        return dicManagers.ContainsKey(type) ? (T)dicManagers[type] : null;
+        UtilFunction.ChangeLanguageSetting(EGameLanuage.Korean);
     }
 }

@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\DataInfo\Editor\WeaponDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\DataInfo\Editor\BodyDataInfoEditor.cs" />
     <Compile Include="Assets\Scripts\Dialogue\Editor\CharacterNameWindowEditor.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\Editor\LocalizedDataInfoEditor.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\Editor\LocalizedDataInfoWindowEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

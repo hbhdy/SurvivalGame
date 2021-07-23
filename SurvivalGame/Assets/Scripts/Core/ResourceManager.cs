@@ -14,6 +14,8 @@ public class ResourceManager : HSSManager
     public BodyDataInfo enemyBodyDataInfo;
     public WheelDataInfo enemyWheelDataInfo;
 
+    public LocalizedDataInfo localDataInfo;
+
     public BarrageData barrageData;
 
     // 다이얼로그는 에셋이 여러개일 수 있음 ( 묶음 관리 )
@@ -42,11 +44,24 @@ public class ResourceManager : HSSManager
         yield return StartCoroutine(enemyBodyDataInfo.InitData());
         yield return StartCoroutine(enemyWheelDataInfo.InitData());
 
+        yield return StartCoroutine(localDataInfo.InitData());
+
         yield return StartCoroutine(barrageData.InitData());
 
         yield return StartCoroutine(base.InitManager());
 
         dialogueData.LoadDialouge(dialogueNames);
+    }
+
+    public void SetCurrentLanguage(EGameLanuage lang)
+    {
+        localDataInfo.SetCurrentLanguage(lang.ToString());
+        PlayerPrefs.SetString("Language",lang.ToString());
+    }
+
+    public string GetLocalUIText(string key)
+    {
+        return localDataInfo.GetUITextData(key);
     }
 
     public List<DialogueDataSet> GetDialogueKeyData(string key)
