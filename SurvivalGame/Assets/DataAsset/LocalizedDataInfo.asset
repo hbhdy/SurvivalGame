@@ -20,6 +20,36 @@ MonoBehaviour:
     - key: English
       value: Start
     - key: Japanese
+      value: "\u958B\u59CB"
+    - key: Russian
+      value: 
+  - mainKey: New828
+    valueList:
+    - key: Korean
+      value: 
+    - key: English
+      value: 
+    - key: Japanese
+      value: 
+    - key: Russian
+      value: 
+  - mainKey: New350
+    valueList:
+    - key: Korean
+      value: 
+    - key: English
+      value: 
+    - key: Japanese
+      value: 
+    - key: Russian
+      value: 
+  - mainKey: New252
+    valueList:
+    - key: Korean
+      value: 
+    - key: English
+      value: 
+    - key: Japanese
       value: 
     - key: Russian
       value: 

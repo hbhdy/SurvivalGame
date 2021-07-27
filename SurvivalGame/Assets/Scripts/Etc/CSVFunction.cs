@@ -527,4 +527,93 @@ public class CSVFunction
         }
     }
     #endregion
+
+    #region [CSV] Localized Data Info
+    public static void LocalizedDataWriter(LocalizedDataInfo asset)
+    {
+        List<string[]> data = new List<string[]>();
+
+        string[] tempData = new string[5];
+        tempData[0] = "Key";
+        tempData[1] = "Korean";
+        tempData[2] = "English";
+        tempData[3] = "Japanese";
+        tempData[4] = "Russian";
+
+        data.Add(tempData);
+
+        for (int i = 0; i < asset.dataList.Count; i++)
+        {
+            tempData = new string[6];
+            tempData[0] = asset.dataList[i].mainKey;
+            tempData[1] = asset.dataList[i].valueList[0].value;
+            tempData[2] = asset.dataList[i].valueList[1].value;
+            tempData[3] = asset.dataList[i].valueList[2].value;
+            tempData[4] = asset.dataList[i].valueList[3].value;
+
+            data.Add(tempData);
+        }
+
+        string[][] output = new string[data.Count][];
+
+        for (int i = 0; i < output.Length; i++)
+        {
+            output[i] = data[i];
+        }
+
+        int length = output.GetLength(0);
+        string delimiter = ",";
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int index = 0; index < length; index++)
+        {
+            sb.AppendLine(string.Join(delimiter, output[index]));
+        }
+
+        // 임의 경로
+        string filePath = Application.dataPath + "/CSVFile/" + "LocalizedDataInfo.csv";
+
+        StreamWriter outStream = File.CreateText(filePath);
+        outStream.WriteLine(sb);
+        outStream.Close();
+    }
+
+    public static void LocalizedDataReader(LocalizedDataInfo asset)
+    {
+        // 지정된 위치의 파일 읽기
+        List<Dictionary<string, object>> data = CSVReader.FileRead("LocalizedDataInfo.csv");
+
+        asset.dataList.Clear();
+
+        for (int i = 0; i < data.Count; i++)
+            asset.dataList.Add(new DoubleKeyData());
+
+        for(int i = 0; i < asset.dataList.Count; i++)
+        {
+            asset.dataList[i].valueList.Clear();
+            for (int j = 0; j < (int)EGameLanuage.Count; j++)
+            {
+                asset.dataList[i].Add(i.ToString(), ((EGameLanuage)j).ToString(), "");
+            }
+        }
+
+        for (int i = 0; i < data.Count; i++)
+        {
+            asset.dataList[i].mainKey = data[i]["Key"].ToString();
+
+            asset.dataList[i].valueList[0].key = EGameLanuage.Korean.ToString();
+            asset.dataList[i].valueList[0].value = data[i]["Korean"].ToString();
+
+            asset.dataList[i].valueList[1].key = EGameLanuage.English.ToString();
+            asset.dataList[i].valueList[1].value = data[i]["English"].ToString();
+
+            asset.dataList[i].valueList[2].key = EGameLanuage.Japanese.ToString();
+            asset.dataList[i].valueList[2].value = data[i]["Japanese"].ToString();
+
+            asset.dataList[i].valueList[3].key = EGameLanuage.Russian.ToString();
+            asset.dataList[i].valueList[3].value = data[i]["Russian"].ToString();
+        }
+    }
+    #endregion
 }
