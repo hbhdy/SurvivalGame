@@ -35,7 +35,7 @@ public class HSSObjectPool : MonoBehaviour
             obj.GetComponent<HSSObject>().SetKey(poolKey);
 
             obj.SetActive(false);
-            obj.name = obj.GetInstanceID().ToString();
+            obj.name = targetObj.name.ToString() + obj.GetInstanceID().ToString();
 
             objectPool.Push(obj);
         }

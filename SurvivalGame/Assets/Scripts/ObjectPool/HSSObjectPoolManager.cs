@@ -8,11 +8,11 @@ public class HSSObjectPoolManager : MonoBehaviour
 {
     public static HSSObjectPoolManager instance = null;
 
-    // 카테고리를 나눠서 관리하기 위함 ( 적, 총알 등등 )
+    // 카테고리를 나눠서 인스펙터상 편리하게 관리하기 위함 ( 적, 총알 등등 )
     [HideInInspector]
     public HSSObjectCategory[] poolCategories;
 
-    // 나눠진 카테고리를 모으기 위함
+    // 나눠진 카테고리를 내부적으로는 모아서 관리 및 처리함
     [HideInInspector]
     public ObjectInfo[] poolTable;
 
