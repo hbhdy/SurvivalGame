@@ -50,6 +50,7 @@ public class SceneLoadingManager : HSSManager
         LoadingUI.instance.SetActiveLoadingUI(false);
     }
 
+    // 씬 전환
     public IEnumerator SceneLoadingWithAsync(string targetScene)
     {
         AsyncOperation async = SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);
@@ -71,7 +72,7 @@ public class SceneLoadingManager : HSSManager
         yield return async;
     }
 
-    // 비동기 씬 연결
+    // 씬 전환 및 로딩 표시
     public IEnumerator SceneLoadingWithAsyncUI(string targetScene)
     {
         LoadingUI.instance.SetActiveLoadingUI(true);

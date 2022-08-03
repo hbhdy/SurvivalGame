@@ -10,6 +10,7 @@ public class LoadingUI : MonoBehaviour
     public GameObject objBack;
     public GameObject objBar;
     public Image uiLoadingGage;
+    public Text gageText;
 
     public void Awake()
     {
@@ -31,6 +32,7 @@ public class LoadingUI : MonoBehaviour
     public void SetLoadingGage(float gage)
     {
         uiLoadingGage.fillAmount = gage;
+        gageText.text = string.Format("{0:0.00}%", gage * 100f);
     }
 
     public void SetActiveLoadingUI(bool set)

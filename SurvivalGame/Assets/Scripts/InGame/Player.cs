@@ -12,20 +12,14 @@ public class Player : MonoBehaviour
     [HideInInspector]
     public GameObject objHUD = null;
 
-    [HideInInspector]
-    public Weapon weapon;
-    [HideInInspector]
-    public Body body;
-    [HideInInspector]
-    public Wheel wheel;
+    private HUDPack hudPack;
+    private Weapon weapon;
+    private Body body;
+    private Wheel wheel;
 
-    [HideInInspector]
-    public AssembleData assembleData;
-
-    [HideInInspector]
-    public bool isMoving = false;
-    [HideInInspector]
-    public Vector3 moveDir = Vector3.zero;
+    private AssembleData assembleData;
+    private bool isMoving = false;
+    private Vector3 moveDir = Vector3.zero;
 
     private Vector3 originPos;
     private Quaternion originQt;
@@ -52,7 +46,9 @@ public class Player : MonoBehaviour
         wheel.SetWheelData();
 
         objHUD = GameUI.instance.HUD.GetPlayerHudPack();
-        objHUD.GetComponent<HUDPack>().SetSteeringTarget(objWheel);
+
+        hudPack = UtilFunction.Find<HUDPack>(objHUD.transform);
+        hudPack.SetSteeringTarget(objWheel);
 
         GameUI.instance.playerHPState.LinkBody(body);
 
@@ -100,7 +96,7 @@ public class Player : MonoBehaviour
 
         float rate = body.entityStatus.useHP / (float)body.entityStatus.HP;
 
-        objHUD.GetComponent<HUDPack>().MakeDamageText(true, totalDamage);
+        hudPack.MakeDamageText(true, totalDamage);
 
         GameUI.instance.playerHPState.CalcHPState();
     }

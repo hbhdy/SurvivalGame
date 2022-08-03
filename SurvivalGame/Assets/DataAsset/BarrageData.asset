@@ -152,7 +152,7 @@ MonoBehaviour:
     fireDelay: 3
     bulletCount: 1
     isFold: 0
-    isTargetOn: 1
+    isTargetOn: 0
     patten:
     - boolDir: 000000000000000000000000000000
     - boolDir: 000000000000000000000000000000

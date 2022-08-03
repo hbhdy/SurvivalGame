@@ -6,14 +6,14 @@ public class PlayerSetting : MonoBehaviour
 {
     public static PlayerSetting instance = null;
 
+    private GameObject objPlayer;
+
     public GameObject objStartMarker;
 
-    [HideInInspector]
-    public GameObject objPlayer;
+    public AssembleData dummyPlayer;
+
     [HideInInspector]
     public Player player;
-
-    public AssembleData dummyPlayer;
 
     [HideInInspector]
     public AssembleData inGamePlayer = new AssembleData();
@@ -64,15 +64,7 @@ public class PlayerSetting : MonoBehaviour
 
         inGamePlayer.wheelData.id = data.wheelData.id;
         inGamePlayer.wheelData.key = data.wheelData.key;
-        inGamePlayer.wheelData.level = data.wheelData.level;
-
-        //ConnectKeyData weapon = new ConnectKeyData();
-        //weapon.slotKey = data.weaponKeyList.slotKey;
-        //weapon.weaponData.id = data.weaponKeyList.weaponData.id;
-        //weapon.weaponData.key = data.weaponKeyList.weaponData.key;
-        //weapon.weaponData.level = data.weaponKeyList.weaponData.level;
-
-        //inGamePlayer.weaponKeyList = weapon;       
+        inGamePlayer.wheelData.level = data.wheelData.level;    
     }
 
     public void PlayerResetPosition()

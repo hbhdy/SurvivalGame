@@ -16,15 +16,11 @@ public class Enemy : HSSObject
     [HideInInspector]
     public GameObject objHUD = null;
 
-    [HideInInspector]
-    public Vector3 spawnPoint;
-
-    [HideInInspector]
-    public EnemyWeapon weapon;
-    [HideInInspector]
-    public Body body;
-    [HideInInspector]
-    public Wheel wheel;
+    private HUDPack hUDPack;
+    private EnemyWeapon weapon;
+    private Body body;
+    private Wheel wheel;
+    private Vector3 spawnPoint;
 
     [HideInInspector]
     public bool isLive = false;
@@ -83,9 +79,11 @@ public class Enemy : HSSObject
         if(haveHUD)
         {
             objHUD = GameUI.instance.HUD.MackHudPack();
-            objHUD.GetComponent<HUDPack>().SetSteeringTarget(objHPBarPoint);
-            objHUD.GetComponent<HUDPack>().SetGage(1.0f);
-            objHUD.GetComponent<HUDPack>().Following();
+
+            hUDPack = UtilFunction.Find<HUDPack>(objHUD.transform);
+            hUDPack.SetSteeringTarget(objHPBarPoint);
+            hUDPack.SetGage(1.0f);
+            hUDPack.Following();
 
             objHUD.SetActive(true);
         }
@@ -103,9 +101,8 @@ public class Enemy : HSSObject
 
         float rate = body.entityStatus.useHP / (float)body.entityStatus.HP;
 
-        objHUD.GetComponent<HUDPack>().MakeDamageText(false, totalDamage);
-
-        objHUD.GetComponent<HUDPack>().SetGage(rate);
+        hUDPack.MakeDamageText(false, totalDamage);
+        hUDPack.SetGage(rate);
 
         if(isBoss)
         {
@@ -134,7 +131,7 @@ public class Enemy : HSSObject
         if (isBoss)
             GameUI.instance.objBossHpFrame.SetActive(false);
 
-        objHUD.GetComponent<HUDPack>().SetHPBar(false);
+        hUDPack.SetHPBar(false);
 
         Invoke("SaveInPool", 3.0f);
     }
@@ -143,6 +140,7 @@ public class Enemy : HSSObject
     {
         HSSObjectPoolManager.instance.SaveObject(key, gameObject);
 
+        hUDPack = null;
         Destroy(objHUD);
     }
 }

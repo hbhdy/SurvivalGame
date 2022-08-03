@@ -173,7 +173,7 @@ public class Joystick : MonoBehaviour
             if (force > 1.0f)
                 force = 1.0f;
 
-            return 1.0f;
+            return force;
         }
         else
             return 0.0f;

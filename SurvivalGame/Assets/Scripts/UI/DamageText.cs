@@ -19,7 +19,7 @@ public class DamageText : HSSUIObject
     }
     public void SetText(int damage)
     {
-        if (damage == 0)
+        if (damage <= 0)
         {
             uiDamage.text = "miss";
         }
