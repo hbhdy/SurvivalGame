@@ -35,7 +35,7 @@ public class HSSObjectPool : MonoBehaviour
             obj.GetComponent<HSSObject>().SetKey(poolKey);
 
             obj.SetActive(false);
-            obj.name = targetObj.name.ToString() + obj.GetInstanceID().ToString();
+            obj.name = string.Format("{0}_{1}", targetObj.name, obj.GetInstanceID());
 
             objectPool.Push(obj);
         }
@@ -45,7 +45,7 @@ public class HSSObjectPool : MonoBehaviour
     {
         // 풀에서 없으면 추가
         if (objectPool.Count == 0)
-            MakeObjectPool(1);
+            MakeObjectPool(4);
 
         // 풀에서 빼서 할당
         GameObject obj = objectPool.Pop();

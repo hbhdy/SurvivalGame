@@ -19,7 +19,6 @@ public class HSSObjectPoolManager : MonoBehaviour
     // 키값과 해당 종류의 오브젝트 보관
     private Dictionary<string, HSSObjectPool> pools = new Dictionary<string, HSSObjectPool>();
 
-
     public void Awake()
     {
         if (instance == null)
@@ -33,6 +32,7 @@ public class HSSObjectPoolManager : MonoBehaviour
         for (int i = 0; i < poolCategories.Length; i++)
         {
             maxCount += poolCategories[i].GetTableLength();
+            poolCategories[i].SetObjectInfoData();
         }
 
         if (poolCategories.Length > 0)
@@ -41,6 +41,7 @@ public class HSSObjectPoolManager : MonoBehaviour
             poolTable = new ObjectInfo[maxCount];
 
             int index = 0;
+
             for (int i = 0; i < poolCategories.Length; i++)
             {
                 // 깊은 복사
@@ -63,8 +64,8 @@ public class HSSObjectPoolManager : MonoBehaviour
 
             if (poolTable[i].originParent != null)
                 pool = new HSSObjectPool(poolTable[i].keyName, poolTable[i].prefab, poolTable[i].count, poolTable[i].originParent);
-            else
-                pool = new HSSObjectPool(poolTable[i].keyName, poolTable[i].prefab, poolTable[i].count, this.gameObject);
+            //else
+            //    pool = new HSSObjectPool(poolTable[i].keyName, poolTable[i].prefab, poolTable[i].count, this.gameObject);
 
             pools.Add(poolTable[i].keyName, pool);
         }
@@ -104,8 +105,11 @@ public class HSSObjectPoolManager : MonoBehaviour
 [System.Serializable]
 public struct ObjectInfo
 {
+    [HideInInspector]
     public string keyName;
-    public GameObject prefab;
+    [HideInInspector]
     public GameObject originParent;
+
+    public GameObject prefab;
     public int count;
 }
