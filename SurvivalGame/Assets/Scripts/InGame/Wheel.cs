@@ -31,21 +31,6 @@ public class Wheel : MonoBehaviour
         }
     }
 
-    //public void FixedUpdate()
-    //{
-    //    if (!InGameCore.instance.isInGameCoreReady)
-    //        return;
-
-    //    if (eOwner == EOwner.AI)
-    //    {
-
-    //    }
-    //    else
-    //    {
-
-    //    }
-    //}
-
     public void MoveEnemyWheel(Vector3 dir)
     {
         Vector3 newPos = transform.position;

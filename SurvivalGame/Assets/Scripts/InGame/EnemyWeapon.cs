@@ -115,25 +115,28 @@ public class EnemyWeapon : MonoBehaviour
                     if (!enemy.isLive)
                         yield break;
 
-                    if (barrage[nowBarrageNum].isTargetOn)
+                    if (raderFov2D.objTarget != null)
                     {
-                        Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
-                        straightDir = straightDir.normalized;
+                        if (barrage[nowBarrageNum].isTargetOn)
+                        {
+                            Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                            straightDir = straightDir.normalized;
 
-                        for (int i = 0; i < dicDirLists[nowBarrageNum].Count; i++)
-                        {
-                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                            bullet.GetComponent<Bullet>().SetBulletDoubleDirection(dicDirLists[nowBarrageNum][i], straightDir);
-                            bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                            for (int i = 0; i < dicDirLists[nowBarrageNum].Count; i++)
+                            {
+                                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                                bullet.GetComponent<Bullet>().SetBulletDoubleDirection(dicDirLists[nowBarrageNum][i], straightDir);
+                                bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                            }
                         }
-                    }
-                    else
-                    {
-                        for (int i = 0; i < dicDirLists[nowBarrageNum].Count; i++)
+                        else
                         {
-                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                            bullet.GetComponent<Bullet>().SetBulletDirection(dicDirLists[nowBarrageNum][i]);
-                            bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                            for (int i = 0; i < dicDirLists[nowBarrageNum].Count; i++)
+                            {
+                                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                                bullet.GetComponent<Bullet>().SetBulletDirection(dicDirLists[nowBarrageNum][i]);
+                                bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                            }
                         }
                     }
                     yield return new WaitForSeconds(barrage[nowBarrageNum].fireInterval);
@@ -147,17 +150,19 @@ public class EnemyWeapon : MonoBehaviour
                     if (!enemy.isLive)
                         yield break;
 
-                    Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
-                    straightDir = straightDir.normalized;
-
-                    for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
+                    if (raderFov2D.objTarget != null)
                     {
-                        GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                        bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
-                        bullet.GetComponent<Bullet>().SetBulletState(weaponData);
-                        yield return new WaitForSeconds(0.1f);
-                    }
+                        Vector3 straightDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                        straightDir = straightDir.normalized;
 
+                        for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
+                        {
+                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
+                            bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                            yield return new WaitForSeconds(0.1f);
+                        }
+                    }
                     yield return new WaitForSeconds(barrage[nowBarrageNum].fireInterval);
                 }
                 break;
@@ -167,17 +172,20 @@ public class EnemyWeapon : MonoBehaviour
                     if (!enemy.isLive)
                         yield break;
 
-                    Vector3 angleDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
-                    angleDir = angleDir.normalized;
-
-                    angle = barrage[nowBarrageNum].startAngle;
-                    for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
+                    if (raderFov2D.objTarget != null)
                     {
-                        Vector3 degree = Quaternion.Euler(0, 0, angle) * angleDir;
-                        GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                        bullet.GetComponent<Bullet>().SetBulletDirection(degree);
-                        bullet.GetComponent<Bullet>().SetBulletState(weaponData);
-                        angle += barrage[nowBarrageNum].addAngle;
+                        Vector3 angleDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                        angleDir = angleDir.normalized;
+
+                        angle = barrage[nowBarrageNum].startAngle;
+                        for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
+                        {
+                            Vector3 degree = Quaternion.Euler(0, 0, angle) * angleDir;
+                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            bullet.GetComponent<Bullet>().SetBulletDirection(degree);
+                            bullet.GetComponent<Bullet>().SetBulletState(weaponData);
+                            angle += barrage[nowBarrageNum].addAngle;
+                        }
                     }
                     yield return new WaitForSeconds(barrage[nowBarrageNum].fireInterval);
                 }
@@ -188,21 +196,25 @@ public class EnemyWeapon : MonoBehaviour
                     if (!enemy.isLive)
                         yield break;
 
-                    Vector3 shotDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
-                    shotDir = shotDir.normalized;
-
-                    for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
+                    if (raderFov2D.objTarget != null)
                     {
-                        shotDir = new Vector3(shotDir.x + Random.Range(-0.25f, 0.25f), shotDir.y + Random.Range(-0.1f, 0.1f));
-                        GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
-                        bullet1.GetComponent<Bullet>().SetBulletDirection(shotDir);
-                        bullet1.GetComponent<Bullet>().SetBulletState(weaponData);
+                        Vector3 shotDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+                        shotDir = shotDir.normalized;
+
+                        for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
+                        {
+                            shotDir = new Vector3(shotDir.x + Random.Range(-0.25f, 0.25f), shotDir.y + Random.Range(-0.1f, 0.1f));
+                            GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            bullet1.GetComponent<Bullet>().SetBulletDirection(shotDir);
+                            bullet1.GetComponent<Bullet>().SetBulletState(weaponData);
+                        }
                     }
                     yield return new WaitForSeconds(barrage[nowBarrageNum].fireInterval);
                 }
                 break;
             case EBarrageType.Tornado:
                 Vector3 tornadoDir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
+
                 tornadoDir = tornadoDir.normalized;
 
                 angle = barrage[nowBarrageNum].startAngle;
@@ -211,6 +223,7 @@ public class EnemyWeapon : MonoBehaviour
                 {
                     if (!enemy.isLive)
                         yield break;
+
                     Vector3 degree = Quaternion.Euler(0, 0, angle) * tornadoDir;
                     GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                     bullet1.GetComponent<Bullet>().SetBulletDirection(degree);

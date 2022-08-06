@@ -45,7 +45,7 @@ public class HSSUIObjectPool : MonoBehaviour
     {
         // 풀에서 없으면 추가
         if (objectPool.Count == 0)
-            MakeObjectPool(1);
+            MakeObjectPool(4);
 
         // 풀에서 빼서 할당
         GameObject obj = objectPool.Pop();

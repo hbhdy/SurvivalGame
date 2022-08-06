@@ -26,6 +26,7 @@ public class Enemy : HSSObject
     public bool isLive = false;
 
     private int prevHp;
+    private Coroutine co_Move = null;
 
     public void Awake()
     {
@@ -45,21 +46,44 @@ public class Enemy : HSSObject
         prevHp = body.entityStatus.HP;
     }
 
-    public void FixedUpdate()
+    //public void FixedUpdate()
+    //{
+    //    if (!isBoss)
+    //    {
+    //        if (SpawnManager.instance.isWaitCheck)
+    //        {
+    //            SaveEnemy();
+    //        }
+
+    //        if (weapon.raderFov2D.objTarget != null)
+    //        {
+    //            Vector3 dir = weapon.raderFov2D.objTarget.transform.position - wheel.transform.position;
+    //            dir = dir.normalized;
+    //            wheel.MoveEnemyWheel(dir);
+    //        }
+    //    }
+    //}
+
+    private IEnumerator Co_Move()
     {
-        if (!isBoss)
+        while (true)
         {
-            if (SpawnManager.instance.isWaitCheck)
+            if (!isBoss)
             {
-                SaveEnemy();
+                if (SpawnManager.instance.isWaitCheck)
+                {
+                    SaveEnemy();
+                }
+
+                if (weapon.raderFov2D.objTarget != null)
+                {
+                    Vector3 dir = weapon.raderFov2D.objTarget.transform.position - wheel.transform.position;
+                    dir = dir.normalized;
+                    wheel.MoveEnemyWheel(dir);
+                }
             }
 
-            if (weapon.raderFov2D.objTarget != null)
-            {
-                Vector3 dir = weapon.raderFov2D.objTarget.transform.position - wheel.transform.position;
-                dir = dir.normalized;
-                wheel.MoveEnemyWheel(dir);
-            }
+            yield return null;
         }
     }
 
@@ -87,6 +111,10 @@ public class Enemy : HSSObject
 
             objHUD.SetActive(true);
         }
+
+        if (co_Move != null)
+            StopCoroutine(co_Move);
+        co_Move = StartCoroutine(Co_Move());
     }
 
     public float GetHpRatio()
@@ -123,6 +151,9 @@ public class Enemy : HSSObject
     {
         if (!isLive)
             return;
+
+        StopCoroutine(co_Move);
+        co_Move = null;
 
         isLive = false;
 
