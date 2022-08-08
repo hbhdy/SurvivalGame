@@ -12,6 +12,7 @@ public class Enemy : HSSObject
 
     public bool haveHUD = true;
     public bool isBoss = false;
+    public string exKey;
 
     [HideInInspector]
     public GameObject objHUD = null;
@@ -73,6 +74,7 @@ public class Enemy : HSSObject
                 if (SpawnManager.instance.isWaitCheck)
                 {
                     SaveEnemy();
+                    yield break;
                 }
 
                 if (weapon.raderFov2D.objTarget != null)
@@ -124,6 +126,9 @@ public class Enemy : HSSObject
 
     public void HitProgress()
     {
+        if (!isLive)
+            return;
+
         int totalDamage = prevHp - (int)body.entityStatus.useHP;
         prevHp = (int)body.entityStatus.useHP;
 
@@ -132,7 +137,7 @@ public class Enemy : HSSObject
         hUDPack.MakeDamageText(false, totalDamage);
         hUDPack.SetGage(rate);
 
-        if(isBoss)
+        if (isBoss)
         {
             if(GameUI.instance.objBossHpFrame.activeSelf)
             {
@@ -142,20 +147,17 @@ public class Enemy : HSSObject
 
         if (body.entityStatus.useHP <= 0)
         {
+            HSSObjectPoolManager.instance.SpawnObject(exKey, body.transform.position, body.transform.rotation);
             SaveEnemy();
             return;
         }
     }
 
-    public void SaveEnemy()
+    private void SaveEnemy()
     {
-        if (!isLive)
-            return;
-
+        isLive = false;
         StopCoroutine(co_Move);
         co_Move = null;
-
-        isLive = false;
 
         objBody.SetActive(false);
 

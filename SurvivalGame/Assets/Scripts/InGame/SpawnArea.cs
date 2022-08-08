@@ -40,8 +40,7 @@ public class SpawnArea : MonoBehaviour
                 xPos = Random.Range(-halfRadius, halfRadius);
                 yPos = Random.Range(-halfRadius, halfRadius);
                 randPos = new Vector3(xPos, yPos, 0);
-                Debug.Log(randPos);
-
+ 
                 HSSObjectPoolManager.instance.SpawnObject(enemyKey, randPos, Quaternion.identity, null);
             }
             yield return waitTime;

@@ -51,7 +51,7 @@ public class RelativeSpawnPoint : MonoBehaviour
 
                 for (int j = 0; j < pointList[i].objLink.Count; j++)
                 {
-                    pointList[i].objLink[j].GetComponent<Enemy>().SaveEnemy();
+                    //pointList[i].objLink[j].GetComponent<Enemy>().SaveEnemy();
                 }
             }
 

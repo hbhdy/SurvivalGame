@@ -28,7 +28,7 @@ public class HSSObject : MonoBehaviour
         if (parent != null)
             transform.SetParent(parent);
     }
-    public void Save()
+    public virtual void Save()
     {
         transform.SetParent(trOriginParent);
     }
