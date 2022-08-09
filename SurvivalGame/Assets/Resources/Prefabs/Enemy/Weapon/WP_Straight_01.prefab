@@ -48,7 +48,7 @@ MonoBehaviour:
   eOwner: 1
   barrageKeyLists:
   - Straight_01
-  bulletKey: Bullet_Basic_01
+  bulletKey: Bullet_Basic_02
   weaponData:
     itemCode: WP_Straight_01
     prefabName: 

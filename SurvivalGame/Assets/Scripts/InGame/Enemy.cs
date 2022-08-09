@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Enemy : HSSObject
 {
-    [Header("Enemy Object")]
-    public GameObject objWeapon;
-    public GameObject objBody;
-    public GameObject objWheel;
     public GameObject objHPBarPoint;
 
     public bool haveHUD = true;
@@ -17,23 +13,34 @@ public class Enemy : HSSObject
     [HideInInspector]
     public GameObject objHUD = null;
 
-    private HUDPack hUDPack;
-    private EnemyWeapon weapon;
-    private Body body;
-    private Wheel wheel;
-    private Vector3 spawnPoint;
-
     [HideInInspector]
     public bool isLive = false;
 
+    private HUDPack hUDPack;
+
+    private GameObject objWeapon;
+    private GameObject objBody;
+    private GameObject objWheel;
+
+    private EnemyWeapon weapon;
+    private Body body;
+    private Wheel wheel;
+
+    private Vector3 spawnPoint;
     private int prevHp;
     private Coroutine co_Move = null;
 
     public void Awake()
     {
-        weapon = objWeapon.GetComponent<EnemyWeapon>();
-        body = objBody.GetComponent<Body>();
-        wheel = objWheel.GetComponent<Wheel>();
+        weapon = GetComponentInChildren<EnemyWeapon>();
+        body = GetComponentInChildren<Body>();
+        wheel = GetComponentInChildren<Wheel>();
+
+        objWeapon = weapon.gameObject;
+        objBody = body.gameObject;
+        objWheel = wheel.gameObject;
+
+        body.Init();
     }
 
     public void InitEnemy()
@@ -46,24 +53,6 @@ public class Enemy : HSSObject
 
         prevHp = body.entityStatus.HP;
     }
-
-    //public void FixedUpdate()
-    //{
-    //    if (!isBoss)
-    //    {
-    //        if (SpawnManager.instance.isWaitCheck)
-    //        {
-    //            SaveEnemy();
-    //        }
-
-    //        if (weapon.raderFov2D.objTarget != null)
-    //        {
-    //            Vector3 dir = weapon.raderFov2D.objTarget.transform.position - wheel.transform.position;
-    //            dir = dir.normalized;
-    //            wheel.MoveEnemyWheel(dir);
-    //        }
-    //    }
-    //}
 
     private IEnumerator Co_Move()
     {
