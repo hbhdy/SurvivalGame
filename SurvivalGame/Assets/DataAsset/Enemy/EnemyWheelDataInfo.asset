@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: EnemyWheelDataInfo
   m_EditorClassIdentifier: 
   prefabPath: Prefabs/Enemy/Wheel/
+  wheelLists: []
   wheelDataList:
-  - itemCode: WH_01
+  - key: 
     prefabName: WH_01
     objPrefab: {fileID: 6919475554931141773, guid: 2df49604d62b2ae4ca442172027bee64, type: 3}
     movingSpeed: 1.5

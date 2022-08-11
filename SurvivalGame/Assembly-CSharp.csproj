@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Core\InputManager.cs" />
     <Compile Include="Assets\Scripts\InGame\Weapon.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\DataInfoBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

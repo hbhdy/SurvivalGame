@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using Newtonsoft.Json.Linq;
 
-[CreateAssetMenu(fileName = "WheelDataInfo", menuName = "DataScript/WheelDataInfo", order = 2)]
-public class WheelDataInfo : ScriptableObject
+public class WheelDataInfo : DataInfoBase
 {
     public string prefabPath;
+
+    private WheelData[] wheelLists;
 
     public List<WheelData> wheelDataList = new List<WheelData>();
 
@@ -14,12 +16,41 @@ public class WheelDataInfo : ScriptableObject
 
     public IEnumerator InitData()
     {
-        for (int i = 0; i < wheelDataList.Count; ++i)
+        EDataLoadResult type = Load();
+
+        switch(type)
         {
-            dicWheelDataList.Add(wheelDataList[i].itemCode, wheelDataList[i]);
+            case EDataLoadResult.Complate:
+                Debug.Log("WheelDataInfo - Load Complate)");
+                break;
+            case EDataLoadResult.Fail:
+                Debug.Log("WheelDataInfo - Load Fail)");
+                break;
+            case EDataLoadResult.Skip:
+                Debug.Log("WheelDataInfo - Already have a key");
+                break;
         }
 
         yield return true;
+    }
+
+    public EDataLoadResult Load()
+    {
+        string data = Resources.Load<TextAsset>("JsonFile/WheelDataInfo").text;
+        wheelLists = Newtonsoft.Json.JsonConvert.DeserializeObject<WheelData[]>(data);
+
+        if (wheelLists == null)
+            return EDataLoadResult.Fail;
+
+        for (int i = 0; i < wheelLists.Length; ++i)
+        {
+            if (dicWheelDataList.ContainsKey(wheelLists[i].key) == false)
+                dicWheelDataList.Add(wheelLists[i].key, wheelLists[i]);
+            else
+                return EDataLoadResult.Skip;
+        }
+
+        return EDataLoadResult.Complate;
     }
 
     public GameObject GetPrefabData(string key)  // itemcode
@@ -31,19 +62,12 @@ public class WheelDataInfo : ScriptableObject
     {
         return dicWheelDataList[key];
     }
-
-#if UNITY_EDITOR
-    public void OnEnable()
-    {
-        EditorUtility.SetDirty(this);
-    }
-#endif
 }
 
 [System.Serializable]
 public class WheelData
 {
-    public string itemCode;
+    public string key;
 
     public string prefabName;
     public GameObject objPrefab;

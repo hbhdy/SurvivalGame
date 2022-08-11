@@ -95,7 +95,7 @@ public class CSVFunction
         for (int i = 0; i < asset.wheelDataList.Count; i++)
         {
             tempData = new string[6];
-            tempData[0] = asset.wheelDataList[i].itemCode;
+            tempData[0] = asset.wheelDataList[i].key;
             tempData[1] = asset.wheelDataList[i].prefabName;
             tempData[2] = asset.wheelDataList[i].movingSpeed.ToString();
             tempData[3] = asset.wheelDataList[i].rotateSpeed.ToString();
@@ -144,7 +144,7 @@ public class CSVFunction
 
         for (int i = 0; i < data.Count; i++)
         {
-            asset.wheelDataList[i].itemCode = data[i]["itemCode"].ToString();
+            asset.wheelDataList[i].key = data[i]["itemCode"].ToString();
             asset.wheelDataList[i].prefabName = data[i]["prefabName"].ToString();
             asset.wheelDataList[i].movingSpeed = float.Parse(data[i]["MovingSpeed"].ToString());
             asset.wheelDataList[i].rotateSpeed = float.Parse(data[i]["RotateSpeed"].ToString());
@@ -316,7 +316,7 @@ public class CSVFunction
         for (int i = 0; i < asset.wheelDataList.Count; i++)
         {
             tempData = new string[6];
-            tempData[0] = asset.wheelDataList[i].itemCode;
+            tempData[0] = asset.wheelDataList[i].key;
             tempData[1] = asset.wheelDataList[i].prefabName;
             tempData[2] = asset.wheelDataList[i].movingSpeed.ToString();
             tempData[3] = asset.wheelDataList[i].rotateSpeed.ToString();
@@ -364,7 +364,7 @@ public class CSVFunction
 
         for (int i = 0; i < data.Count; i++)
         {
-            asset.wheelDataList[i].itemCode = data[i]["itemCode"].ToString();
+            asset.wheelDataList[i].key = data[i]["key"].ToString();
             asset.wheelDataList[i].prefabName = data[i]["prefabName"].ToString();
             asset.wheelDataList[i].movingSpeed = float.Parse(data[i]["MovingSpeed"].ToString());
             asset.wheelDataList[i].rotateSpeed = float.Parse(data[i]["RotateSpeed"].ToString());

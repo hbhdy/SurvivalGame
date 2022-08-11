@@ -72,6 +72,13 @@ public enum EBarrageType
 
 }
 
+public enum EDataLoadResult
+{
+    Complate,
+    Fail,
+    Skip,
+}
+
 [System.Serializable]
 public class EntityStatus
 {

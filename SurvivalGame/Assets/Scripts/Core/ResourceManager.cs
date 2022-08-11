@@ -50,6 +50,11 @@ public class ResourceManager : HSSManager
 
         yield return StartCoroutine(base.InitManager());
 
+
+        EDataLoadResult type = wheelDataInfo.Load();
+
+        Debug.Log("EDataLoadResult : " + type);
+
         dialogueData.LoadDialouge(dialogueNames);
     }
 

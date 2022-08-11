@@ -13,8 +13,14 @@ MonoBehaviour:
   m_Name: WheelDataInfo
   m_EditorClassIdentifier: 
   prefabPath: Prefabs/Player/Wheel/
+  wheelLists:
+  - key: 
+    prefabName: 
+    objPrefab: {fileID: 0}
+    movingSpeed: 1
+    rotateSpeed: 360
   wheelDataList:
-  - itemCode: PlayerWheel_01
+  - key: 
     prefabName: PlayerWheel_01
     objPrefab: {fileID: 3838179170011392559, guid: 561589cfad7b758409607dfe9d60a2ea, type: 3}
     movingSpeed: 3

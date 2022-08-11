@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
     {
         objWeapon = Instantiate(Core.RSS.GetWeaponObject(assembleData.weaponData.key), transform.position, transform.rotation, transform);
         objBody = Instantiate(Core.RSS.GetBodyObject(assembleData.bodyData.key), transform.position, transform.rotation, transform);
-        objWheel = Instantiate(Core.RSS.GetWheelObject(assembleData.wheelData.key), transform.position, transform.rotation, transform);
+        //objWheel = Instantiate(Core.RSS.GetWheelObject(assembleData.wheelData.key), transform.position, transform.rotation, transform);
 
         objWeapon.transform.parent = objBody.transform;
 

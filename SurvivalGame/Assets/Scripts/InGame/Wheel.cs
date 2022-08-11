@@ -23,11 +23,11 @@ public class Wheel : MonoBehaviour
     {
         if (eOwner == EOwner.Player)
         {
-            wheelData = Core.RSS.GetWheelData(wheelData.itemCode);
+            wheelData = Core.RSS.GetWheelData(wheelData.key);
         }
         else
         {
-            wheelData = Core.RSS.GetEnemyWheelData(wheelData.itemCode);
+            wheelData = Core.RSS.GetEnemyWheelData(wheelData.key);
         }
     }
 
