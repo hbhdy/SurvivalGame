@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
 
     public void SetWeaponData()
     {
-        weaponData = Core.RSS.GetWeaponData(weaponData.itemCode);
+        weaponData = Core.RSS.GetWeaponData(weaponData.key);
     }
 
     public void FixedUpdate()

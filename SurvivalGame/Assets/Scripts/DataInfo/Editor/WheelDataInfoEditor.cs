@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(WheelDataInfo))]
+[CustomEditor(typeof(DataInfoWheel))]
 public class WheelDataInfoEditor : Editor
 {
-    WheelDataInfo info = null;
+    DataInfoWheel info = null;
 
     //private void OnEnable()
     //{

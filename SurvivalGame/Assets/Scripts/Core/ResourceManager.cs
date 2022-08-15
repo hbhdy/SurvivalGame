@@ -6,13 +6,9 @@ using UnityEngine.Audio;
 // 전체 리소스 관리
 public class ResourceManager : HSSManager
 {
-    public WeaponDataInfo weaponDataInfo;
-    public BodyDataInfo bodyDataInfo;
-    public WheelDataInfo wheelDataInfo;
-
-    public WeaponDataInfo enemyWeaponDataInfo;
-    public BodyDataInfo enemyBodyDataInfo;
-    public WheelDataInfo enemyWheelDataInfo;
+    private DataInfoWeapon DataInfoWeapon { get; set; } = new DataInfoWeapon();
+    private DataInfoBody DataInfoBody { get; set; } = new DataInfoBody();
+    private DataInfoWheel DataInfoWheel { get; set; } = new DataInfoWheel();
 
     public LocalizedDataInfo localDataInfo;
 
@@ -36,24 +32,18 @@ public class ResourceManager : HSSManager
     public override IEnumerator InitManager()
     {
         // 리소스 매니저 초기화할때 해당 에셋 초기화 및 Dictionary에 할당 ( Key값에 따라 활용하기 위함 )
-        yield return StartCoroutine(weaponDataInfo.InitData());
-        yield return StartCoroutine(bodyDataInfo.InitData());
-        yield return StartCoroutine(wheelDataInfo.InitData());
+        yield return StartCoroutine(DataInfoWeapon.InitData());
+        //yield return StartCoroutine(DataInfoBody.InitData());
+        yield return StartCoroutine(DataInfoWheel.InitData());
 
-        yield return StartCoroutine(enemyWeaponDataInfo.InitData());
-        yield return StartCoroutine(enemyBodyDataInfo.InitData());
-        yield return StartCoroutine(enemyWheelDataInfo.InitData());
-
-        yield return StartCoroutine(localDataInfo.InitData());
-
-        yield return StartCoroutine(barrageData.InitData());
+        //yield return StartCoroutine(localDataInfo.InitData());
+        //yield return StartCoroutine(barrageData.InitData());
 
         yield return StartCoroutine(base.InitManager());
 
+        //EDataLoadResult type = DataInfoWheel.Load();
 
-        EDataLoadResult type = wheelDataInfo.Load();
-
-        Debug.Log("EDataLoadResult : " + type);
+        //Debug.Log("EDataLoadResult : " + type);
 
         dialogueData.LoadDialouge(dialogueNames);
     }
@@ -90,52 +80,34 @@ public class ResourceManager : HSSManager
         return barrageData.GetBarrageData(key);
     }
 
-    // Enemy------------------------------------------------------------------------------------
-    public WeaponData GetEnemyWeaponData(string key)
-    {
-        return enemyWeaponDataInfo.GetWeaponData(key);
-    }
-
-    public BodyData GetEnemyBodyData(string key)
-    {
-        return enemyBodyDataInfo.GetBodyData(key);
-    }
-
-    public WheelData GetEnemyWheelData(string key)
-    {
-        return enemyWheelDataInfo.GetWheelData(key);
-    }
-
-    // Player------------------------------------------------------------------------------------
-
     public WeaponData GetWeaponData(string key)
     {
-        return weaponDataInfo.GetWeaponData(key);
+        return DataInfoWeapon.GetWeaponData(key);
     }
 
     public BodyData GetBodyData(string key)
     {
-        return bodyDataInfo.GetBodyData(key);
+        return DataInfoBody.GetBodyData(key);
     }
 
     public WheelData GetWheelData(string key)
     {
-        return wheelDataInfo.GetWheelData(key);
+        return DataInfoWheel.GetWheelData(key);
     }
 
     public GameObject GetWeaponObject(string key)
     {
-        return weaponDataInfo.GetPrefabData(key);
+        return DataInfoWeapon.GetPrefabData(key);
     }
 
     public GameObject GetBodyObject(string key)
     {
-        return bodyDataInfo.GetPrefabData(key);
+        return DataInfoBody.GetPrefabData(key);
     }
 
     public GameObject GetWheelObject(string key)
     {
-        return wheelDataInfo.GetPrefabData(key);
+        return DataInfoWheel.GetPrefabData(key);
     }
 
     public Sprite GetUIImage(string key)

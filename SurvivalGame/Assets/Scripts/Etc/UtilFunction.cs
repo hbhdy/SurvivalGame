@@ -10,6 +10,27 @@ using UnityEngine.SceneManagement;
 
 public static class UtilFunction
 {
+    [Serializable]
+    private class JsonConvertData<T>
+    {
+        public T[] DataInfo;
+    }
+
+    public static T[] LoadJson<T>(string fileName)
+    {
+        string path = string.Format("/JsonFile/{0}.json", fileName);
+
+        FileStream stream = new FileStream(Application.dataPath + path, FileMode.Open);
+        byte[] bytes = new byte[stream.Length];
+        stream.Read(bytes, 0, bytes.Length);
+        stream.Close();
+        string jsonData = Encoding.UTF8.GetString(bytes);
+
+        JsonConvertData<T> data = Newtonsoft.Json.JsonConvert.DeserializeObject<JsonConvertData<T>>(jsonData);
+
+        return data.DataInfo;
+    }
+
     public static int CalcDamage(float damage, float defence, bool critical = false)
     {
         if (damage <= 0)

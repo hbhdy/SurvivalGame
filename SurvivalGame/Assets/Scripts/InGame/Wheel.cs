@@ -21,21 +21,14 @@ public class Wheel : MonoBehaviour
 
     public void SetWheelData()
     {
-        if (eOwner == EOwner.Player)
-        {
-            wheelData = Core.RSS.GetWheelData(wheelData.key);
-        }
-        else
-        {
-            wheelData = Core.RSS.GetEnemyWheelData(wheelData.key);
-        }
+        wheelData = Core.RSS.GetWheelData(wheelData.key);
     }
 
     public void MoveEnemyWheel(Vector3 dir)
     {
         Vector3 newPos = transform.position;
 
-        newPos += dir * Time.deltaTime * wheelData.movingSpeed;
+        newPos += dir * Time.deltaTime * wheelData.moveSpeed;
 
         rigid2D.MovePosition(newPos);
     }
@@ -46,13 +39,13 @@ public class Wheel : MonoBehaviour
         newQt.x = 0.0f;
         newQt.y = 0.0f;
 
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, newQt, wheelData.rotateSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, newQt, wheelData.rotationSpeed * Time.deltaTime);
 
         moveDir = Vector3.Lerp(moveDir, Joystick.instance.GetDir(), Time.deltaTime);
 
         Vector3 newPos = transform.position;
 
-        newPos += Joystick.instance.GetDir() * wheelData.movingSpeed * power * Time.deltaTime;
+        newPos += Joystick.instance.GetDir() * wheelData.moveSpeed * power * Time.deltaTime;
         rigid2D.MovePosition(newPos);
 
         rigid2D.angularVelocity = 0.0f;

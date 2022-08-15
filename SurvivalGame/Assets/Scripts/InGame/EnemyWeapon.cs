@@ -37,7 +37,7 @@ public class EnemyWeapon : MonoBehaviour
     {
         isFireReady = true;
 
-        weaponData = Core.RSS.GetEnemyWeaponData(weaponData.itemCode);
+        weaponData = Core.RSS.GetWeaponData(weaponData.key);
 
         for (int i = 0; i < barrageKeyLists.Count; i++)
         {

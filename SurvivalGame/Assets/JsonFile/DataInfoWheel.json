@@ -1,0 +1,39 @@
+{
+  "DataInfo": [
+    {
+      "key": "PlayerWheel_01",
+      "eOwner": "Player",
+      "prefabName": "PlayerWheel_01",
+      "moveSpeed": 3,
+      "rotationSpeed": 360
+    },
+    {
+      "key": "PlayerWheel_02",
+      "eOwner": "Player",
+      "prefabName": "PlayerWheel_01",
+      "moveSpeed": 5,
+      "rotationSpeed": 360
+    },
+    {
+      "key": "EnemyWheel_01",
+      "eOwner": "AI",
+      "prefabName": "EnemyWheel_01",
+      "moveSpeed": 2,
+      "rotationSpeed": 360
+    },
+    {
+      "key": "EnemyWheel_02",
+      "eOwner": "AI",
+      "prefabName": "EnemyWheel_02",
+      "moveSpeed": 3,
+      "rotationSpeed": 360
+    },
+    {
+      "key": "EnemyWheel_03",
+      "eOwner": "AI",
+      "prefabName": "EnemyWheel_03",
+      "moveSpeed": 4,
+      "rotationSpeed": 360
+    }
+  ]
+}

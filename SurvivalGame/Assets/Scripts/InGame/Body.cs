@@ -30,16 +30,12 @@ public class Body : MonoBehaviour
 
     public void SetBodyData()
     {
+        bodyData = Core.RSS.GetBodyData(bodyData.key);
+
         if (eOwner == EOwner.Player)
-        {
-            bodyData = Core.RSS.GetBodyData(bodyData.itemCode);
             rootPlayer = GetComponentInParent<Player>();
-        }
         else
-        {
-            bodyData = Core.RSS.GetEnemyBodyData(bodyData.itemCode);
             rootEnemy = GetComponentInParent<Enemy>();
-        }
 
         entityStatus.HP = bodyData.hp;
         entityStatus.useHP = entityStatus.HP;
