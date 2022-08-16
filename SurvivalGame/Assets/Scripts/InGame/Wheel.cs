@@ -19,9 +19,12 @@ public class Wheel : MonoBehaviour
         rigid2D = GetComponent<Rigidbody2D>();
     }
 
-    public void SetWheelData()
+    public void SetWheelData(string key)
     {
-        wheelData = Core.RSS.GetWheelData(wheelData.key);
+        wheelData = Core.RSS.GetWheelData(key);
+
+        if (wheelData == null)
+            Debug.LogFormat("wheelData Null - key: {0}", key);
     }
 
     public void MoveEnemyWheel(Vector3 dir)

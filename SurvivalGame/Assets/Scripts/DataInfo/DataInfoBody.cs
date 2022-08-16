@@ -5,12 +5,8 @@ using UnityEditor;
 
 public class DataInfoBody : DataInfoBase
 {
-    public string prefabPath;
-
-    private BodyData[] bodyLists;
-
-    // 사용 안함
-    public List<BodyData> bodyDataList = new List<BodyData>();
+    public string prefabPathPlayer = "Prefabs/Player/Body/";
+    public string prefabPathEnemy = "Prefabs/Enemy/Body/";
 
     public Dictionary<string, BodyData> dicBodyDataList = new Dictionary<string, BodyData>();
 
@@ -36,16 +32,23 @@ public class DataInfoBody : DataInfoBase
 
     public EDataLoadResult Load()
     {
-        string data = Resources.Load<TextAsset>("JsonFile/DataInfoBody").text;
-        bodyLists = Newtonsoft.Json.JsonConvert.DeserializeObject<BodyData[]>(data);
+        BodyData[] bodyData = UtilFunction.LoadJson<BodyData>("DataInfoBody");
 
-        if (bodyLists == null)
+        if (bodyData == null)
             return EDataLoadResult.Fail;
 
-        for (int i = 0; i < bodyLists.Length; ++i)
+        for (int i = 0; i < bodyData.Length; ++i)
         {
-            if (dicBodyDataList.ContainsKey(bodyLists[i].key) == false)
-                dicBodyDataList.Add(bodyLists[i].key, bodyLists[i]);
+            if (bodyData[i].eOwner == EOwner.Player)
+                bodyData[i].objPrefab = Resources.Load<GameObject>(prefabPathPlayer + bodyData[i].prefabName);
+            else
+                bodyData[i].objPrefab = Resources.Load<GameObject>(prefabPathEnemy + bodyData[i].prefabName);
+
+            if (bodyData[i].objPrefab == null)
+                Debug.LogFormat("objPrefab Null -> Key: {0}", bodyData[i].prefabName);
+
+            if (dicBodyDataList.ContainsKey(bodyData[i].key) == false)
+                dicBodyDataList.Add(bodyData[i].key, bodyData[i]);
             else
                 return EDataLoadResult.Skip;
         }
@@ -68,10 +71,10 @@ public class DataInfoBody : DataInfoBase
 public class BodyData
 {
     public string key;
-        
+    public EOwner eOwner;
     public string prefabName;
-    public GameObject objPrefab;
-
     public int hp = 0;
     public int defence = 0;
+
+    public GameObject objPrefab;
 }

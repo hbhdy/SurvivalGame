@@ -28,9 +28,12 @@ public class Body : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
     }
 
-    public void SetBodyData()
+    public void SetBodyData(string key)
     {
-        bodyData = Core.RSS.GetBodyData(bodyData.key);
+        bodyData = Core.RSS.GetBodyData(key);
+
+        if (bodyData == null)
+            Debug.LogFormat("bodyData Null - key: {0}", key);
 
         if (eOwner == EOwner.Player)
             rootPlayer = GetComponentInParent<Player>();

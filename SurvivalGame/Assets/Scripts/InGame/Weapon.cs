@@ -6,8 +6,8 @@ public class Weapon : MonoBehaviour
 {
     public EOwner eOwner = EOwner.Player;
 
-    public string bulletKey;
-    public WeaponData weaponData;
+    private string bulletKey;
+    private WeaponData weaponData;
     public float fireInterval = 0.0f;
 
     private FOV2D fov2D;
@@ -22,9 +22,12 @@ public class Weapon : MonoBehaviour
         raderFov2D = GetComponent<RadarWithFOV2D>();
     }
 
-    public void SetWeaponData()
+    public void SetWeaponData(string key)
     {
-        weaponData = Core.RSS.GetWeaponData(weaponData.key);
+        weaponData = Core.RSS.GetWeaponData(key);
+
+        if (weaponData == null)
+            Debug.LogFormat("weaponData Null - key: {0}", key);
     }
 
     public void FixedUpdate()

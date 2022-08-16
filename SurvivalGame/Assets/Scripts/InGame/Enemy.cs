@@ -8,6 +8,10 @@ public class Enemy : HSSObject
 
     public bool haveHUD = true;
     public bool isBoss = false;
+
+    public string weaponKey;
+    public string bodyKey;
+    public string wheelKey;
     public string exKey;
 
     [HideInInspector]
@@ -47,9 +51,9 @@ public class Enemy : HSSObject
     {
         body.SetTransformCenter(objWheel);
 
-        body.SetBodyData();
-        weapon.SetWeaponData();
-        wheel.SetWheelData();
+        weapon.SetWeaponData(weaponKey);
+        body.SetBodyData(bodyKey);
+        wheel.SetWheelData(wheelKey);
 
         prevHp = body.entityStatus.HP;
     }

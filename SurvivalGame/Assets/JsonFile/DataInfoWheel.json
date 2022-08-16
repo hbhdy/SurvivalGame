@@ -8,13 +8,6 @@
       "rotationSpeed": 360
     },
     {
-      "key": "PlayerWheel_02",
-      "eOwner": "Player",
-      "prefabName": "PlayerWheel_01",
-      "moveSpeed": 5,
-      "rotationSpeed": 360
-    },
-    {
       "key": "EnemyWheel_01",
       "eOwner": "AI",
       "prefabName": "EnemyWheel_01",

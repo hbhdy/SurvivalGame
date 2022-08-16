@@ -1,0 +1,32 @@
+{
+  "DataInfo": [
+    {
+      "key": "PlayerBody_01",
+      "eOwner": "Player",
+      "prefabName": "PlayerBody_01",
+      "hp": 500,
+      "defence": 0
+    },
+    {
+      "key": "BD_Ghost_01",
+      "eOwner": "AI",
+      "prefabName": "BD_Ghost_01",
+      "hp": 50,
+      "defence": 10
+    },
+    {
+      "key": "BD_Death_01",
+      "eOwner": "AI",
+      "prefabName": "BD_Death_01",
+      "hp": 100,
+      "defence": 20
+    },
+    {
+      "key": "BD_Skull_01",
+      "eOwner": "AI",
+      "prefabName": "BD_Skull_01",
+      "hp": 300,
+      "defence": 30
+    }
+  ]
+}

@@ -33,7 +33,7 @@ public class ResourceManager : HSSManager
     {
         // 리소스 매니저 초기화할때 해당 에셋 초기화 및 Dictionary에 할당 ( Key값에 따라 활용하기 위함 )
         yield return StartCoroutine(DataInfoWeapon.InitData());
-        //yield return StartCoroutine(DataInfoBody.InitData());
+        yield return StartCoroutine(DataInfoBody.InitData());
         yield return StartCoroutine(DataInfoWheel.InitData());
 
         //yield return StartCoroutine(localDataInfo.InitData());

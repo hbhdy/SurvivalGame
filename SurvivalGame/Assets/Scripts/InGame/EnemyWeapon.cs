@@ -8,8 +8,8 @@ public class EnemyWeapon : MonoBehaviour
 
     public List<string> barrageKeyLists = new List<string>();
 
-    public string bulletKey;
-    public WeaponData weaponData;
+    private string bulletKey;
+    private WeaponData weaponData;
 
     private List<Barrage> barrage = new List<Barrage>();
 
@@ -33,11 +33,14 @@ public class EnemyWeapon : MonoBehaviour
         enemy = GetComponentInParent<Enemy>();
     }
 
-    public void SetWeaponData()
+    public void SetWeaponData(string key)
     {
         isFireReady = true;
 
-        weaponData = Core.RSS.GetWeaponData(weaponData.key);
+        weaponData = Core.RSS.GetWeaponData(key);
+
+        if (weaponData == null)
+            Debug.LogFormat("weaponData Null - key: {0}", key);
 
         for (int i = 0; i < barrageKeyLists.Count; i++)
         {

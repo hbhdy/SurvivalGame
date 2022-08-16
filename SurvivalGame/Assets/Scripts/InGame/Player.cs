@@ -41,9 +41,9 @@ public class Player : MonoBehaviour
         body = objBody.GetComponent<Body>();
         wheel = objWheel.GetComponent<Wheel>();
 
-        body.SetBodyData();
-        weapon.SetWeaponData();
-        wheel.SetWheelData();
+        body.SetBodyData(assembleData.bodyData.key);
+        weapon.SetWeaponData(assembleData.weaponData.key);
+        wheel.SetWheelData(assembleData.wheelData.key);
 
         objHUD = GameUI.instance.HUD.GetPlayerHudPack();
 
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
     {
         objWeapon = Instantiate(Core.RSS.GetWeaponObject(assembleData.weaponData.key), transform.position, transform.rotation, transform);
         objBody = Instantiate(Core.RSS.GetBodyObject(assembleData.bodyData.key), transform.position, transform.rotation, transform);
-        //objWheel = Instantiate(Core.RSS.GetWheelObject(assembleData.wheelData.key), transform.position, transform.rotation, transform);
+        objWheel = Instantiate(Core.RSS.GetWheelObject(assembleData.wheelData.key), transform.position, transform.rotation, transform);
 
         objWeapon.transform.parent = objBody.transform;
 
