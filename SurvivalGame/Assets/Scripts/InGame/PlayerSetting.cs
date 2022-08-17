@@ -71,4 +71,10 @@ public class PlayerSetting : MonoBehaviour
     {
         player.objWheel.transform.position = objStartMarker.transform.position;
     }
+
+    public void AddExp(int amount)
+    {
+        if (player != null)
+            player.AddExp(amount);
+    }
 }

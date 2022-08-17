@@ -141,6 +141,7 @@ public class Enemy : HSSObject
         if (body.entityStatus.useHP <= 0)
         {
             HSSObjectPoolManager.instance.SpawnObject(exKey, body.transform.position, body.transform.rotation);
+            HSSObjectPoolManager.instance.SpawnObject("SmallExp", body.transform.position, body.transform.rotation);
             SaveEnemy();
             return;
         }

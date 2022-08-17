@@ -6,7 +6,6 @@ public class Weapon : MonoBehaviour
 {
     public EOwner eOwner = EOwner.Player;
 
-    private string bulletKey;
     private WeaponData weaponData;
     public float fireInterval = 0.0f;
 
@@ -44,7 +43,7 @@ public class Weapon : MonoBehaviour
                 Vector3 dir = raderFov2D.objTarget.transform.position - gameObject.transform.position;
                 dir = dir.normalized;
 
-                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(weaponData.bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                 bullet.GetComponent<Bullet>().SetBulletDirection(dir);
                 bullet.GetComponent<Bullet>().SetBulletState(weaponData);
             }

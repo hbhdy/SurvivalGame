@@ -106,6 +106,7 @@
     <Compile Include="Assets\Scripts\UI\LocalizedText.cs" />
     <Compile Include="Assets\Scripts\InGame\Wheel.cs" />
     <Compile Include="Assets\Scripts\Core\InputManager.cs" />
+    <Compile Include="Assets\Scripts\InGame\ExpItem.cs" />
     <Compile Include="Assets\Scripts\InGame\Weapon.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
   </ItemGroup>

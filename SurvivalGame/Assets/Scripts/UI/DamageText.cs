@@ -40,7 +40,7 @@ public class DamageText : HSSUIObject
 
             uiDamage.color = new Color(uiDamage.color.r, uiDamage.color.g, uiDamage.color.b, 1f - (time / fadeTime));
 
-            time += Time.deltaTime;
+            time += Time.fixedUnscaledDeltaTime;
             yield return null;
         }
 

@@ -33,16 +33,16 @@ public class SpawnArea : MonoBehaviour
         float xPos = 0;
         float yPos = 0;
 
+        yield return new WaitUntil(()=> InGameCore.instance.isInGameCoreReady);
+
         while (true)
         {
-            if (InGameCore.instance.isInGameCoreReady)
-            {
-                xPos = Random.Range(-halfRadius, halfRadius);
-                yPos = Random.Range(-halfRadius, halfRadius);
-                randPos = new Vector3(xPos, yPos, 0);
- 
-                HSSObjectPoolManager.instance.SpawnObject(enemyKey, randPos, Quaternion.identity, null);
-            }
+            xPos = Random.Range(-halfRadius, halfRadius);
+            yPos = Random.Range(-halfRadius, halfRadius);
+            randPos = new Vector3(xPos, yPos, 0);
+
+            HSSObjectPoolManager.instance.SpawnObject(enemyKey, randPos, Quaternion.identity, null);
+
             yield return waitTime;
         }
     }

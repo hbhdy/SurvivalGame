@@ -11,14 +11,14 @@
       "key": "BD_Ghost_01",
       "eOwner": "AI",
       "prefabName": "BD_Ghost_01",
-      "hp": 50,
+      "hp": 100,
       "defence": 10
     },
     {
       "key": "BD_Death_01",
       "eOwner": "AI",
       "prefabName": "BD_Death_01",
-      "hp": 100,
+      "hp": 200,
       "defence": 20
     },
     {

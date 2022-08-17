@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3838179170011392552}
   - component: {fileID: 2901474593408854145}
   - component: {fileID: 6996513058921903044}
-  m_Layer: 10
+  - component: {fileID: 2869634193239846086}
+  m_Layer: 11
   m_Name: PlayerWheel_01
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67,9 +68,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eOwner: 0
   wheelData:
-    itemCode: PlayerWheel_01
+    key: 
+    eOwner: 0
     prefabName: 
+    moveSpeed: 0
+    rotationSpeed: 0
     objPrefab: {fileID: 0}
-    movingSpeed: 1
-    rotateSpeed: 360
   moveDir: {x: 0, y: 0, z: 0}
+--- !u!58 &2869634193239846086
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838179170011392559}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

@@ -37,7 +37,7 @@ public class ResourceManager : HSSManager
         yield return StartCoroutine(DataInfoWheel.InitData());
 
         //yield return StartCoroutine(localDataInfo.InitData());
-        //yield return StartCoroutine(barrageData.InitData());
+        yield return StartCoroutine(barrageData.InitData());
 
         yield return StartCoroutine(base.InitManager());
 

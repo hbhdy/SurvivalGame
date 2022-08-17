@@ -25,9 +25,13 @@ public class Player : MonoBehaviour
     private Quaternion originQt;
     private int prevHp;
 
+    private int playerExp = 0;
+
     // 플레이어 초기화
     public IEnumerator InitPayer(AssembleData data)
     {
+        playerExp = 0;
+
         assembleData = data;
 
         originPos = transform.position;
@@ -99,5 +103,11 @@ public class Player : MonoBehaviour
         hudPack.MakeDamageText(true, totalDamage);
 
         GameUI.instance.playerHPState.CalcHPState();
+    }
+
+    public void AddExp(int amount)
+    {
+        playerExp += amount;
+        Debug.Log("Player Exp : " + playerExp);
     }
 }

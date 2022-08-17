@@ -13,7 +13,7 @@
       "key": "WP_Circle_01",
       "eOwner": "AI",
       "prefabName": "WP_Circle_01",
-      "bulletKey": "Bullet_Circle_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0
@@ -22,7 +22,7 @@
       "key": "WP_Heart_01",
       "eOwner": "AI",
       "prefabName": "WP_Heart_01",
-      "bulletKey": "Bullet_Heart_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0
@@ -31,7 +31,7 @@
       "key": "WP_Hexagon_01",
       "eOwner": "AI",
       "prefabName": "WP_Hexagon_01",
-      "bulletKey": "Bullet_Hexagon_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0
@@ -40,7 +40,7 @@
       "key": "WP_Octagon_01",
       "eOwner": "AI",
       "prefabName": "WP_Octagon_01",
-      "bulletKey": "Bullet_Octagon_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0
@@ -49,7 +49,7 @@
       "key": "WP_Plus_01",
       "eOwner": "AI",
       "prefabName": "WP_Plus_01",
-      "bulletKey": "Bullet_Plus_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0
@@ -58,7 +58,7 @@
       "key": "WP_Square_01",
       "eOwner": "AI",
       "prefabName": "WP_Square_01",
-      "bulletKey": "Bullet_Square_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0
@@ -67,7 +67,7 @@
       "key": "WP_Star_01",
       "eOwner": "AI",
       "prefabName": "WP_Star_01",
-      "bulletKey": "Bullet_Star_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0
@@ -85,7 +85,7 @@
       "key": "WP_Triangle_01",
       "eOwner": "AI",
       "prefabName": "WP_Triangle_01",
-      "bulletKey": "Bullet_Triangle_01",
+      "bulletKey": "Bullet_Basic_01",
       "attackDamage": 30,
       "criChance": 0,
       "criDamage": 0

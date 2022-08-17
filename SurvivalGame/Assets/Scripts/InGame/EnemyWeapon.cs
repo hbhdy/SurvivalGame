@@ -127,7 +127,7 @@ public class EnemyWeapon : MonoBehaviour
 
                             for (int i = 0; i < dicDirLists[nowBarrageNum].Count; i++)
                             {
-                                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(weaponData.bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                                 bullet.GetComponent<Bullet>().SetBulletDoubleDirection(dicDirLists[nowBarrageNum][i], straightDir);
                                 bullet.GetComponent<Bullet>().SetBulletState(weaponData);
                             }
@@ -136,7 +136,7 @@ public class EnemyWeapon : MonoBehaviour
                         {
                             for (int i = 0; i < dicDirLists[nowBarrageNum].Count; i++)
                             {
-                                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                                GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(weaponData.bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                                 bullet.GetComponent<Bullet>().SetBulletDirection(dicDirLists[nowBarrageNum][i]);
                                 bullet.GetComponent<Bullet>().SetBulletState(weaponData);
                             }
@@ -160,7 +160,7 @@ public class EnemyWeapon : MonoBehaviour
 
                         for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
                         {
-                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(weaponData.bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                             bullet.GetComponent<Bullet>().SetBulletDirection(straightDir);
                             bullet.GetComponent<Bullet>().SetBulletState(weaponData);
                             yield return new WaitForSeconds(0.1f);
@@ -184,7 +184,7 @@ public class EnemyWeapon : MonoBehaviour
                         for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
                         {
                             Vector3 degree = Quaternion.Euler(0, 0, angle) * angleDir;
-                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            GameObject bullet = HSSObjectPoolManager.instance.SpawnObject(weaponData.bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                             bullet.GetComponent<Bullet>().SetBulletDirection(degree);
                             bullet.GetComponent<Bullet>().SetBulletState(weaponData);
                             angle += barrage[nowBarrageNum].addAngle;
@@ -207,7 +207,7 @@ public class EnemyWeapon : MonoBehaviour
                         for (int i = 0; i < barrage[nowBarrageNum].bulletCount; i++)
                         {
                             shotDir = new Vector3(shotDir.x + Random.Range(-0.25f, 0.25f), shotDir.y + Random.Range(-0.1f, 0.1f));
-                            GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                            GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(weaponData.bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                             bullet1.GetComponent<Bullet>().SetBulletDirection(shotDir);
                             bullet1.GetComponent<Bullet>().SetBulletState(weaponData);
                         }
@@ -228,7 +228,7 @@ public class EnemyWeapon : MonoBehaviour
                         yield break;
 
                     Vector3 degree = Quaternion.Euler(0, 0, angle) * tornadoDir;
-                    GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(bulletKey, gameObject.transform.position, gameObject.transform.rotation);
+                    GameObject bullet1 = HSSObjectPoolManager.instance.SpawnObject(weaponData.bulletKey, gameObject.transform.position, gameObject.transform.rotation);
                     bullet1.GetComponent<Bullet>().SetBulletDirection(degree);
                     bullet1.GetComponent<Bullet>().SetBulletState(weaponData);
                     angle += barrage[nowBarrageNum].addAngle;
