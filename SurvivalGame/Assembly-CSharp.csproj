@@ -109,6 +109,8 @@
     <Compile Include="Assets\Scripts\InGame\ExpItem.cs" />
     <Compile Include="Assets\Scripts\InGame\Weapon.cs" />
     <Compile Include="Assets\Scripts\Core\Core.cs" />
+    <Compile Include="Assets\Scripts\UI\UIAttrTypeAttribute.cs" />
+    <Compile Include="Assets\Scripts\Core\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
