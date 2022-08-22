@@ -23,9 +23,7 @@ public class ExpItem : HSSObject
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("뭔가 충돌은 일어남");
-
-        if(isReady==true)
+        if (isReady == true)
         {
             if (collision.gameObject.tag.Equals("Player"))
             {

@@ -110,4 +110,9 @@ public class Player : MonoBehaviour
         playerExp += amount;
         Debug.Log("Player Exp : " + playerExp);
     }
+
+    public int GetExp()
+    {
+        return playerExp;
+    }
 }

@@ -77,4 +77,12 @@ public class PlayerSetting : MonoBehaviour
         if (player != null)
             player.AddExp(amount);
     }
+
+    public int GetExp()
+    {
+        if (player != null)
+            return player.GetExp();
+
+        return 0;
+    }
 }
