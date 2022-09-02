@@ -7,7 +7,6 @@ public class ExpItem : HSSObject
     public int exp = 0;
 
     private bool isReady = false;
-    private string layerCheck = "Player";
 
     private void OnEnable()
     {
@@ -33,17 +32,4 @@ public class ExpItem : HSSObject
             }
         }
     }
-
-    //public void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (isReady == true)
-    //    {
-    //        if (collision.gameObject.layer.Equals(layerCheck))
-    //        {
-    //            HSSObjectPoolManager.instance.SaveObject(key, gameObject);
-    //            isReady = false;
-    //        }
-    //    }
-    //}
-
 }

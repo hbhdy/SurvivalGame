@@ -70,7 +70,7 @@ public class GameUI : MonoBehaviour
         {
             uiFadeEffect.color = new Color(0, 0, 0, fadeCount);
             fadeCount += 0.01f;
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
 
         uiFadeEffect.color = new Color(0, 0, 0, 1);
@@ -80,7 +80,7 @@ public class GameUI : MonoBehaviour
         {
             uiFadeEffect.color = new Color(0, 0, 0, fadeCount);
             fadeCount -= 0.01f;
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
         uiFadeEffect.color = new Color(0, 0, 0, 0);
         objWarning.SetActive(false);

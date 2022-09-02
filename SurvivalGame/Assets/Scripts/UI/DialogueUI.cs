@@ -105,14 +105,14 @@ public class DialogueUI : MonoBehaviour
         if (cam != null)
             GetComponent<Canvas>().worldCamera = cam.GetComponent<Camera>();
 
-        InGameCore.instance.GamePause();
+        InGameCore.instance.GamePause(InGameCore.E_Pause_Type.Pause_Type_Dialogue, true);
         Joystick.instance.SetJoystick(false);
         Joystick.instance.OnPointerUp(Vector2.zero);
 
         objSkip.SetActive(true);
         yield return StartCoroutine(StoryLine(key));
 
-        InGameCore.instance.GameResume();
+        InGameCore.instance.GamePause(InGameCore.E_Pause_Type.Pause_Type_Dialogue, false);
         Joystick.instance.SetJoystick(true);
         GameUI.instance.HudsOnOff(true);
     }

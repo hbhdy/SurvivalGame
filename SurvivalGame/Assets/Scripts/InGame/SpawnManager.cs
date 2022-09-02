@@ -35,13 +35,15 @@ public class SpawnManager : MonoBehaviour
 
     public IEnumerator StarGameRoutine()
     {
+        InGameCore.instance.GamePause(InGameCore.E_Pause_Type.Pause_Type_Dialogue, true);
         GameUI.instance.FadeEffectRoutine();
 
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSecondsRealtime(3.0f);
 
+        InGameCore.instance.GamePause(InGameCore.E_Pause_Type.Pause_Type_Dialogue, false);
         zonePoints[nowStageCount].ActiveZone();
 
-        DialogueUI.instance.StartDialogue("Circle_Dialogue");
+        //DialogueUI.instance.StartDialogue("Circle_Dialogue");
     }
 
     public void NextStageRoutine()
@@ -60,7 +62,7 @@ public class SpawnManager : MonoBehaviour
         }
         GameUI.instance.FadeEffectRoutine();
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSecondsRealtime(5.0f);
 
         nowStageCount++;
         zonePoints[nowStageCount].ActiveZone();

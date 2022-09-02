@@ -564,7 +564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1508334618
 Transform:
   m_ObjectHideFlags: 0
@@ -1032,6 +1032,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4344714077813293548, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4745307833816228606, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1050,7 +1054,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601357765753739043, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
       propertyPath: spwnTime
-      value: 2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601357765753739043, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6230988648882157510, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
       propertyPath: m_RootOrder
@@ -1179,6 +1187,10 @@ PrefabInstance:
     - target: {fileID: 8403688191389200331, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
       propertyPath: pointList.Array.data[1].objPoint.Array.data[3]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8549691104005330861, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9204795383269934540, guid: 36f8b8a3ac287dd4c9035070ce7aee64, type: 3}
       propertyPath: m_RootOrder

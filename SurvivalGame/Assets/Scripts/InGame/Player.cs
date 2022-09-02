@@ -55,10 +55,12 @@ public class Player : MonoBehaviour
         hudPack.SetSteeringTarget(objWheel);
 
         GameUI.instance.playerHPState.LinkBody(body);
-
+        GameUI.instance.playerHPState.LinkExp(this);
         prevHp = body.entityStatus.HP;
 
         yield return new WaitForEndOfFrame();
+
+        StartCoroutine(Co_Move());
     }
 
     // 웨폰 바디 휠 조립
@@ -75,23 +77,47 @@ public class Player : MonoBehaviour
         yield return true;
     }
 
-    public void FixedUpdate()
+    private IEnumerator Co_Move()
     {
-        if (Joystick.instance.GetDir() != Vector3.zero)
-        {
-            wheel.MoveWheel(Joystick.instance.GetMoveForce());
+        yield return new WaitUntil(() => InGameCore.instance.isInGameCoreReady);
 
-            isMoving = true;
-        }
-        else
+        while (true)
         {
-            if (isMoving)
+            if (Joystick.instance.GetDir() != Vector3.zero)
             {
-                wheel.BreakWheel();
-                isMoving = false;
+                wheel.MoveWheel(Joystick.instance.GetMoveForce());
+
+                isMoving = true;
             }
+            else
+            {
+                if (isMoving)
+                {
+                    wheel.BreakWheel();
+                    isMoving = false;
+                }
+            }
+            yield return new WaitForEndOfFrame();
         }
     }
+
+    //public void FixedUpdate()
+    //{
+    //    if (Joystick.instance.GetDir() != Vector3.zero)
+    //    {
+    //        wheel.MoveWheel(Joystick.instance.GetMoveForce());
+
+    //        isMoving = true;
+    //    }
+    //    else
+    //    {
+    //        if (isMoving)
+    //        {
+    //            wheel.BreakWheel();
+    //            isMoving = false;
+    //        }
+    //    }
+    //}
 
     public void HitProgress()
     {
@@ -109,10 +135,17 @@ public class Player : MonoBehaviour
     {
         playerExp += amount;
         Debug.Log("Player Exp : " + playerExp);
+
+        GameUI.instance.playerHPState.CalcEXPState();
     }
 
     public int GetExp()
     {
         return playerExp;
+    }
+
+    public Vector2 GetPlayerBodyPos()
+    {
+        return body.transform.position;
     }
 }

@@ -10,6 +10,8 @@ public class PlayerHPState : MonoBehaviour
 
     [HideInInspector]
     public Body body;
+    [HideInInspector]
+    public Player player;
 
     private int bodyHp;
     private int playerExp;
@@ -21,9 +23,9 @@ public class PlayerHPState : MonoBehaviour
         bodyHp = (int)body.entityStatus.useHP;
     }
 
-    public void LinkExp()
+    public void LinkExp(Player p)
     {
-        playerExp = InGameCore.instance.playerSetting.GetExp();
+        player = p; 
     }
 
     public void CalcHPState()
@@ -36,7 +38,6 @@ public class PlayerHPState : MonoBehaviour
 
     public void CalcEXPState()
     {
-        // 레벨에 따른 경험치 읽어오기 추가 필요 
-        uiPlayerExp.fillAmount = playerExp / 100;
+        uiPlayerExp.fillAmount = (float)(player.GetExp() / 100f);
     }
 }

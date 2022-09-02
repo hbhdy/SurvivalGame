@@ -9,6 +9,7 @@ public class LocalizedDataInfo : ScriptableObject
     [HideInInspector]
     public List<DoubleKeyData> dataList = new List<DoubleKeyData>();
 
+    // 메인 Key - 메인 Value[언어(Key) - 단어(Value)]
     public Dictionary<string, Dictionary<string, string>> uiText = new Dictionary<string, Dictionary<string, string>>();
 
     [HideInInspector]

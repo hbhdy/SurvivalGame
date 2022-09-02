@@ -4,7 +4,7 @@
       "key": "PlayerWheel_01",
       "eOwner": "Player",
       "prefabName": "PlayerWheel_01",
-      "moveSpeed": 3,
+      "moveSpeed": 4,
       "rotationSpeed": 360
     },
     {

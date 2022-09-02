@@ -11,12 +11,14 @@ public class SpawnArea : MonoBehaviour
     public FOV2D fov2d;
 
     private Coroutine co_CreateEnemyRoutine = null;
-    private bool isReady = false;
+    //private bool isReady = false;
+
+    Vector2 playerPos = new Vector2();
 
     private void Awake()
     {
         fov2d = this.GetComponent<FOV2D>();
-        isReady = true;
+        //isReady = true;
     }
 
     private void Start()
@@ -35,11 +37,15 @@ public class SpawnArea : MonoBehaviour
 
         yield return new WaitUntil(()=> InGameCore.instance.isInGameCoreReady);
 
+        Player player = InGameCore.instance.playerSetting.player;  
+
         while (true)
         {
+            playerPos = player.GetPlayerBodyPos();
+
             xPos = Random.Range(-halfRadius, halfRadius);
             yPos = Random.Range(-halfRadius, halfRadius);
-            randPos = new Vector3(xPos, yPos, 0);
+            randPos = new Vector3(playerPos.x + xPos, playerPos.y + yPos, 0);
 
             HSSObjectPoolManager.instance.SpawnObject(enemyKey, randPos, Quaternion.identity, null);
 

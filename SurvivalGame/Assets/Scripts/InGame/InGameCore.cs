@@ -5,6 +5,14 @@ using UnityEngine;
 // 인게임내 초기화 및 게임 흐름을 제어하는 부분
 public class InGameCore : MonoBehaviour
 {
+    public enum E_Pause_Type
+    {
+        Pause_Type_Background,
+        Pause_Type_Dialogue,
+
+        Count,
+    }
+
     public static InGameCore instance = null;
 
     public string currentStage = "";
@@ -15,6 +23,8 @@ public class InGameCore : MonoBehaviour
     [HideInInspector]
     public bool isInGameCoreReady = false;
 
+
+    private Dictionary<E_Pause_Type, bool> dicPause = new Dictionary<E_Pause_Type, bool>();
 
     public void Awake()
     {
@@ -28,6 +38,13 @@ public class InGameCore : MonoBehaviour
 
     public void Start()
     {
+        dicPause.Clear();
+
+        for (int i = 0; i < (int)E_Pause_Type.Count; i++)
+        {
+            dicPause.Add((E_Pause_Type)i, false);
+        }
+
         if (GameEngine.instance.isDev)
             StartCoroutine(InitGameSceneDev());
         else
@@ -77,17 +94,23 @@ public class InGameCore : MonoBehaviour
         isInGameCoreReady = true;
     }
 
-    public void GamePause()
+    public void GamePause(E_Pause_Type pauseType, bool pause)
     {
-        Joystick.instance.SetPause(true);
-        GameUI.instance.SetPause(true);
-        Time.timeScale = 0;
-    }
+        dicPause[pauseType] = pause;
 
-    public void GameResume()
-    {
-        Joystick.instance.SetPause(false);
-        GameUI.instance.SetPause(false);
-        Time.timeScale = 1;
+        bool lastPause = dicPause.ContainsValue(true);
+
+        if (lastPause == true)
+        {
+            Time.timeScale = 1;
+            Joystick.instance.SetPause(false);
+            GameUI.instance.SetPause(false);
+        }
+        else
+        {
+            Time.timeScale = 0;
+            Joystick.instance.SetPause(true);
+            GameUI.instance.SetPause(true);
+        }
     }
 }

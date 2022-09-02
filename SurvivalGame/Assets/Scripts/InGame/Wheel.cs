@@ -13,7 +13,6 @@ public class Wheel : MonoBehaviour
 
     private Rigidbody2D rigid2D;
 
-
     public void Awake()
     {
         rigid2D = GetComponent<Rigidbody2D>();
