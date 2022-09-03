@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7242638643954817740
 Transform:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3626896592139783062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 760081052653203052}
@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &760081052653203052
 Transform:
   m_ObjectHideFlags: 0
@@ -180,9 +180,42 @@ MonoBehaviour:
     isFirst: 1
     addTimer: 0
     isUsed: 0
+  - objPoint: {fileID: 0}
+    percent: 100
+    spawnTimer: 10
+    isLinked: 0
+    objLinkedObject: {fileID: 0}
+    isFold: 0
+    canRecycle: 1
+    canActive: 0
+    isFirst: 1
+    addTimer: 0
+    isUsed: 0
+  - objPoint: {fileID: 0}
+    percent: 100
+    spawnTimer: 10
+    isLinked: 0
+    objLinkedObject: {fileID: 0}
+    isFold: 0
+    canRecycle: 1
+    canActive: 0
+    isFirst: 1
+    addTimer: 0
+    isUsed: 0
+  - objPoint: {fileID: 0}
+    percent: 100
+    spawnTimer: 10
+    isLinked: 0
+    objLinkedObject: {fileID: 0}
+    isFold: 0
+    canRecycle: 1
+    canActive: 0
+    isFirst: 1
+    addTimer: 0
+    isUsed: 0
   spawnKeyInfos:
-  - spawnKey: Boss_Circle_01
-    isRelativeSpwaner: 0
+  - spawnKey: Enemy_Straight_01
+    isRelativeSpwaner: 1
     objRelativeSpawner: {fileID: 0}
     isFold: 1
   fov2d: {fileID: 0}
@@ -227,7 +260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2015358753813396761
 Transform:
   m_ObjectHideFlags: 0
@@ -249,11 +282,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8549691104005330861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fea153c7c9c4b394db92a8c8d5c4359e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyKey: Enemy_Straight_01
+  spwnTime: 1
+  fov2d: {fileID: 0}
 --- !u!114 &4344714077813293548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8549691104005330861}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c686943aeecc9b34bbcdf3304b965a4a, type: 3}
   m_Name: 

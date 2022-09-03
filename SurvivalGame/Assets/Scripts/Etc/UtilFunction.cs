@@ -256,6 +256,30 @@ public static class UtilFunction
         return string.Format("{0:0.##} {1}", len * resultMultply, sizes[order]);
     }
 
+    // Rect값 재할당
+    public static void SetRectTransform(GameObject newObj, GameObject originPrefab)
+    {
+        RectTransform newRect = newObj.GetComponent<RectTransform>();
+        RectTransform oringRect = originPrefab.GetComponent<RectTransform>();
+
+        if (newRect == null || oringRect == null)
+            return;
+
+        newRect.anchoredPosition = oringRect.anchoredPosition;
+        newRect.anchoredPosition3D = oringRect.anchoredPosition3D;
+
+        newRect.anchorMax = oringRect.anchorMax;
+        newRect.anchorMin = oringRect.anchorMin;
+        newRect.offsetMax = oringRect.offsetMax;
+        newRect.offsetMin = oringRect.offsetMin;
+
+        newRect.pivot = oringRect.pivot;
+
+        newRect.sizeDelta = oringRect.sizeDelta;
+
+        newRect.localScale = oringRect.localScale;
+    }
+
     #region [ 오브젝트 탐색 ]
     public static string GetFullPath(Transform transform, string path=null)
     {

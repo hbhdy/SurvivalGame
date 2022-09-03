@@ -9,6 +9,7 @@ public class InGameCore : MonoBehaviour
     {
         Pause_Type_Background,
         Pause_Type_Dialogue,
+        Pause_Type_Option,
 
         Count,
     }
@@ -57,6 +58,8 @@ public class InGameCore : MonoBehaviour
         yield return new WaitUntil(() => Core.instance.isCoreReady);
         yield return new WaitForEndOfFrame();
 
+        Core.UI.SetCanvas();
+
         // 씬 초기화하면서 오브젝트풀의 설정된 오브젝트 생성
         HSSObjectPoolManager.instance.MakeObjectPool();
 
@@ -78,6 +81,8 @@ public class InGameCore : MonoBehaviour
     {
         yield return new WaitUntil(() => Core.instance.isCoreReady);
         yield return new WaitForEndOfFrame();
+
+        Core.UI.SetCanvas();
 
         // 씬 초기화하면서 오브젝트풀의 설정된 오브젝트 생성
         HSSObjectPoolManager.instance.MakeObjectPool();
@@ -102,15 +107,15 @@ public class InGameCore : MonoBehaviour
 
         if (lastPause == true)
         {
-            Time.timeScale = 1;
-            Joystick.instance.SetPause(false);
-            GameUI.instance.SetPause(false);
-        }
-        else
-        {
             Time.timeScale = 0;
             Joystick.instance.SetPause(true);
             GameUI.instance.SetPause(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            Joystick.instance.SetPause(false);
+            GameUI.instance.SetPause(false);
         }
     }
 }

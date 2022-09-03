@@ -52,6 +52,11 @@ public class GameUI : MonoBehaviour
         {
             Joystick.instance.OnPointerUp(Core.INPUT.inputPosition);
         }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Core.UI.OpenUI(E_UI_Type.UI_OptionPopup);
+        }
     }
 
     public void FadeEffectRoutine()

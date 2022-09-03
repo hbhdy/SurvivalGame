@@ -21,6 +21,9 @@ public class Core : MonoBehaviour
     public static InputManager INPUT { get { return instance.Get<InputManager>(); } }
 
     [HideInInspector]
+    public static UIManager UI { get { return instance.Get<UIManager>(); } }
+
+    [HideInInspector]
     public bool isCoreReady = false;
 
     // 짧고 알기 쉽게 명명하기 위함 ( 상속 조건 HSSManager )

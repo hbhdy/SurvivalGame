@@ -75,6 +75,8 @@ public class SceneLoadingManager : HSSManager
     // 씬 전환 및 로딩 표시
     public IEnumerator SceneLoadingWithAsyncUI(string targetScene)
     {
+        Core.UI.ResetDicUI();
+
         LoadingUI.instance.SetActiveLoadingUI(true);
 
         AsyncOperation async = SceneManager.LoadSceneAsync(targetScene, LoadSceneMode.Single);

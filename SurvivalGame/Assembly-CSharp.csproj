@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\InGame\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\UI\DamageText.cs" />
+    <Compile Include="Assets\Scripts\UI\UI_OptionPopup.cs" />
     <Compile Include="Assets\Scripts\UI\UIAttrTypeAttribute.cs" />
     <Compile Include="Assets\Scripts\DataInfo\DataInfoWheel.cs" />
     <Compile Include="Assets\Scripts\InGame\CameraFollower.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Assets\Scripts\InGame\SpawnArea.cs" />
     <Compile Include="Assets\Scripts\InGame\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\InGame\SpawnManager.cs" />
+    <Compile Include="Assets\Scripts\UI\UIBase.cs" />
     <Compile Include="Assets\Scripts\InGame\Player.cs" />
     <Compile Include="Assets\Scripts\UI\HUDPack.cs" />
     <Compile Include="Assets\Scripts\Core\ResourceManager.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Assets\Scripts\InGame\PlayerSetting.cs" />
     <Compile Include="Assets\Scripts\UI\GameUI.cs" />
     <Compile Include="Assets\Scripts\ObjectPool\HSSUIObject.cs" />
+    <Compile Include="Assets\Scripts\Core\UIManager.cs" />
     <Compile Include="Assets\Scripts\DataInfo\DataInfoBody.cs" />
     <Compile Include="Assets\Scripts\DataInfo\DataInfoBase.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueData.cs" />
