@@ -1,0 +1,22 @@
+{
+  "DataInfo": [
+    {
+      "mainKey": "text_common_001",
+      "text_ko": "시작",
+      "text_en": "Start",
+      "text_jp": "start"
+    },
+    {
+      "mainKey": "text_common_002",
+      "text_ko": "확인",
+      "text_en": "Ok",
+      "text_jp": "ok"
+    },
+    {
+      "mainKey": "text_common_003",
+      "text_ko": "취소",
+      "text_en": "Cancel",
+      "text_jp": "cancel"
+    }
+  ]
+}

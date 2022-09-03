@@ -75,7 +75,6 @@ public class CharacterNameWindowEditor : EditorWindow
         GUILayout.Label("[ " + EGameLanuage.Korean.ToString() + " ]", GUILayout.Width(150));
         GUILayout.Label("[ " + EGameLanuage.English.ToString() + " ]", GUILayout.Width(150));
         GUILayout.Label("[ " + EGameLanuage.Japanese.ToString() + " ]", GUILayout.Width(150));
-        GUILayout.Label("[ " + EGameLanuage.Russian.ToString() + " ]", GUILayout.Width(150));
         GUILayout.EndHorizontal();
 
         for (int i = 0; i < nameAsset.nameData.Count; i++)

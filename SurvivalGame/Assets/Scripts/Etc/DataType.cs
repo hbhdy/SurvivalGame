@@ -9,7 +9,6 @@ public enum EGameLanuage
     Korean,
     English,
     Japanese,
-    Russian,
     Count
 }
 

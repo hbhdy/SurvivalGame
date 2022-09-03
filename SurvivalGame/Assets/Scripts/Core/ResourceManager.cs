@@ -10,7 +10,7 @@ public class ResourceManager : HSSManager
     private DataInfoBody DataInfoBody { get; set; } = new DataInfoBody();
     private DataInfoWheel DataInfoWheel { get; set; } = new DataInfoWheel();
 
-    public LocalizedDataInfo localDataInfo;
+    private DataInfoLocalized DataInfoLocalized { get; set; } = new DataInfoLocalized();
 
     public BarrageData barrageData;
 
@@ -34,8 +34,8 @@ public class ResourceManager : HSSManager
         yield return StartCoroutine(DataInfoWeapon.InitData());
         yield return StartCoroutine(DataInfoBody.InitData());
         yield return StartCoroutine(DataInfoWheel.InitData());
+        yield return StartCoroutine(DataInfoLocalized.InitData());
 
-        //yield return StartCoroutine(localDataInfo.InitData());
         yield return StartCoroutine(barrageData.InitData());
 
         yield return StartCoroutine(base.InitManager());
@@ -45,13 +45,13 @@ public class ResourceManager : HSSManager
 
     public void SetCurrentLanguage(EGameLanuage lang)
     {
-        localDataInfo.SetCurrentLanguage(lang.ToString());
+        DataInfoLocalized.SetCurrentLanguage(lang.ToString());
         PlayerPrefs.SetString("Language",lang.ToString());
     }
 
     public string GetLocalUIText(string key)
     {
-        return localDataInfo.GetUITextData(key);
+        return DataInfoLocalized.GetUIText(key);
     }
 
     public List<DialogueDataSet> GetDialogueKeyData(string key)

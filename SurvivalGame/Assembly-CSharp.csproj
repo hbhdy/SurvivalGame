@@ -74,7 +74,7 @@
     <Compile Include="Assets\Scripts\Etc\RadarWithFOV2D.cs" />
     <Compile Include="Assets\Scripts\Dialogue\DialogueAsset.cs" />
     <Compile Include="Assets\Scripts\InGame\ZonePoint.cs" />
-    <Compile Include="Assets\Scripts\DataInfo\LocalizedDataInfo.cs" />
+    <Compile Include="Assets\Scripts\DataInfo\DataInfoLocalized.cs" />
     <Compile Include="Assets\Scripts\InGame\Bullet\BarrageData.cs" />
     <Compile Include="Assets\Scripts\Etc\UtilFunction.cs" />
     <Compile Include="Assets\Scripts\UI\HUDManager.cs" />
